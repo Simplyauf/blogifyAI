@@ -56,8 +56,8 @@ const VerifyEmail = () => {
   }
 
   return (
-    <section className="w-full flex justify-center items-center">
-      <div className="w-[476px] mt-[94px]">
+    <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
+      <div className="md:w-[476px] w-full mt-[94px]">
         <h3 className="text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
           Verify email
         </h3>
@@ -80,28 +80,28 @@ const VerifyEmail = () => {
             type="text"
             maxLength={1}
             placeholder="-"
-            className="h-[72px] text-[34px] leading-[42px] font-bold pl-[27px] font-DarkerGrotesque text-Shade/Shade2 w-[72px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:leading-[42px] font-bold pl-[27px] font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
           />
           <input
             id="input2"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="h-[72px] text-[34px] pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 w-[72px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
           />
           <input
             id="input3"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="h-[72px] text-[34px] pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 w-[72px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
           />
           <input
             id="input4"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="h-[72px] text-[34px] pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 w-[72px] rounded-lg  border border-x-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-x-Surface/surface-600 bg-Brand/Surface/surface-50"
           />
         </div>
         <button className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
