@@ -37,6 +37,16 @@ const DashboardLayout = ({ children }: PropType) => {
       displayValue: "AI Hub",
       LogoImg: (className: string) => <DashboardIcon className={className} />,
     },
+    {
+      link: "/dashboard//aiwriter",
+      displayValue: "AI Writer",
+      LogoImg: (className: string) => <DashboardIcon className={className} />,
+    },
+    {
+      link: "/dashboard//chat",
+      displayValue: "Chat",
+      LogoImg: (className: string) => <DashboardIcon className={className} />,
+    },
   ];
 
   const navigateToSideItems = (path: string) => {
