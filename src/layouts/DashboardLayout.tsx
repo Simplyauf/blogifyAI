@@ -52,6 +52,16 @@ const DashboardLayout = ({ children }: PropType) => {
       displayValue: "Jobs",
       LogoImg: (className: string) => <DashboardIcon className={className} />,
     },
+    {
+      link: "/dashboard/plans",
+      displayValue: "Plans",
+      LogoImg: (className: string) => <DashboardIcon className={className} />,
+    },
+    {
+      link: "/dashboard/support",
+      displayValue: "Support",
+      LogoImg: (className: string) => <DashboardIcon className={className} />,
+    },
   ];
 
   const navigateToSideItems = (path: string) => {
@@ -64,7 +74,7 @@ const DashboardLayout = ({ children }: PropType) => {
   };
   return (
     <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
-      <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center">
+      <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
         <Logo />
         <div className="flex items-center gap-[24px]">
           <div className="relative w-[320px] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
@@ -86,9 +96,9 @@ const DashboardLayout = ({ children }: PropType) => {
           </div>
         </div>
       </header>
-      <section>
-        <div className="flex w-full ">
-          <ul className="flex flex-col bg-Brand/Surface/surface-50 border border-Surface/surface-400 w-[252px] px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
+      <section className="mt-[76px]">
+        <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
+          <ul className="flex flex-col fixed top-[76px] left-0 w-[15%] bg-Brand/Surface/surface-50 border border-Surface/surface-400 min-w-[252px] max-w-[260px] px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
             {SidebarValues.map((content, index) => {
               const { LogoImg, displayValue, link } = content;
               return (

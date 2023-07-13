@@ -13,7 +13,7 @@ const CreateBlogModal = ({
   setCreateBlogModalOpen,
 }: PropTypes) => {
   const [ChooseBlogTemplateModalOpen, setChooseBlogTemplateModalOpen] =
-    useState(true);
+    useState(false);
   return (
     <>
       <ChooseBlogTemplateModal

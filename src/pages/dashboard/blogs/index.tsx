@@ -14,7 +14,7 @@ import CreateBlogModal from "./createBlogModal";
 
 const Blogs = () => {
   const [currentView, setCurrentView] = useState("Grid");
-  const [CreateBlogModalOpen, setCreateBlogModalOpen] = useState(true);
+  const [CreateBlogModalOpen, setCreateBlogModalOpen] = useState(false);
 
   interface BlogListProp {
     key: number;
@@ -141,7 +141,7 @@ const Blogs = () => {
         CreateBlogModalOpen={CreateBlogModalOpen}
         setCreateBlogModalOpen={setCreateBlogModalOpen}
       />
-      <section className="mt-8 px-6 w-full 2xl:px-[4%]">
+      <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
         <div className="w-full justify-between items-center flex">
           <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
             Blogs
@@ -214,7 +214,7 @@ const Blogs = () => {
             })}
         </div>
         {currentView === "Grid" && (
-          <div className="w-full grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
+          <div className="w-full grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 xl:gap-[5rem] 2xl:gap-6">
             {blogs.map((elem, index) => {
               const { status } = elem;
 

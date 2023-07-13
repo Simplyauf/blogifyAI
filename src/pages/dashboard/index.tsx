@@ -123,12 +123,12 @@ const Dashboard = () => {
   ];
 
   return (
-    <section className="mt-8 px-6 w-full 2xl:px-[4%]">
+    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
       <div className="w-full">
         <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
           Blog Analytics
         </h2>
-        <div className="flex mt-4 gap-6  w-full flex-wrap justify-between relative">
+        <div className=" mt-4 gap-6  w-full grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4  justify-between relative">
           {currentAnalytics.length < 1 &&
             analytic.map((elem, index) => {
               return <SkeletonAnalytics key={index} />;
@@ -184,7 +184,6 @@ const Dashboard = () => {
               </button>
             </div>
           )}
-          ;
         </div>
       </div>
       <div className="mt-6">
@@ -200,7 +199,7 @@ const Dashboard = () => {
             <ArrowRight />
           </div>
         </div>
-        <div className="flex mt-4 gap-6 w-full flex-wrap justify-between">
+        <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 justify-between">
           {AIWriter.map((elem, index) => {
             const { title, description, image } = elem;
             return (

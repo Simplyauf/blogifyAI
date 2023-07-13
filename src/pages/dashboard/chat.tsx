@@ -9,6 +9,66 @@ import ChatIconGreen from "@/assets/chat-smileGreen.svg";
 import ChatIconGray from "@/assets/chat-smileGray.svg";
 import Checkmark from "@/assets/check-mark.svg";
 import Send from "@/assets/sent-fast.svg";
+import Divider from "@/assets/Divider.svg";
+
+export const AIChat = () => {
+  return (
+    <div className="w-full justify-start flex">
+      <div className="w-full flex gap-2 items-start">
+        <div className="flex justify-center items-center w-10 h-10 p-2 bg-Accent/Success/Success-800 rounded-[50%]">
+          <ChatIconGreen />
+        </div>
+        <div className="flex flex-col justify-end max-w-[392px] bg-Surface/surface-400 rounded-lg gap-2 items-end p-3 ">
+          <p className="font-DarkerGrotesque text-[18px] font-medium leading-[110%] text-left text-Brand/Text/Text-800">
+            Id id sit veniam labore laborum eu aliquip do laboris dolor ipsum ad
+            elit. Consectetur do sit eiusmod.{" "}
+          </p>
+          <div className=" flex items-center gap-2">
+            <span className="text-Brand/Text/Text-600 font-Poppins leading-[130%] tracking-[0.36px] text-[12px] text-right">
+              10:42AM
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const DateDivider = () => {
+  return (
+    <article className="flex gap-4 items-center my-4">
+      <Divider />
+      <span className="font-DarkerGrotesque text-[16px] font-medium leading-normal text-Gray/7">
+        06 November, 2019
+      </span>
+      <Divider />
+    </article>
+  );
+};
+
+export const UserChat = () => {
+  return (
+    <div className="w-full justify-end flex mt-4">
+      <div className=" flex gap-2 items-start">
+        <div className="flex flex-col justify-end max-w-[392px] bg-Brand/Primary/Primary-800  rounded-lg gap-2 items-end p-3 ">
+          <p className="font-DarkerGrotesque text-[18px] font-medium leading-[110%] text-left text-Brand/Text/Text-100">
+            Id id sit veniam labore laborum eu aliquip do laboris dolor ipsum ad
+            elit. Consectetur do sit eiusmod.{" "}
+          </p>
+          <div className=" flex items-center gap-2">
+            <Checkmark />
+            <span className="text-Brand/Text/Text-200 font-Poppins leading-[130%] tracking-[0.36px] text-[12px] text-right">
+              10:42AM
+            </span>
+          </div>
+        </div>
+        <div className="flex justify-center items-center w-10 h-10 p-2 bg-Brand/Primary/Primary-800 rounded-[50%]">
+          <ChatIconGray />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Chat = () => {
   const SingleAIList = () => {
@@ -37,56 +97,8 @@ const Chat = () => {
     );
   };
 
-  const AIChat = () => {
-    return (
-      <div className="w-full justify-start flex">
-        <div className="w-full flex gap-2 items-start">
-          <div className="flex justify-center items-center w-10 h-10 p-2 bg-Accent/Success/Success-800 rounded-[50%]">
-            <ChatIconGreen />
-          </div>
-          <div className="flex flex-col justify-end max-w-[392px] bg-Surface/surface-400 rounded-lg gap-2 items-end p-3 ">
-            <p className="font-DarkerGrotesque text-[18px] font-medium leading-[110%] text-left text-Brand/Text/Text-800">
-              Id id sit veniam labore laborum eu aliquip do laboris dolor ipsum
-              ad elit. Consectetur do sit eiusmod.{" "}
-            </p>
-            <div className=" flex items-center gap-2">
-              <Checkmark />
-              <span className="text-Brand/Text/Text-200 font-Poppins leading-[130%] tracking-[0.36px] text-[12px] text-right">
-                10:42AM
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  const UserChat = () => {
-    return (
-      <div className="w-full justify-end flex mt-4">
-        <div className=" flex gap-2 items-start">
-          <div className="flex flex-col justify-end max-w-[392px] bg-Brand/Primary/Primary-800  rounded-lg gap-2 items-end p-3 ">
-            <p className="font-DarkerGrotesque text-[18px] font-medium leading-[110%] text-left text-Brand/Text/Text-100">
-              Id id sit veniam labore laborum eu aliquip do laboris dolor ipsum
-              ad elit. Consectetur do sit eiusmod.{" "}
-            </p>
-            <div className=" flex items-center gap-2">
-              <Checkmark />
-              <span className="text-Brand/Text/Text-200 font-Poppins leading-[130%] tracking-[0.36px] text-[12px] text-right">
-                10:42AM
-              </span>
-            </div>
-          </div>
-          <div className="flex justify-center items-center w-10 h-10 p-2 bg-Brand/Primary/Primary-800 rounded-[50%]">
-            <ChatIconGray />
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <section className="mt-8 px-6 w-full 2xl:px-[4%]">
+    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         AI Chat
       </h2>
@@ -107,7 +119,7 @@ const Chat = () => {
             </button>
           </div>
 
-          <div className="mt-8 w-full  flex flex-col ai-chat-scrollbar items-start gap-4 h-[390px] pb-3 overflow-auto pr-[2px]">
+          <div className="mt-8 w-full  flex flex-col ai-chat-scrollbar items-start gap-4 h-[380px] pb-3 overflow-auto pr-[2px]">
             <SingleAIList />
             <SingleAIList />
             <SingleAIList />
@@ -120,6 +132,7 @@ const Chat = () => {
         <section className=" basis-[65%] relative">
           <div className="pb-9 p-6 h-[411px] overflow-y-auto ai-chat-scrollbar">
             <AIChat />
+            <DateDivider />
             <UserChat />
             <UserChat />
             <UserChat />
@@ -129,7 +142,7 @@ const Chat = () => {
           <div className="w-full p-4 absolute bottom-0">
             <div className="flex w-full gap-2 items-center">
               <input
-                className="w-full h-[50px] border rounded-lg bg-Brand/Surface/surface-50 border-Brand/Surface/surface-800 px-4 py-1"
+                className="w-full h-[50px] focus:outline-none border rounded-lg bg-Brand/Surface/surface-50 border-Brand/Surface/surface-800 px-4 py-1"
                 placeholder="Write Message"
                 type="text"
               />
