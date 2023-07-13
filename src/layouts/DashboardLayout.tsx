@@ -38,13 +38,18 @@ const DashboardLayout = ({ children }: PropType) => {
       LogoImg: (className: string) => <DashboardIcon className={className} />,
     },
     {
-      link: "/dashboard//aiwriter",
+      link: "/dashboard/aiwriter",
       displayValue: "AI Writer",
       LogoImg: (className: string) => <DashboardIcon className={className} />,
     },
     {
-      link: "/dashboard//chat",
+      link: "/dashboard/chat",
       displayValue: "Chat",
+      LogoImg: (className: string) => <DashboardIcon className={className} />,
+    },
+    {
+      link: "/dashboard/jobs",
+      displayValue: "Jobs",
       LogoImg: (className: string) => <DashboardIcon className={className} />,
     },
   ];
