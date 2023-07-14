@@ -255,7 +255,7 @@ const Blogs = () => {
             </div>
             <button
               onClick={() => setCreateBlogModalOpen(true)}
-              className="flex mx-auto items-center justify-center w-[134px] h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[4px] p-4 "
+              className="flex mx-auto items-center text-Brand/Surface/surface-50 justify-center gap-2 w-[134px] h-[48px] min-w-fit  bg-Brand/Primary/Primary-800 rounded-[4px] p-4 "
             >
               <span className="font-DarkerGrotesque text-[16px] font-medium leading-[26px] text-Brand/Surface/surface-50">
                 Create Blog

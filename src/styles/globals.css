@@ -12,17 +12,15 @@ body {
 }
 
 @layer components {
-  .ai-chat-scrollbar,
   .custom-overflow::-webkit-scrollbar {
     width: 5px;
   }
-  .ai-chat-scrollbar,
+
   .custom-overflow::-webkit-scrollbar-track {
     background: white;
     border-radius: 0px;
   }
 
-  .ai-chat-scrollbar,
   .custom-overflow::-webkit-scrollbar-thumb {
     border-radius: 14px;
     border: 3px solid #ebeef0;

@@ -21,7 +21,7 @@ const Chat = () => {
       </h2>
       <div className="w-full rounded-lg mt-4 gap-[14px] bg-Brand/Surface/surface-50 flex h-[494px]">
         <section className="w-full  relative">
-          <div className="pb-9 p-6 h-[411px] overflow-y-auto ai-chat-scrollbar">
+          <div className="pb-9 p-6 h-[411px] overflow-y-auto custom-overflow">
             <AIChat />
             <DateDivider />
             <UserChat />

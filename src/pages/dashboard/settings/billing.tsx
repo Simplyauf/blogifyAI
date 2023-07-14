@@ -95,13 +95,16 @@ const Billing = () => {
           </div>
         </div>
       </section>
-      <SettingTab />
+
       <section className="mt-6 w-full bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col gap-6">
         <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
           Billing History
         </h4>
         <div className="mt-2 w-full">
-          <div className="w-full flex items-center gap-4"></div>
+          <div className="w-full flex items-center gap-4 px-4 ">
+            <input type="checkbox" name="" id="" className="w-5 h-5" />
+            <div className=""></div>
+          </div>
         </div>
       </section>
     </section>

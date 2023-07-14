@@ -113,13 +113,13 @@ const Chat = () => {
               />
               <Search className="" />
             </div>
-            <button className="flex  items-center justify-center w-[115px] max-w-[35%]  h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] p-4 ">
-              <span>Create Blog</span>
+            <button className="flex text-Brand/Surface/surface-50  items-center justify-center w-[115px] max-w-[35%] gap-2 h-[48px] min-w-fit bg-Brand/Primary/Primary-800 rounded-[8px] p-4 ">
+              <span>New Chat</span>
               <Add />
             </button>
           </div>
 
-          <div className="mt-8 w-full  flex flex-col ai-chat-scrollbar items-start gap-4 h-[calc(100vh-280px)] pb-3 overflow-auto pr-[2px]">
+          <div className="mt-8 w-full  flex flex-col custom-overflow items-start gap-4 h-[calc(100vh-280px)] pb-3 overflow-auto pr-[2px]">
             <SingleAIList />
             <SingleAIList />
             <SingleAIList />
@@ -134,7 +134,7 @@ const Chat = () => {
           </div>
         </section>
         <section className=" basis-[65%] relative">
-          <div className="pb-9 p-6 h-[calc(100vh-230px)] overflow-y-auto ai-chat-scrollbar">
+          <div className="pb-9 p-6 h-[calc(100vh-230px)] overflow-y-auto custom-overflow w-full">
             <AIChat />
             <DateDivider />
             <UserChat />
