@@ -4,17 +4,23 @@ import List from "@/assets/list view-rectangle.svg";
 import Grid from "@/assets/grid 02.svg";
 import Add from "@/assets/add.svg";
 import Maximize from "@/assets/maximize.svg";
-import BlogImg from "@/assets/Blog Image.svg";
+import LightMaximize from "@/assets/light-maximize.svg";
+import BlogImg from "@/assets/Blog Image.png";
 import Edit from "@/assets/edit.svg";
 import MenuCircle from "@/assets/menu-circle-vertical.svg";
 import { useState } from "react";
 import Globe from "@/assets/globe.svg";
-import SmallBlogImg from "@/assets/smallBlogImage.svg";
+import SmallBlogImg from "@/assets/smallBlogImg.png";
+import StatusIcon from "@/assets/broadcast.svg";
+import ActionIcon from "@/assets/information.svg";
 import CreateBlogModal from "./createBlogModal";
+import Image from "next/image";
 
 const Blogs = () => {
   const [currentView, setCurrentView] = useState("Grid");
   const [CreateBlogModalOpen, setCreateBlogModalOpen] = useState(false);
+
+  console.log(BlogImg);
 
   interface BlogListProp {
     key: number;
@@ -24,8 +30,16 @@ const Blogs = () => {
   const SingleListView = ({ key, status }: BlogListProp) => {
     return (
       <div className="mt-3 flex items-center bg-Brand/Surface/surface-50 rounded-lg">
-        <SmallBlogImg className="rounded-l-lg" />
-        <div className="flex w-[80%] justify-between ml-auto gap-2 items-center px-6">
+        <Image
+          src={SmallBlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-cover rounded-l-lg"
+          style={{ width: "170px", height: "88px" }}
+        />
+        <div className="flex w-[80%] justify-between ml-auto gap-2 items-center ">
           <h2 className="text-Brand/Text/Text-800 text-[20px] font-bold line-clamp-1 text-ellipsis leading-7 font-DarkerGrotesque w-[25%]">
             Blogsite Title
           </h2>
@@ -54,7 +68,16 @@ const Blogs = () => {
     return (
       <div className="flex flex-col gap-3 rounded-lg min-w-[267px]   h-[354px]  bg-Brand/Surface/surface-50">
         <>
-          <BlogImg className="rounded-t-lg w-full" />
+          <Image
+            src={BlogImg.src}
+            alt="blog-image"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full object-cover rounded-t-lg"
+            style={{ width: "100%", height: "187px" }}
+          />
+
           <div className="pt-3 flex flex-col gap-3 p-6 ">
             <div className="justify-between flex items-center ">
               <h2 className="text-Brand/Text/Text-800 text-ellipsis text-[20px] font-bold  leading-7 font-DarkerGrotesque">
@@ -111,24 +134,84 @@ const Blogs = () => {
 
   const blogs = [
     {
-      GridImg: (className: string) => <BlogImg />,
-      ListImg: (className: string) => <SmallBlogImg />,
+      GridImg: (className: string) => (
+        <Image
+          src={BlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "100%", height: "187px" }}
+        />
+      ),
+      ListImg: (className: string) => (
+        <Image
+          src={SmallBlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "170px", height: "88px" }}
+        />
+      ),
       title: "Blogsite Title",
       url: "blogsitetitle.com",
       status: "Live",
     },
     {
-      GridImg: (className: string) => <BlogImg />,
-      ListImg: (className: string) => <SmallBlogImg />,
-      image: (className: string) => <BlogImg />,
+      GridImg: (className: string) => (
+        <Image
+          src={BlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "100%", height: "187px" }}
+        />
+      ),
+      ListImg: (className: string) => (
+        <Image
+          src={SmallBlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "170px", height: "88px" }}
+        />
+      ),
+
       title: "Blogsite Title",
       url: "blogsitetitle.com",
       status: "action-needed",
     },
     {
-      GridImg: (className: string) => <BlogImg />,
-      ListImg: (className: string) => <SmallBlogImg />,
-      image: (className: string) => <BlogImg />,
+      GridImg: (className: string) => (
+        <Image
+          src={BlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "100%", height: "187px" }}
+        />
+      ),
+      ListImg: (className: string) => (
+        <Image
+          src={SmallBlogImg.src}
+          alt="blog-image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full object-fill"
+          style={{ width: "170px", height: "88px" }}
+        />
+      ),
+
       title: "Blogsite Title",
       url: "blogsitetitle.com",
       status: "Inactive",
@@ -141,7 +224,7 @@ const Blogs = () => {
         CreateBlogModalOpen={CreateBlogModalOpen}
         setCreateBlogModalOpen={setCreateBlogModalOpen}
       />
-      <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
+      <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
         <div className="w-full justify-between items-center flex">
           <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
             Blogs
@@ -174,7 +257,9 @@ const Blogs = () => {
               onClick={() => setCreateBlogModalOpen(true)}
               className="flex mx-auto items-center justify-center w-[134px] h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[4px] p-4 "
             >
-              <span>Create Blog</span>
+              <span className="font-DarkerGrotesque text-[16px] font-medium leading-[26px] text-Brand/Surface/surface-50">
+                Create Blog
+              </span>
               <Add />
             </button>
           </div>
@@ -192,19 +277,19 @@ const Blogs = () => {
                 <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
                   Status
                 </span>
-                <Globe />
+                <StatusIcon />
               </div>
               <div className="flex items-center gap-[3px]  w-[25%]">
                 <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Blog title
+                  Domain
                 </span>
-                <Globe />
+                <LightMaximize />
               </div>
               <div className="flex items-center gap-[3px]  w-[25%]">
                 <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Blog title
+                  Actions
                 </span>
-                <Globe />
+                <ActionIcon />
               </div>
             </div>
           )}
@@ -214,7 +299,7 @@ const Blogs = () => {
             })}
         </div>
         {currentView === "Grid" && (
-          <div className="w-full grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 xl:gap-[5rem] 2xl:gap-6">
+          <div className="w-full grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
             {blogs.map((elem, index) => {
               const { status } = elem;
 

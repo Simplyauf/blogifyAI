@@ -73,7 +73,7 @@ const Support = () => {
         CreateTicketModalOpen={CreateTicketModalOpen}
         setCreateTicketModalOpen={setCreateTicketModalOpen}
       />
-      <div className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
+      <div className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%]  right-0">
         <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
           Support Channels
         </h2>
@@ -94,7 +94,7 @@ const Support = () => {
             <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
               Follow Us
             </h4>
-            <p className="font-DarkerGrotesque text-[16px] font-medium leading-nrmal text-Brand/Text/Text-600 ">
+            <p className="font-DarkerGrotesque text-[16px] font-medium leading-normal text-Brand/Text/Text-600 ">
               The help center contains a wealth of valuable resources and
               information to address frequently encountered problems.
             </p>
@@ -123,8 +123,13 @@ const Support = () => {
               Support Tickets
             </h2>
 
-            <button className="flex  items-center justify-center w-[143px] h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[4px] p-4 " onClick={()=> setCreateTicketModalOpen(true)}>
-              <span>Create Ticket</span>
+            <button
+              className="flex  items-center justify-center w-[143px] gap-2 h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[4px] p-4 "
+              onClick={() => setCreateTicketModalOpen(true)}
+            >
+              <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque">
+                Create Ticket
+              </span>
               <Add />
             </button>
           </div>
@@ -133,7 +138,7 @@ const Support = () => {
               <>
                 {" "}
                 <thead className="bg-Gray/50 text-Gray/500">
-                  <tr className="text-left border-b border-gray/200 bg-gray/50 ">
+                  <tr className="text-left border-b border-Gray/200 bg-Gray/50 ">
                     <th className="py-3 px-6  capitalize text-[14px] font-semibold  leading-normal font-DarkerGrotesque">
                       <div className="flex items-center">
                         <input
@@ -167,9 +172,9 @@ const Support = () => {
                     return (
                       <tr
                         key={index}
-                        className="tableRow text-Gray/500 border-b border-gray-200"
+                        className="tableRow text-Gray/500 border-b border-Gray/200"
                       >
-                        <td className="py-4 px-6 text-[16px] font-semibold text-gray-900   leading-normal font-DarkerGrotesque">
+                        <td className="py-4 px-6 text-[16px] font-semibold text-Gray/900   leading-normal font-DarkerGrotesque">
                           <div className="flex items-center">
                             <input
                               type="checkbox"
@@ -207,7 +212,7 @@ const Support = () => {
               </>
             </table>
             <div className="w-full px-6 py-3 flex items-center justify-between">
-              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[108px] h-[38px]  text-gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[14px] font-medium  leading-4 font-DarkerGrotesque">
+              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[108px] h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
                 <ArrowLeft />
                 <span>Previous</span>
               </button>
@@ -220,7 +225,7 @@ const Support = () => {
                 <div className="p-3 text-Gray/500">9</div>
                 <div className="p-3 text-Gray/500">10</div>
               </div>
-              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[85px] h-[38px]  text-gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[14px] font-medium  leading-4 font-DarkerGrotesque">
+              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[85px] h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
                 <span>Next</span>
                 <ArrowRight />
               </button>

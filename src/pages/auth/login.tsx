@@ -19,19 +19,19 @@ const Login = () => {
             Login
           </h3>
           <p className="text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
-            Welcome back
+            Welcome back!
           </p>
           <div className="flex w-full mt-[16px] items-center md:justify-between justify-center md:gap-[16px] gap-x-[35px]">
             <button className="h-[55.6px] rounded-lg md:w-[230px] md:px-0 px-[20px]  flex items-center justify-center gap-[10px] bg-Surface/surface-400">
               <GMark />
               <span className="text-[16px] md:flex hidden font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
-                Sign Up with Google
+                Sign In with Google
               </span>
             </button>
             <button className="h-[55.6px] rounded-lg  md:w-[230px] md:px-0 px-[20px]  flex items-center justify-center gap-[10px] bg-Surface/surface-400">
               <Apple />
               <span className="text-[16px] md:flex hidden font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
-                Sign Up with Apple
+                Sign In with Apple
               </span>
             </button>
           </div>
@@ -94,7 +94,7 @@ const Login = () => {
                 Dont have an account?{" "}
                 <Link
                   href="/auth/signup"
-                  className="text-Brand/Primary/Primary-800 cursor-pointer"
+                  className="clipped-Link-text cursor-pointer"
                 >
                   Sign Up
                 </Link>

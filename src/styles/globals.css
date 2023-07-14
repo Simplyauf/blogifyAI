@@ -12,16 +12,30 @@ body {
 }
 
 @layer components {
-  .ai-chat-scrollbar::-webkit-scrollbar {
+  .ai-chat-scrollbar,
+  .custom-overflow::-webkit-scrollbar {
     width: 5px;
   }
-  .ai-chat-scrollbar::-webkit-scrollbar-track {
+  .ai-chat-scrollbar,
+  .custom-overflow::-webkit-scrollbar-track {
     background: white;
     border-radius: 0px;
   }
 
-  .ai-chat-scrollbar::-webkit-scrollbar-thumb {
+  .ai-chat-scrollbar,
+  .custom-overflow::-webkit-scrollbar-thumb {
     border-radius: 14px;
     border: 3px solid #ebeef0;
+  }
+
+  .clipped-Link-text {
+    background: #03045e;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  input {
+    @apply focus-within:outline-none;
   }
 }

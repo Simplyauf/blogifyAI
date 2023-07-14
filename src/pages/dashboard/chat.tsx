@@ -78,7 +78,7 @@ const Chat = () => {
           <ChatIcon />
         </div>
         <div className="flex flex-col gap-1 basis-[65%]">
-          <h2 className="text-Secondary/Secondary-1 text-[20px] font-bold  leading-normal font-DarkerGrotesque ">
+          <h2 className="text-Secondary/Secondary-1 text-[20px] font-semibold  leading-normal font-DarkerGrotesque ">
             This is a title
           </h2>
           <span className="text-[12px] font-normal  leading-4 font-DarkerGrotesque tracking-[0.1px] text-Secondary-Text">
@@ -98,17 +98,17 @@ const Chat = () => {
   };
 
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
+    <section className="mt-8 px-6 h-[calc(100vh-76px)] overflow-y-scroll bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         AI Chat
       </h2>
-      <div className="w-full rounded-lg mt-4 gap-[14px] bg-Brand/Surface/surface-50 flex h-[494px]">
+      <div className="w-full rounded-lg mt-4 gap-[14px] bg-Brand/Surface/surface-50 flex h-[calc(100vh-160px)]">
         <section className="basis-[35%] px-4 py-8 ">
           <div className="flex w-full items-center justify-between gap-4">
             <div className="relative w-[224px] max-w-[65%] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg pr-3 border-Brand/Surface/surface-800 border">
               <input
                 type="text"
-                className="w-[82%] pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
+                className="w-[82%] pr-4 ml-4 h-12  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
                 placeholder="Explore"
               />
               <Search className="" />
@@ -119,7 +119,11 @@ const Chat = () => {
             </button>
           </div>
 
-          <div className="mt-8 w-full  flex flex-col ai-chat-scrollbar items-start gap-4 h-[380px] pb-3 overflow-auto pr-[2px]">
+          <div className="mt-8 w-full  flex flex-col ai-chat-scrollbar items-start gap-4 h-[calc(100vh-280px)] pb-3 overflow-auto pr-[2px]">
+            <SingleAIList />
+            <SingleAIList />
+            <SingleAIList />
+            <SingleAIList />
             <SingleAIList />
             <SingleAIList />
             <SingleAIList />
@@ -130,9 +134,13 @@ const Chat = () => {
           </div>
         </section>
         <section className=" basis-[65%] relative">
-          <div className="pb-9 p-6 h-[411px] overflow-y-auto ai-chat-scrollbar">
+          <div className="pb-9 p-6 h-[calc(100vh-230px)] overflow-y-auto ai-chat-scrollbar">
             <AIChat />
             <DateDivider />
+            <UserChat />
+            <UserChat />
+            <UserChat />
+            <UserChat />
             <UserChat />
             <UserChat />
             <UserChat />

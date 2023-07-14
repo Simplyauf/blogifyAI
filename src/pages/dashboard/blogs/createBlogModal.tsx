@@ -69,7 +69,10 @@ const CreateBlogModal = ({
           </div>
           <div className="w-full flex justify-end mt-6">
             {" "}
-            <button className="flex  items-center justify-center w-[147px] h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] py-2 px-4 ">
+            <button
+              onClick={() => setChooseBlogTemplateModalOpen(true)}
+              className="flex  items-center justify-center w-[147px] h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] py-2 px-4 "
+            >
               <span>Create</span>
             </button>
           </div>

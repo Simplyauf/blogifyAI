@@ -3,6 +3,7 @@ import React from "react";
 import User3 from "@/assets/users 02.svg";
 import Decrease from "@/assets/arrow-down-circle.svg";
 import Increase from "@/assets/arrow-up-circle.svg";
+import ChartWave from "@/assets/chart-wave-rectangle.svg";
 import ArrowRight from "@/assets/arrow-right.svg";
 import Add from "@/assets/add.svg";
 import { useState } from "react";
@@ -10,15 +11,15 @@ import { useState } from "react";
 const SkeletonAnalytics = () => (
   <article className="flex items-center justify-between h-[106px] 2xl:h-[120px] p-4 gap-4 rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px] animate-pulse">
     <div className="flex flex-col justify-stretch items-stretch w-full gap-2">
-      <h3 className="text-Brand/Text/Text-600 text-[14px] font-medium leading-normal font-DarkerGrotesque h-3 bg-gray-200"></h3>
-      <h1 className="text-Brand/Text/Text-800 text-[24px] font-bold leading-8 font-DarkerGrotesque h-6 bg-gray-200"></h1>
+      <h3 className="text-Brand/Text/Text-600 text-[14px] font-medium leading-normal font-DarkerGrotesque h-3 bg-Surface/surface-400"></h3>
+      <h1 className="text-Brand/Text/Text-800 text-[24px] font-bold leading-8 font-DarkerGrotesque h-6 bg-Surface/surface-400"></h1>
       <div className="flex items-center  text-[16px] font-semibold leading-normal font-DarkerGrotesque  w-[70%]">
-        <span className="h-4 bg-gray-200 w-[20%]"></span>{" "}
-        <span className="h-4 bg-gray-200 w-[10%] ml-[4px]"> </span>
-        <span className="ml-[8px] text-Brand/Text/Text-600 text-[14px] font-medium bg-gray-200 w-[70%] h-4"></span>
+        <span className="h-4 bg-Surface/surface-400 w-[20%]"></span>{" "}
+        <span className="h-4 bg-Surface/surface-400 w-[10%] ml-[4px]"> </span>
+        <span className="ml-[8px] text-Brand/Text/Text-600 text-[14px] font-medium bg-Surface/surface-400 w-[70%] h-4"></span>
       </div>
     </div>
-    <div className="flex p-4 items-center justify-center rounded-[50%] w-[40px] h-[40px] bg-gray-200"></div>
+    <div className="flex p-4 items-center justify-center rounded-[50%] w-[40px] h-[40px] bg-Surface/surface-400"></div>
   </article>
 );
 
@@ -50,7 +51,7 @@ const Dashboard = () => {
       rating: 7,
       since: "last month",
       direction: "increase",
-      image: (className: string) => <User3 />,
+      image: (className: string) => <ChartWave />,
     },
     {
       title: "Engagements",
@@ -58,7 +59,7 @@ const Dashboard = () => {
       rating: 7,
       since: "last month",
       direction: "decrease",
-      image: (className: string) => <User3 />,
+      image: (className: string) => <ChartWave />,
     },
 
     {
@@ -123,7 +124,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
+    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <div className="w-full">
         <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
           Blog Analytics
@@ -139,7 +140,7 @@ const Dashboard = () => {
               return (
                 <article
                   key={index}
-                  className="flex items-center justify-between h-[106px] 2xl:h-[120px] p-4 gap-4 rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px]"
+                  className="flex items-center justify-between h-[106px] 2xl:h-[120px] p-4 gap-4 rounded-lg bg-Brand/Surface/surface-50 w-full min-w-[267px] 2xl:min-w-[280px]"
                 >
                   <div className="flex flex-col justify-stretch items-stretch">
                     <h3 className="text-Brand/Text/Text-600 text-[14px] font-medium leading-normal font-DarkerGrotesque">
@@ -172,12 +173,12 @@ const Dashboard = () => {
             })}
           {currentAnalytics.length < 1 && (
             <div className="absolute left-[40%] top-[10%]  flex-col items-center justify-center gap-[8px] ">
-              <h3 className="text-Brand/Text/Text-800 text-ellipsis text-[20px] font-bold  leading-7 font-DarkerGrotesque mt-4">
-                Create our own hobby to see analytics
+              <h3 className="text-[#000]  text-[20px] font-semibold  leading-normal font-DarkerGrotesque mt-4">
+                Create your blog to see analytics
               </h3>
               <button
                 onClick={() => setCurrentAnalytics(analytic)}
-                className="flex mx-auto items-center justify-center w-[127px] h-[32px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-md p-4 "
+                className="flex mx-auto items-center justify-center gap-2 w-[127px] h-[32px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[4px] px-4 "
               >
                 <span>Create Blog</span>
                 <Add />
@@ -193,7 +194,7 @@ const Dashboard = () => {
           </h2>
           <div className="flex items-center gap-1 cursor-pointer">
             {" "}
-            <span className="font-DarkerGrotesque text-[16px] font-medium leading-normal">
+            <span className="font-DarkerGrotesque text-[16px] text-Text/Text-600 font-medium leading-normal">
               See more
             </span>
             <ArrowRight />
@@ -205,9 +206,9 @@ const Dashboard = () => {
             return (
               <article
                 key={index}
-                className="flex flex-col w-[267px] min-w-[200px]   items-start justify-start h-[216px] p-5  rounded-lg bg-Brand/Surface/surface-50 max-w-[267px]"
+                className="flex flex-col w-full   items-start justify-start h-[216px] p-5  rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px]"
               >
-                <div className="flex p-4 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px]">
+                <div className="flex p-2 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px]">
                   {image("")}
                 </div>
                 <h3 className="text-Brand/Text/Text-800 text-ellipsis text-[20px] font-bold  leading-7 font-DarkerGrotesque mt-4">

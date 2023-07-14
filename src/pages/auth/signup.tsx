@@ -37,7 +37,9 @@ const Signup = () => {
           </div>
           <div className="flex  my-[24px] gap-[16px] w-full items-center">
             <div className="w-[212px] h-[1px] bg-Surface/surface-400"></div>
-            <span className="">OR</span>
+            <span className="text-[18px]  font-DarkerGrotesque  font-medium leading-[110%] text-Brand/Text/Text-800">
+              OR
+            </span>
             <div className="w-[212px] h-[1px] bg-Surface/surface-400"></div>
           </div>
 
@@ -48,7 +50,7 @@ const Signup = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
+                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
                 />
               </div>
               <div className="mt-[12px] flex gap-[4px] items-center">
@@ -64,7 +66,7 @@ const Signup = () => {
                 <input
                   type="email"
                   placeholder="Your Name"
-                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
+                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -74,7 +76,7 @@ const Signup = () => {
                 <input
                   type="password"
                   placeholder="Create Password"
-                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
+                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
                 />
                 <Eye className="absolute right-3 top-3" />
               </div>
@@ -95,12 +97,12 @@ const Signup = () => {
               </div>
               <div className="mt-[24px] flex gap-[8px]">
                 <input
-                  className="w-[24px] h-[24px] accent-Brand/Primary/Primary-800 cursor-pointer border-2 rounded-lg border-Brand/Surface/surface-50"
+                  className="w-[24px] h-[24px] accent-Brand/Primary/Primary-800 cursor-pointer border-2 rounded-lg border-Brand/Surface/surface-50 focus:outline-none"
                   type="checkbox"
                   name=""
                   id=""
                 />
-                <span className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
+                <span className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium clipped-Link-text">
                   I agree to Terms of Service and Privacy Policy
                 </span>
               </div>
@@ -112,7 +114,7 @@ const Signup = () => {
                 Already have an account?{" "}
                 <Link
                   href="/auth/login"
-                  className="text-Brand/Primary/Primary-800 cursor-pointer"
+                  className=" cursor-pointer clipped-Link-text"
                 >
                   Login
                 </Link>

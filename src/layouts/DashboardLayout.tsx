@@ -4,7 +4,17 @@ import DownArrow from "@/assets/DownArrow.svg";
 import Search from "@/assets/search 03.svg";
 import Notification from "@/assets/notification.svg";
 import Userpic from "@/assets/Userpic.svg";
+import BlogIcon from "@/assets/globe.svg";
+import AnalyticIcon from "@/assets/chart-wave.svg";
+import Plans from "@/assets/diamond.svg";
+import SupportIcon from "@/assets/medical service.svg";
+import Chatting from "@/assets/chatting.svg";
+import AiWriterIcon from "@/assets/notes-edit-check.svg";
+import JobsIcon from "@/assets/briefcase.svg";
+import AiHubIcon from "@/assets/post add.svg";
+import SettingIcon from "@/assets/setting.svg";
 import DashboardIcon from "@/assets/dashboard.svg";
+import LogoutIcon from "@/assets/logout.svg";
 import { useRouter } from "next/router";
 
 interface PropType {
@@ -14,7 +24,6 @@ interface PropType {
 const DashboardLayout = ({ children }: PropType) => {
   const router = useRouter();
   const { pathname } = router;
-  console.log(pathname, useRouter());
 
   const SidebarValues = [
     {
@@ -25,48 +34,58 @@ const DashboardLayout = ({ children }: PropType) => {
     {
       link: "/dashboard/blogs",
       displayValue: "Blogs",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <BlogIcon className={className} />,
     },
     {
       link: "/dashboard/analytics",
       displayValue: "Analytics",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <AnalyticIcon className={className} />,
     },
     {
-      link: "/aihub",
+      link: "/dashboard/aihub",
       displayValue: "AI Hub",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <AiHubIcon className={className} />,
     },
     {
       link: "/dashboard/aiwriter",
       displayValue: "AI Writer",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <AiWriterIcon className={className} />,
     },
     {
       link: "/dashboard/chat",
       displayValue: "Chat",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <Chatting className={className} />,
     },
     {
       link: "/dashboard/jobs",
       displayValue: "Jobs",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <JobsIcon className={className} />,
     },
     {
       link: "/dashboard/plans",
       displayValue: "Plans",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <Plans className={className} />,
     },
     {
       link: "/dashboard/support",
       displayValue: "Support",
-      LogoImg: (className: string) => <DashboardIcon className={className} />,
+      LogoImg: (className: string) => <SupportIcon className={className} />,
+    },
+    {
+      link: "/dashboard/settings",
+      displayValue: "Settings",
+      LogoImg: (className: string) => <SettingIcon className={className} />,
+    },
+    {
+      link: "/dashboard/logout",
+      displayValue: "Logout",
+      LogoImg: (className: string) => <LogoutIcon className={className} />,
     },
   ];
 
   const navigateToSideItems = (path: string) => {
+    console.log("yh");
     if (pathname === "/dashboard") {
-      console.log("yh");
       router.push(`/${path}`);
     } else {
       router.push(path);
@@ -98,25 +117,40 @@ const DashboardLayout = ({ children }: PropType) => {
       </header>
       <section className="mt-[76px]">
         <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
-          <ul className="flex flex-col fixed top-[76px] left-0 w-[15%] bg-Brand/Surface/surface-50 border border-Surface/surface-400 min-w-[252px] max-w-[260px] px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
+          <ul className="flex flex-col fixed top-[76px] left-0 lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
             {SidebarValues.map((content, index) => {
               const { LogoImg, displayValue, link } = content;
               return (
                 <li
                   key={index}
                   onClick={() => navigateToSideItems(link)}
-                  className={`flex items-center gap-4 py-2 px-6 w-full cursor-pointer  ${
+                  className={`flex items-center gap-4 py-2 px-6 w-full cursor-pointer ${
+                    displayValue === "Logout" && "text-Accent/Danger/Danger-800"
+                  }  ${
                     pathname === link
                       ? "bg-Brand/Primary/Primary-100 rounded-[50px]"
                       : ""
                   }`}
                 >
-                  <>{LogoImg("")}</>
+                  <>
+                    {LogoImg(
+                      `${displayValue === "logout" && "text-[#C92014]"}`
+                    )}
+                  </>
                   <h3
-                    className={`font-DarkerGrotesque font-semibold leading-normal text-lg  self-stretch   ${
-                      pathname === link
-                        ? " text-Brand/Primary/Primary-800 opacity-[0.8999999761581421] "
-                        : "text-Brand/Text/Text-600 opacity-[0.800000011920929]"
+                    className={`font-DarkerGrotesque font-semibold leading-normal text-lg  self-stretch  " 
+                     ${
+                       displayValue === "Logout" &&
+                       pathname !== link &&
+                       "text-Accent/Danger/Danger-800"
+                     } 
+                   ${
+                     pathname !== link &&
+                     displayValue !== "Logout" &&
+                     "text-Brand/Text/Text-600 opacity-[0.800000011920929]"
+                   }  ${
+                      pathname === link &&
+                      " text-Brand/Primary/Primary-800 opacity-[0.8999999761581421] "
                     }`}
                   >
                     {displayValue}

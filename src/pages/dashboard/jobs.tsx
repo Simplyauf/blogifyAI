@@ -30,7 +30,7 @@ const Jobs = () => {
     "Email Generator",
   ];
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-[85%] right-0">
+    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Jobs
       </h2>
@@ -52,13 +52,13 @@ const Jobs = () => {
                 design, and content, and possibly add some animation.
               </p>
               <div className="flex items-center gap-2">
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600 min-w-fit ">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600 min-w-fit ">
                   Web design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 min-w-fit lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 min-w-fit lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   UI / Visual Design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 min-w-fit lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 min-w-fit lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   Brand / Graphic Design
                 </button>
               </div>
@@ -89,13 +89,13 @@ const Jobs = () => {
                 design, and content, and possibly add some animation.
               </p>
               <div className="flex items-center gap-2">
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] min-w-fit font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] min-w-fit font-semibold leading-normal text-Text/Text-600">
                   Web design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque min-w-fit  text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque min-w-fit  text-[12px] font-semibold leading-normal text-Text/Text-600">
                   UI / Visual Design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex min-w-fit  items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex min-w-fit  items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   Brand / Graphic Design
                 </button>
               </div>
@@ -126,13 +126,13 @@ const Jobs = () => {
                 design, and content, and possibly add some animation.
               </p>
               <div className="flex items-center gap-2">
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   Web design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   UI / Visual Design
                 </button>
-                <button className="border-Text/Text-600 h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
+                <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   Brand / Graphic Design
                 </button>
               </div>
@@ -196,7 +196,7 @@ const Jobs = () => {
               })}
             </div>
           </div>
-          <button className="flex justify-center items-center h-12 rounded-lg px-4 py-3 mt-6 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[126px] gap-2">
+          <button className="flex justify-center items-center h-12 rounded-lg px-4 py-3 mt-6 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[16px] font-medium leading-4 text-Brand/Surface/surface-50 w-[126px] gap-2">
             <span>Clear filter</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

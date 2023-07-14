@@ -40,7 +40,7 @@ const ForgotPassword = () => {
               <LeftArrow />
               <Link
                 href="/auth/login"
-                className="text-Brand/Primary/Primary-800  text-[16px] leading-normal "
+                className="clipped-Link-text text-[16px] leading-normal "
               >
                 Back to Login
               </Link>

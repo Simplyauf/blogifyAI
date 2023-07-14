@@ -74,42 +74,42 @@ const VerifyEmail = () => {
             Go back{" "}
           </span>{" "}
         </p>
-        <div className="flex w-full items-center justify-center  mt-[24px] gap-[24px]">
+        <div className="flex w-full items-center justify-center text-Shade/Shade2 mt-[24px] gap-[24px]">
           <input
             id="input1"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="md:h-[72px] text-[34px] pl-[18px] md:leading-[42px] font-bold pl-[27px] font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:leading-[42px] font-bold md:pl-[27px] font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50 focus:outline-none"
           />
           <input
             id="input2"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50 focus:outline-none"
           />
           <input
             id="input3"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-Surface/surface-600 bg-Brand/Surface/surface-50 focus:outline-none"
           />
           <input
             id="input4"
             type="text"
             maxLength={1}
             placeholder="-"
-            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-x-Surface/surface-600 bg-Brand/Surface/surface-50"
+            className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-x-Surface/surface-600 bg-Brand/Surface/surface-50 focus:outline-none"
           />
         </div>
         <button className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
           Verify Account
         </button>
-        <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
+        <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium ">
           Haven’t received it?{" "}
-          <span className="text-Brand/Primary/Primary-800 cursor-pointer">
+          <span className=" cursor-pointer clipped-Link-text">
             Resend a new code
           </span>
         </div>
