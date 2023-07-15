@@ -5,6 +5,22 @@ import Decrease from "@/assets/arrow-down-circle.svg";
 import Increase from "@/assets/arrow-up-circle.svg";
 import ChartWave from "@/assets/chart-wave-rectangle.svg";
 import ArrowRight from "@/assets/arrow-right.svg";
+import Facebook from "@/assets/facebook.svg";
+import FigmaIcon from "@/assets/figma.svg";
+import BookIcon from "@/assets/book.svg";
+import YoutubeIcon from "@/assets/youtube.svg";
+import PackageIcon from "@/assets/package box 01.svg";
+import UserIcon from "@/assets/users 02.svg";
+import GoogleIcon from "@/assets/google.svg";
+import ListCircleIcon from "@/assets/list view-circle.svg";
+import InstaIcon from "@/assets/instagram.svg";
+import TagIcon from "@/assets/tag.svg";
+import NotesIcon from "@/assets/notes 01.svg";
+import QuizIcon from "@/assets/quiz.svg";
+import ArticleIcon from "@/assets/article.svg";
+import SearchIcon from "@/assets/search 01.svg";
+import GmailIcon from "@/assets/gmail.svg";
+import PostIcon from "@/assets/post add.svg";
 import Add from "@/assets/add.svg";
 import { useState } from "react";
 
@@ -31,6 +47,112 @@ interface currentAnalyticProp {
   direction: string;
   image: (className: string) => React.ReactNode;
 }
+
+export const AIWriter = [
+  {
+    image: (className: string) => <ArticleIcon />,
+    title: "Article Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <PostIcon />,
+    title: "Post Title Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <PackageIcon />,
+    title: "Product Description",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <PackageIcon />,
+    title: "Product Name Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <UserIcon />,
+    title: "Testimonial Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <Facebook />,
+    title: "Facebook Ad Copy",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <BookIcon />,
+    title: "Blog Post Idea",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <YoutubeIcon />,
+    title: "YouTube Video Description",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+
+  {
+    image: (className: string) => <TagIcon />,
+    title: "YouTube Video Tag",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <InstaIcon />,
+    title: "Instagram Caption",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <InstaIcon />,
+    title: "Instagram Hashtags",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <ListCircleIcon />,
+    title: "Google Ad Copy",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <GoogleIcon />,
+    title: "Google Ad Headlines",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <QuizIcon />,
+    title: "FAQ Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <SearchIcon />,
+    title: "Meta Description",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <NotesIcon />,
+    title: "Newsletter",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+  {
+    image: (className: string) => <GmailIcon />,
+    title: "Email Generator",
+    description:
+      "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
+  },
+];
 
 const Dashboard = () => {
   const [currentAnalytics, setCurrentAnalytics] = useState<
@@ -69,57 +191,6 @@ const Dashboard = () => {
       since: "last month",
       direction: "decrease",
       image: (className: string) => <User3 />,
-    },
-  ];
-
-  const AIWriter = [
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
-    },
-    {
-      image: (className: string) => <User3 />,
-      title: "Product Name Generator",
-      description:
-        "An article generator is a tool that automatically creates written content, providing a quick and convenient solution for content creation.",
     },
   ];
 
