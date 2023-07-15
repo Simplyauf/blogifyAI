@@ -9,8 +9,10 @@ import Lock from "@/assets/lock.svg";
 import RemoveCircle from "@/assets/remove-circle.svg";
 import Checkbox from "@/assets/checkbox.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Signup = () => {
+  const router = useRouter();
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
       <div className="md:w-[476px] w-full mt-[24px]">
@@ -45,7 +47,7 @@ const Signup = () => {
 
           <form action="">
             <div className="w-full">
-              <div className="w-full h-[48px] py-[4px] border-2 rounded-lg border-Accent/Danger/Danger-800 flex items-center gap-[16px] px-[16px]">
+              <div className="w-full h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 flex items-center gap-[16px] px-[16px]">
                 <Gmail />
                 <input
                   type="email"
@@ -53,7 +55,7 @@ const Signup = () => {
                   className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
                 />
               </div>
-              <div className="mt-[12px] flex gap-[4px] items-center">
+              <div className="mt-[12px]  gap-[4px] items-center hidden">
                 <RemoveCircle />
                 <span className="text-[16px] leading-normal font-DarkerGrotesque font-medium text-Accent/Danger/Danger-800">
                   Please enter a valid email address
@@ -107,7 +109,11 @@ const Signup = () => {
                 </span>
               </div>
 
-              <button className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
+              <button
+                type="button"
+                className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
+                onClick={() => router.push("/auth/login")}
+              >
                 Sign Up
               </button>
               <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">

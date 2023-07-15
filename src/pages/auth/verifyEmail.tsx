@@ -2,8 +2,11 @@ import React from "react";
 import AuthHeaderLayout from "@/src/layouts/authHeaderLayout";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const VerifyEmail = () => {
+  const router = useRouter();
+
   const [pin, setPin] = useState("0");
   const inputs = ["input1", "input2", "input3", "input4"];
 
@@ -104,7 +107,11 @@ const VerifyEmail = () => {
             className="md:h-[72px] text-[34px] pl-[18px] md:pl-[27px] leading-[42px] font-bold font-DarkerGrotesque text-Shade/Shade2 md:w-[72px] w-[55px] h-[55px] rounded-lg  border border-x-Surface/surface-600 bg-Brand/Surface/surface-50 focus:outline-none"
           />
         </div>
-        <button className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
+        <button
+          type="button"
+          className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
+          onClick={() => router.push("/dashboard")}
+        >
           Verify Account
         </button>
         <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium ">

@@ -2,7 +2,7 @@ import DashboardLayout from "@/src/layouts/DashboardLayout";
 import React from "react";
 import Search from "@/assets/search 03.svg";
 import { useState } from "react";
-import { AIWriter } from ".";
+import { AIWriter } from "..";
 
 const AiWriter = () => {
   return (

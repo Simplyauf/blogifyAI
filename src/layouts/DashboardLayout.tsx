@@ -96,7 +96,7 @@ const DashboardLayout = ({ children }: PropType) => {
   return (
     <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
       <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
-        <Logo />
+        <Logo onClick={() => router.push("/")} className="cursor-pointer" />
         <div className="flex items-center gap-[24px]">
           <div className="relative w-[320px] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
             <input
