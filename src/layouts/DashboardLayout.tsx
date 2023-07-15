@@ -86,7 +86,7 @@ const DashboardLayout = ({ children }: PropType) => {
   const navigateToSideItems = (path: string) => {
     console.log("yh");
     if (pathname === "/dashboard") {
-      router.push(`/${path}`);
+      router.push(`${path}`);
     } else {
       router.push(path);
     }
