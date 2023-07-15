@@ -3,8 +3,10 @@ import React from "react";
 import Search from "@/assets/search 03.svg";
 import { useState } from "react";
 import { AIWriter } from "..";
+import { useRouter } from "next/router";
 
 const AiWriter = () => {
+  const router = useRouter();
   return (
     <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
@@ -16,7 +18,10 @@ const AiWriter = () => {
           return (
             <article
               key={index}
-              className="flex flex-col w-full   items-start justify-start p-5  rounded-lg bg-Brand/Surface/surface-50 "
+              onClick={() =>
+                router.push("/dashboard/aiwriter/article-generator")
+              }
+              className="flex flex-col w-full   items-start justify-start p-5  rounded-lg bg-Brand/Surface/surface-50 cursor-pointer"
             >
               <div className="flex p-2 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px]">
                 {image("")}
