@@ -59,7 +59,7 @@ const Notifications = () => {
   return (
     <section className="  px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
-        Notifications
+        Settings
       </h2>
       <SettingsTab />
       <section className="mt-4 mb-8 w-full bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col">

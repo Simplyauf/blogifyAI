@@ -47,26 +47,26 @@ const Settings = () => {
           <form action="" className="flex flex-col ">
             <div className="w-full flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
               <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
-                Name
+                Current Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
                 <SmileRectangle />
                 <input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder=" Current Password"
                   className="w-full h-full border-transparent focus-visible:border-transparent bg-Brand/Surface/surface-50 focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
                 />
               </div>
             </div>
             <div className="w-full flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
               <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
-                Email address
+                New Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
                 <Gmail />
                 <input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="New Password"
                   className="w-full h-full border-transparent focus-visible:border-transparent bg-Brand/Surface/surface-50 focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
                 />
               </div>
@@ -74,13 +74,13 @@ const Settings = () => {
 
             <div className="w-full mt-5 flex items-start gap-8 pt-5 border-t border-t-Surface/surface-400">
               <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
-                Country
+                Confirm Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
                 <Globe />
                 <input
                   type="text"
-                  placeholder="country"
+                  placeholder="Confirm password"
                   className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent bg-Brand/Surface/surface-50 text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
                 />
                 <DownArrow />

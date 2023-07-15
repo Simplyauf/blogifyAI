@@ -91,6 +91,8 @@ const DashboardLayout = ({ children }: PropType) => {
       router.push(path);
     }
   };
+
+  console.log(pathname);
   return (
     <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
       <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
@@ -127,10 +129,15 @@ const DashboardLayout = ({ children }: PropType) => {
                   className={`flex items-center gap-4 py-2 px-6 w-full cursor-pointer ${
                     displayValue === "Logout" && "text-Accent/Danger/Danger-800"
                   }  ${
-                    pathname === link
-                      ? "bg-Brand/Primary/Primary-100 rounded-[50px]"
-                      : ""
-                  }`}
+                    pathname.startsWith(link) &&
+                    link !== "/dashboard" &&
+                    "bg-Brand/Primary/Primary-100 rounded-[50px]"
+                  }
+                  ${
+                    pathname === link &&
+                    "bg-Brand/Primary/Primary-100 rounded-[50px]"
+                  }
+                  `}
                 >
                   <>
                     {LogoImg(
@@ -140,18 +147,57 @@ const DashboardLayout = ({ children }: PropType) => {
                   <h3
                     className={`font-DarkerGrotesque font-semibold leading-normal text-lg  self-stretch  " 
                      ${
-                       displayValue === "Logout" &&
-                       pathname !== link &&
-                       "text-Accent/Danger/Danger-800"
-                     } 
+                       pathname.startsWith(link) &&
+                       link !== "/dashboard" &&
+                       "bg-Brand/Primary/Primary-100 rounded-[50px]"
+                     }
+                 
+                      ${
+                        pathname !== link &&
+                        pathname.startsWith(link) &&
+                        " rounded-[50px] text-Brand/Text/Text-600 opacity-[0.800000011920929]"
+                      }
+                     ${
+                       pathname.startsWith(link) &&
+                       link !== "/dashboard" &&
+                       "bg-Brand/Primary/Primary-100 rounded-[50px]"
+                     }
+                  ${
+                    pathname === link &&
+                    "bg-Brand/Primary/Primary-100  rounded-[50px]"
+                  }
+                       ${
+                         displayValue === "Logout" &&
+                         !pathname.startsWith(link) &&
+                         "text-Accent/Danger/Danger-800"
+                       } 
                    ${
-                     pathname !== link &&
+                     !pathname.startsWith(link) &&
                      displayValue !== "Logout" &&
                      "text-Brand/Text/Text-600 opacity-[0.800000011920929]"
-                   }  ${
-                      pathname === link &&
-                      " text-Brand/Primary/Primary-800 opacity-[0.8999999761581421] "
-                    }`}
+                   } 
+
+                  
+  ${
+    !pathname.startsWith(link) &&
+    link === "/dashboard" &&
+    " text-Brand/Primary/Primary-800 opacity-[0.8999999761581421] text-2xl"
+  }
+
+                   ${
+                     pathname.startsWith(link) &&
+                     link !== "/dashboard" &&
+                     " text-Brand/Primary/Primary-800 opacity-[0.8999999761581421] text-2xl"
+                   }
+                   
+                     ${
+                       pathname !== "/dashboard" &&
+                       link !== "/dashboard" &&
+                       displayValue !== "Logout" &&
+                       " opacity-[0.800000011920929] "
+                     } 
+                   
+                   `}
                   >
                     {displayValue}
                   </h3>

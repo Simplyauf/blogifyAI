@@ -60,6 +60,7 @@ module.exports = {
       fontFamily: {
         DarkerGrotesque: ["Darker Grotesque", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
+        DMSans: ["DM Sans"],
       },
     },
   },
