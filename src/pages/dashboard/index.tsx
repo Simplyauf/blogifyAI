@@ -154,45 +154,46 @@ export const AIWriter = [
   },
 ];
 
+export const analytic = [
+  {
+    title: "Visits",
+    data: "27564",
+    rating: 7,
+    since: "last month",
+    direction: "decrease",
+    image: (className: string) => <User3 />,
+  },
+  {
+    title: "Average session duration",
+    data: "10 mins",
+    rating: 7,
+    since: "last month",
+    direction: "increase",
+    image: (className: string) => <ChartWave />,
+  },
+  {
+    title: "Engagements",
+    data: "27564",
+    rating: 7,
+    since: "last month",
+    direction: "decrease",
+    image: (className: string) => <ChartWave />,
+  },
+
+  {
+    title: "Unique visits",
+    data: "27564",
+    rating: 7,
+    since: "last month",
+    direction: "decrease",
+    image: (className: string) => <User3 />,
+  },
+];
+
 const Dashboard = () => {
   const [currentAnalytics, setCurrentAnalytics] = useState<
     currentAnalyticProp[]
   >([]);
-  const analytic = [
-    {
-      title: "Visits",
-      data: "27564",
-      rating: 7,
-      since: "last month",
-      direction: "decrease",
-      image: (className: string) => <User3 />,
-    },
-    {
-      title: "Average session duration",
-      data: "10 mins",
-      rating: 7,
-      since: "last month",
-      direction: "increase",
-      image: (className: string) => <ChartWave />,
-    },
-    {
-      title: "Engagements",
-      data: "27564",
-      rating: 7,
-      since: "last month",
-      direction: "decrease",
-      image: (className: string) => <ChartWave />,
-    },
-
-    {
-      title: "Unique visits",
-      data: "27564",
-      rating: 7,
-      since: "last month",
-      direction: "decrease",
-      image: (className: string) => <User3 />,
-    },
-  ];
 
   return (
     <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">

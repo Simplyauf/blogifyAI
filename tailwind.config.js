@@ -14,6 +14,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        "Orange/1": "#FF9500",
+        "Blue/1": "#007AFF",
+        "Purple/1": "#AF52DE",
         "Gray/1": "#1C1C1E",
         "Brand/Text/Text-800": "#252525",
         "text/text-secondary": "#7C7C7C",
@@ -57,6 +60,8 @@ module.exports = {
         "Primary/50": "#F9F5FF",
         "Success/50": "#ECFDF3",
         White: "#FFFFFF",
+        "Red/1": "#FF3B30",
+        "Green/1": "#34C759",
       },
       fontFamily: {
         DarkerGrotesque: ["Darker Grotesque", "sans-serif"],
