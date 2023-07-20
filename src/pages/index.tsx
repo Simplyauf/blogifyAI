@@ -12,5 +12,5 @@ export default function Home() {
     router.push("/auth/signup");
   }, 500);
 
-  return <main>hello</main>;
+  return <main></main>;
 }
