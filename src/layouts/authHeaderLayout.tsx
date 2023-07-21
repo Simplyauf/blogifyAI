@@ -37,7 +37,7 @@ const AuthHeaderLayout = ({ children }: PropType) => {
           </div>
         </div>
       </header>
-      {children}
+      <section className="mt-[76px] w-full">{children}</section>
     </div>
   );
 };
