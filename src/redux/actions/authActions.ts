@@ -25,16 +25,13 @@ export const loginUser =
       console.log(response);
       // Extract the access token from the response
 
-    const data = response.data.data;
-      console.log(accessToken);
+      const data = response.data.data;
+      // console.log(accessToken);
       rememberMe
         ? Cookies.set("user", JSON.stringify(data), { expires: 20 })
         : Cookies.set("user", JSON.stringify(data));
 
-
-     
       const accessToken = response.data.meta.token;
-
 
       Cookies.set("accessToken", accessToken);
 
