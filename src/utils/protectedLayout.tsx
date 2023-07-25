@@ -17,8 +17,8 @@ export const ProtectRoute = ({ children }: any) => {
 
   useEffect(() => {
     if (!isAuthenticated && !isEntireAppLoading) {
-      console.log("hey");
-      router.push("/");
+      // console.log("hey");
+      router.push("/auth/login");
     }
   }, [isAuthenticated, router, router.pathname, isEntireAppLoading]);
 

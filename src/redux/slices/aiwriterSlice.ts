@@ -4,13 +4,17 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 interface AIState {
   aiList: any;
   loadingAll: boolean;
-  error: {} | null;
+  loadingSingle: boolean;
+  error: any;
+  aiListSingle: any;
 }
 
 const initialAIState: AIState = {
   aiList: [],
   loadingAll: false,
+  loadingSingle: false,
   error: {},
+  aiListSingle: {},
 };
 const aiwriterSlice = createSlice({
   name: "ai_List",
@@ -38,8 +42,28 @@ const aiwriterSlice = createSlice({
       state.error = action.payload.error;
       state.aiList = null;
     },
+    aiSingleStart(state) {
+      state.loadingSingle = true;
+      state.error = null;
+    },
+    aiSingleStartSuccess: (state, action) => {
+      state.loadingSingle = false;
+      state.error = null;
+      state.aiListSingle = action.payload;
+    },
+    aiSingleStartFailure(state, action) {
+      state.loadingSingle = false;
+      state.error = action.payload.error;
+      state.aiListSingle = null;
+    },
   },
 });
-export const { aiListStart, aiListStartSuccess, aiListStartFailure } =
-  aiwriterSlice.actions;
+export const {
+  aiListStart,
+  aiListStartSuccess,
+  aiListStartFailure,
+  aiSingleStart,
+  aiSingleStartSuccess,
+  aiSingleStartFailure,
+} = aiwriterSlice.actions;
 export default aiwriterSlice.reducer;
