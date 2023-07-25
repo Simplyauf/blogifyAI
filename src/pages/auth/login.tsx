@@ -151,7 +151,7 @@ const Login = () => {
                       </span>
                     </div>
                     <span
-                      className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium"
+                      className="text-Brand/Text/Text-800 cursor-pointer text-[16px] leading-normal font-DarkerGrotesque font-medium"
                       onClick={() => router.push("/auth/forgotPassword")}
                     >
                       Forgot Password?
