@@ -18,9 +18,11 @@ export const loginUser =
       });
       console.log(response);
       // Extract the access token from the response
-      const accessToken = response.data.data;
-      console.log(accessToken);
-      Cookies.set("user", JSON.stringify(accessToken));
+      const data = response.data.data;
+      const accessToken = response.data.meta.token;
+
+      Cookies.set("user", JSON.stringify(data));
+      Cookies.set("accessToken", accessToken);
       router.push("/dashboard");
       // Save the access token in the Redux store
       dispatch(login(accessToken));

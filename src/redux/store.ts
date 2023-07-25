@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./slices/authSlice";
+import AiWriterSlice from "./slices/aiwriterSlice";
 // import authSlice from "../features/auth/authSlice";
 // ...
 
@@ -7,6 +8,7 @@ export const store = configureStore({
   reducer: {
     // auth: authSlice,
     auth: authSlice,
+    aiWriters: AiWriterSlice,
   },
 });
 
