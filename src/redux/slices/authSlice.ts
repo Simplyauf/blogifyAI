@@ -3,12 +3,14 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 // Define the initial authentication state
 interface AuthState {
   isAuthenticated: boolean;
+  isEntireAppLoading: boolean;
   accessToken: string | null;
 }
 
 const initialAuthState: AuthState = {
   isAuthenticated: false,
   accessToken: null,
+  isEntireAppLoading: true,
 };
 const authSlice = createSlice({
   name: "auth",
@@ -22,7 +24,14 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.accessToken = null;
     },
+    setIsAuthenticated: (state, action: PayloadAction<boolean>) => {
+      state.isAuthenticated = action.payload;
+    },
+    setIsEntireAppLoader: (state, action: PayloadAction<boolean>) => {
+      state.isEntireAppLoading = action.payload;
+    },
   },
 });
-export const { login, logout } = authSlice.actions;
+export const { login, logout, setIsAuthenticated, setIsEntireAppLoader } =
+  authSlice.actions;
 export default authSlice.reducer;

@@ -8,7 +8,13 @@ import { NextRouter } from "next/router";
 import Cookies from "js-cookie";
 
 export const loginUser =
-  (email: string, password: string, toast: any, router: NextRouter) =>
+  (
+    email: string,
+    password: string,
+    toast: any,
+    router: NextRouter,
+    rememberMe: boolean
+  ) =>
   async (dispatch: any) => {
     try {
       // Perform the login API call
@@ -18,11 +24,20 @@ export const loginUser =
       });
       console.log(response);
       // Extract the access token from the response
-      const data = response.data.data;
+
+    const data = response.data.data;
+      console.log(accessToken);
+      rememberMe
+        ? Cookies.set("user", JSON.stringify(data), { expires: 20 })
+        : Cookies.set("user", JSON.stringify(data));
+
+
+     
       const accessToken = response.data.meta.token;
 
-      Cookies.set("user", JSON.stringify(data));
+
       Cookies.set("accessToken", accessToken);
+
       router.push("/dashboard");
       // Save the access token in the Redux store
       dispatch(login(accessToken));
