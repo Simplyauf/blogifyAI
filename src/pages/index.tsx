@@ -11,9 +11,6 @@ export default function Home() {
   // const { isAuthenticated } = useAppSelector((state) => state.auth);
   const router = useRouter();
 
-  setTimeout(() => {
-    router.push("/auth/signup");
-  }, 500);
   // const user = Cookies.get("user");
   // if (!user) {
   //   router.push("/auth/login");

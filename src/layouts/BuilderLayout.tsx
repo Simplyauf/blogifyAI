@@ -7,6 +7,10 @@ import Search from "@/assets/search 03.svg";
 import Notification from "@/assets/notification.svg";
 import Userpic from "@/assets/Userpic.svg";
 import FileIcon from "@/assets/file2.svg";
+import { Provider } from "react-redux";
+import EntireAppLayout from "../utils/entireAppLayout";
+import { ProtectRoute } from "../utils/protectedLayout";
+import { store } from "../redux/store";
 
 interface PropType {
   children: React.ReactNode;
@@ -544,71 +548,81 @@ const BuilderLayout = ({ children }: PropType) => {
     }
   };
   return (
-    <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
-      <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
-        <Logo onClick={() => router.push("/")} className="cursor-pointer" />
-        <div className="flex items-center gap-[24px]">
-          <div className="relative w-[320px] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
-            <input
-              type="text"
-              className="w-[82%] pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
-              placeholder="Explore"
-            />
-            <Search className=" " />
-          </div>
-          <div className="flex rounded-[50px] bg-Surface/surface-400 flex-col items-end p-2 relative">
-            <Notification />
-            <div className="w-[6px] h-[6px] rounded-[99px] bg-Accent/Danger/Danger-800 border border-s-Brand/Surface/surface-50 absolute top-[9px] right-[12px]"></div>
-          </div>
+    <Provider store={store}>
+      <EntireAppLayout>
+        <ProtectRoute>
+          <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
+            <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
+              <Logo
+                onClick={() => router.push("/")}
+                className="cursor-pointer"
+              />
+              <div className="flex items-center gap-[24px]">
+                <div className="relative w-[320px] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
+                  <input
+                    type="text"
+                    className="w-[82%] pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
+                    placeholder="Explore"
+                  />
+                  <Search className=" " />
+                </div>
+                <div className="flex rounded-[50px] bg-Surface/surface-400 flex-col items-end p-2 relative">
+                  <Notification />
+                  <div className="w-[6px] h-[6px] rounded-[99px] bg-Accent/Danger/Danger-800 border border-s-Brand/Surface/surface-50 absolute top-[9px] right-[12px]"></div>
+                </div>
 
-          <div className="flex items-center gap-[2px]">
-            <Userpic className="w-10 h-10 rounded-[50%]" />
-            <DownArrow />
-          </div>
-        </div>
-      </header>
-      <section className="mt-[76px]">
-        <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
-          <div className="  fixed top-[76px] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-[252px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 ">
-            <div className="grid grid-cols-2 w-full gap-4">
-              {SidebarValues.map((content, index) => {
-                const { LogoImg, displayValue, link, activeLogoImg } = content;
-                return (
-                  <div
-                    key={index}
-                    onClick={() => navigateToSideItems(link)}
-                    className={`flex flex-col justify-center self-auto min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
-                      pathname.startsWith(link) &&
-                      "bg-Brand/Primary/Primary-100"
-                    }
+                <div className="flex items-center gap-[2px]">
+                  <Userpic className="w-10 h-10 rounded-[50%]" />
+                  <DownArrow />
+                </div>
+              </div>
+            </header>
+            <section className="mt-[76px]">
+              <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
+                <div className="  fixed top-[76px] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-[252px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 ">
+                  <div className="grid grid-cols-2 w-full gap-4">
+                    {SidebarValues.map((content, index) => {
+                      const { LogoImg, displayValue, link, activeLogoImg } =
+                        content;
+                      return (
+                        <div
+                          key={index}
+                          onClick={() => navigateToSideItems(link)}
+                          className={`flex flex-col justify-center self-auto min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
+                            pathname.startsWith(link) &&
+                            "bg-Brand/Primary/Primary-100"
+                          }
                     }
                   `}
-                  >
-                    <>
-                      {pathname.startsWith(link)
-                        ? activeLogoImg("")
-                        : LogoImg("")}
-                    </>
-                    <h3
-                      className={`font-DarkerGrotesque  leading-normal text-center text-[16px] font-medium self-stretch  ${
-                        pathname.startsWith(link)
-                          ? "text-Brand/Primary/Primary-800"
-                          : "text-Text/Text-600"
-                      }
+                        >
+                          <>
+                            {pathname.startsWith(link)
+                              ? activeLogoImg("")
+                              : LogoImg("")}
+                          </>
+                          <h3
+                            className={`font-DarkerGrotesque  leading-normal text-center text-[16px] font-medium self-stretch  ${
+                              pathname.startsWith(link)
+                                ? "text-Brand/Primary/Primary-800"
+                                : "text-Text/Text-600"
+                            }
                    
                    `}
-                    >
-                      {displayValue}
-                    </h3>
+                          >
+                            {displayValue}
+                          </h3>
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
-            </div>
+                </div>
+                {children}
+              </div>
+            </section>
           </div>
-          {children}
-        </div>
-      </section>
-    </div>
+        </ProtectRoute>
+      </EntireAppLayout>
+    </Provider>
   );
 };
 
