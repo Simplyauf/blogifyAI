@@ -296,7 +296,9 @@ const Signup = () => {
                     // onClick={() => console.log("power")}
                   >
                     {!isSubmitting ? (
-                      "Sign Up"
+                      <span className="text-[20px] font-DarkerGrotesque ">
+                        Sign up
+                      </span>
                     ) : (
                       <ClipLoader color="white" size={20} />
                     )}

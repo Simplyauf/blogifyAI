@@ -5,13 +5,13 @@ export const contentType = "application/json";
 
 export default function http() {
   const cookie = Cookies.get();
-  console.log(cookie);
+  console.log(cookie?.accessToken);
 
   const http = axios.create({
     baseURL: "https://api.blogifyai.com/api/",
     headers: {
       Accept: contentType,
-      Authorization: "Basic " + cookie?.["accessToken"],
+      Authorization: "Bearer " + cookie?.accessToken,
     },
   });
 
