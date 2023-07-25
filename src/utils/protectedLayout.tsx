@@ -24,6 +24,10 @@ export const ProtectRoute = ({ children }: any) => {
 
   console.log(isAuthenticated, isEntireAppLoading);
 
+  if (isEntireAppLoading) {
+    // You can return a loading component or null, depending on your use case
+    return <div>Loading...</div>;
+  }
   if (!isAuthenticated) {
     return null;
   }
