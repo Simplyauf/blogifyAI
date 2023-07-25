@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "@/assets/Logo.svg";
 import DownArrow from "@/assets/DownArrow.svg";
 import Search from "@/assets/search 03.svg";
@@ -17,11 +17,16 @@ import DashboardIcon from "@/assets/dashboard.svg";
 import LogoutIcon from "@/assets/logout.svg";
 import { useRouter } from "next/router";
 
+import { useAppSelector } from "../redux/hooks";
+import Cookies from "js-cookie";
+import { withAuth } from "./withAuth";
+
 interface PropType {
   children: React.ReactNode;
 }
 
 const DashboardLayout = ({ children }: PropType) => {
+  // console.log(isAuthenticated);
   const router = useRouter();
   const { pathname } = router;
 
@@ -92,7 +97,27 @@ const DashboardLayout = ({ children }: PropType) => {
     }
   };
 
-  console.log(pathname);
+  const [data, setData] = useState();
+
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     const user = Cookies.get("user");
+  //     if (!user) {
+  //       router.push("/auth/login");
+  //     } else {
+  //       setData(JSON.parse(user));
+  //     }
+  //   };
+  //   getUser();
+  // }, []);
+  // console.log(data);
+  // if(isAuthenticated){
+
+  // }
+  // const user = Cookies.get("user");
+  // if (!user) {
+  //   router.push("/auth/login");
+  // }
   return (
     <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
       <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">

@@ -1,4 +1,4 @@
-import DashboardLayout from "@/src/layouts/DashboardLayout";
+// import DashboardLayout from "@/src/layouts/DashboardLayout";
 import React from "react";
 import User3 from "@/assets/users 02.svg";
 import Decrease from "@/assets/arrow-down-circle.svg";
@@ -23,6 +23,8 @@ import GmailIcon from "@/assets/gmail.svg";
 import PostIcon from "@/assets/post add.svg";
 import Add from "@/assets/add.svg";
 import { useState } from "react";
+import DashboardLayout from "@/src/layouts/DashboardLayout";
+import { withAuth } from "@/src/layouts/withAuth";
 
 const SkeletonAnalytics = () => (
   <article className="flex items-center justify-between h-[106px] 2xl:h-[120px] p-4 gap-4 rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px] animate-pulse">
@@ -299,6 +301,7 @@ const Dashboard = () => {
 };
 
 Dashboard.getLayout = (page: React.ReactElement) => {
+  // @ts-ignore
   return <DashboardLayout>{page}</DashboardLayout>;
 };
 

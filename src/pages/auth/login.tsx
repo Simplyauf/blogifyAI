@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthHeaderLayout from "@/src/layouts/authHeaderLayout";
 import GMark from "@/assets/GMark.svg";
 import Apple from "@/assets/Apple.svg";
 import Gmail from "@/assets/gmail.svg";
 import Eye from "@/assets/eye.svg";
-import SmileRectangle from "@/assets/smile-rectangle.svg";
+import EyeCross from "@/assets/eyecross.svg";
 import Lock from "@/assets/lock.svg";
 import RemoveCircle from "@/assets/remove-circle.svg";
-import Checkbox from "@/assets/checkbox.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import * as Yup from "yup";
+import { LoginValues, RegisterValues } from "./auth";
+import { useAppDispatch } from "@/src/redux/hooks";
+import { Field, Form, Formik, FormikHelpers } from "formik";
+import { toast } from "react-hot-toast";
+import { loginUser } from "@/src/redux/actions/authActions";
+import { ClipLoader } from "react-spinners";
 const Login = () => {
+  const [showpassword, setShowPassword] = useState(true);
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required"),
+  });
+  const initialValues: LoginValues = {
+    email: "",
+    password: "",
+  };
+  const dispatch = useAppDispatch();
   const router = useRouter();
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
@@ -42,74 +61,127 @@ const Login = () => {
             <span className="">OR</span>
             <div className="w-[212px] h-[1px] bg-Surface/surface-400"></div>
           </div>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={async (
+              values,
+              { setSubmitting }: FormikHelpers<LoginValues>
+            ) => {
+              // console.log("first");
+              // // perform login logic here
 
-          <form action="">
-            <div className="w-full">
-              <div className="w-full h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 flex items-center gap-[16px] px-[16px]">
-                <Gmail />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
-                />
-              </div>
-              <div className="mt-[12px] hidden gap-[4px] items-center">
-                <RemoveCircle />
-                <span className="text-[16px] leading-normal font-DarkerGrotesque font-medium text-Accent/Danger/Danger-800">
-                  Please enter a valid email address
-                </span>
-              </div>
-            </div>
-
-            <div className="w-full mt-[16px]">
-              <div className="w-full relative h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800  flex items-center gap-[16px] px-[16px]">
-                <Lock />
-                <input
-                  type="password"
-                  placeholder="Enter Password"
-                  className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
-                />
-                <Eye className="absolute right-3 top-3" />
-              </div>
-
-              <div className="mt-[24px] flex w-full justify-between items-center">
-                <div className="flex gap-[8px]">
-                  <input
-                    className="w-[24px] h-[24px] accent-Brand/Primary/Primary-800 cursor-pointer border-2 rounded-lg border-Brand/Surface/surface-50"
-                    type="checkbox"
-                    name=""
-                    id=""
-                  />
-                  <span className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
-                    Remember me
-                  </span>
+              const email = values.email;
+              const password = values.password;
+              console.log(values);
+              await dispatch(loginUser(email, password, toast, router));
+              // setSubmitting(false);
+              // console.log("first");
+              // setTimeout(() => {
+              //   alert(JSON.stringify(values, null, 2));
+              //   setSubmitting(false);
+              // }, 500);
+            }}
+            validationSchema={validationSchema}
+          >
+            {({
+              handleChange,
+              values,
+              touched,
+              errors,
+              isSubmitting,
+              handleSubmit,
+              handleBlur,
+            }) => (
+              <Form onSubmit={handleSubmit}>
+                <div className="w-full">
+                  <div className="w-full h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 flex items-center gap-[16px] px-[16px]">
+                    <Gmail />
+                    <Field
+                      type="email"
+                      name="email"
+                      onChange={handleChange}
+                      placeholder="Your Email"
+                      className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
+                    />
+                    {/* {errors.firstName && touched.firstName ? (
+ -            <div>{errors.firstName}</div>
+ -          ) : null} */}
+                  </div>
+                  {errors.email && touched.email ? (
+                    <div className="  gap-[4px] items-center flex">
+                      <RemoveCircle />
+                      <span className="text-[16px] leading-normal font-DarkerGrotesque font-medium text-Accent/Danger/Danger-800">
+                        {errors.email}
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
-                <span
-                  className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium"
-                  onClick={() => router.push("/auth/forgotPassword")}
-                >
-                  Forgot Password?
-                </span>
-              </div>
 
-              <button
-                type="button"
-                className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
-                onClick={() => router.push("/auth/verifyEmail")}
-              >
-                Login
-              </button>
-              <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
-                Dont have an account?{" "}
-                <Link
-                  href="/auth/signup"
-                  className="clipped-Link-text cursor-pointer"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </div>
-          </form>
+                <div className="w-full mt-[16px]">
+                  <div className="w-full relative h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800  flex items-center gap-[16px] px-[16px]">
+                    <Lock />
+                    <Field
+                      // value={values.password}
+                      type={`${showpassword ? "password" : "text"}`}
+                      name="password"
+                      placeholder="Create Password"
+                      className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showpassword)}
+                    >
+                      {showpassword ? (
+                        <Eye className="absolute right-3 top-3" />
+                      ) : (
+                        <EyeCross className="absolute right-3 top-3" />
+                      )}
+                    </button>
+                  </div>
+                  <div className="mt-[24px] flex w-full justify-between items-center">
+                    <div className="flex gap-[8px]">
+                      <input
+                        className="w-[24px] h-[24px] accent-Brand/Primary/Primary-800 cursor-pointer border-2 rounded-lg border-Brand/Surface/surface-50"
+                        type="checkbox"
+                        name=""
+                        id=""
+                      />
+                      <span className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
+                        Remember me
+                      </span>
+                    </div>
+                    <span
+                      className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium"
+                      onClick={() => router.push("/auth/forgotPassword")}
+                    >
+                      Forgot Password?
+                    </span>
+                  </div>
+                  <button
+                    type="submit"
+                    className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
+                    // onClick={() => console.log("power")}
+                  >
+                    {!isSubmitting ? (
+                      "Login"
+                    ) : (
+                      <ClipLoader color="white" size={20} />
+                    )}
+                  </button>
+
+                  <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
+                    Dont have an account?{" "}
+                    <Link
+                      href="/auth/signup"
+                      className=" cursor-pointer clipped-Link-text"
+                    >
+                      Signup
+                    </Link>
+                  </div>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     </section>
