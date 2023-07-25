@@ -16,7 +16,10 @@ import { Field, Form, Formik, FormikHelpers } from "formik";
 import { toast } from "react-hot-toast";
 import { loginUser } from "@/src/redux/actions/authActions";
 import { ClipLoader } from "react-spinners";
+import { ChangeEvent } from "react";
+import Cookies from "js-cookie";
 const Login = () => {
+  const [rememberMe, setRememberMe] = useState(false);
   const [showpassword, setShowPassword] = useState(true);
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -30,8 +33,18 @@ const Login = () => {
     email: "",
     password: "",
   };
+
   const dispatch = useAppDispatch();
   const router = useRouter();
+
+  const handleRememberMe = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setRememberMe(true);
+    } else {
+      setRememberMe(false);
+    }
+  };
+
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
       <div className="md:w-[476px] w-full mt-[24px]">
@@ -73,7 +86,14 @@ const Login = () => {
               const email = values.email;
               const password = values.password;
               console.log(values);
-              await dispatch(loginUser(email, password, toast, router));
+
+              rememberMe &&
+                Cookies.set("rememberMe", JSON.stringify(true), {
+                  expires: 20,
+                });
+              await dispatch(
+                loginUser(email, password, toast, router, rememberMe)
+              );
               // setSubmitting(false);
               // console.log("first");
               // setTimeout(() => {
@@ -145,6 +165,7 @@ const Login = () => {
                         type="checkbox"
                         name=""
                         id=""
+                        onChange={(e) => handleRememberMe(e)}
                       />
                       <span className="text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
                         Remember me

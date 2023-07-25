@@ -4,10 +4,14 @@ import { ReactElement } from "react";
 import { ReactNode } from "react";
 import NextProgress from "next-progress";
 import { NextPage } from "next";
-import { Provider } from "react-redux";
+
 import { store } from "../redux/store";
 import { Toaster } from "react-hot-toast";
-import { useAppSelector } from "../redux/hooks";
+
+import { Provider } from "react-redux";
+
+import Cookies from "js-cookie";
+import EntireAppLayout from "../utils/entireAppLayout";
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -35,7 +39,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           options={{ showSpinner: true }}
           color="#03045E"
         />
-        <Component {...pageProps} />{" "}
+        <EntireAppLayout>
+          <Component {...pageProps} />{" "}
+        </EntireAppLayout>
       </div>
     </Provider>
   );
