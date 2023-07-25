@@ -184,7 +184,9 @@ const Login = () => {
                     // onClick={() => console.log("power")}
                   >
                     {!isSubmitting ? (
-                      "Login"
+                      <span className="text-[20px] font-DarkerGrotesque ">
+                        Login
+                      </span>
                     ) : (
                       <ClipLoader color="white" size={20} />
                     )}

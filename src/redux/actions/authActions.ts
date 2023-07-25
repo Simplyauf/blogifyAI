@@ -24,11 +24,19 @@ export const loginUser =
       });
       console.log(response);
       // Extract the access token from the response
-      const accessToken = response.data.data;
+
+    const data = response.data.data;
       console.log(accessToken);
       rememberMe
-        ? Cookies.set("user", JSON.stringify(accessToken), { expires: 20 })
-        : Cookies.set("user", JSON.stringify(accessToken));
+        ? Cookies.set("user", JSON.stringify(data), { expires: 20 })
+        : Cookies.set("user", JSON.stringify(data));
+
+
+     
+      const accessToken = response.data.meta.token;
+
+
+      Cookies.set("accessToken", accessToken);
 
       router.push("/dashboard");
       // Save the access token in the Redux store
