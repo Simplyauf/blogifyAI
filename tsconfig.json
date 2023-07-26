@@ -20,6 +20,11 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/aiWriter/instagramHashtag.stsx"
+  ],
   "exclude": ["node_modules"]
 }
