@@ -25,6 +25,9 @@ import Add from "@/assets/add.svg";
 import { useState } from "react";
 import DashboardLayout from "@/src/layouts/DashboardLayout";
 import { withAuth } from "@/src/layouts/withAuth";
+import Link from "next/link";
+
+import AiWritercards from "@/src/components/dashboard/AiWritercards";
 
 const SkeletonAnalytics = () => (
   <article className="flex items-center justify-between h-[106px] 2xl:h-[120px] p-4 gap-4 rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px] animate-pulse">
@@ -264,37 +267,20 @@ const Dashboard = () => {
       <div className="mt-6">
         <div className="w-full flex justify-between items-center">
           <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
-            Blog Analytics
+            AI Writer
           </h2>
-          <div className="flex items-center gap-1 cursor-pointer">
+          <Link
+            href={"/dashboard/aiwriter"}
+            className="flex items-center gap-1 cursor-pointer"
+          >
             {" "}
             <span className="font-DarkerGrotesque text-[16px] text-Text/Text-600 font-medium leading-normal">
               See more
             </span>
             <ArrowRight />
-          </div>
+          </Link>
         </div>
-        <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 justify-between">
-          {AIWriter.map((elem, index) => {
-            const { title, description, image } = elem;
-            return (
-              <article
-                key={index}
-                className="flex flex-col w-full   items-start justify-start h-[216px] p-5  rounded-lg bg-Brand/Surface/surface-50 min-w-[267px] 2xl:min-w-[280px]"
-              >
-                <div className="flex p-2 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px]">
-                  {image("")}
-                </div>
-                <h3 className="text-Brand/Text/Text-800 text-ellipsis text-[20px] font-bold  leading-7 font-DarkerGrotesque mt-4">
-                  {title}
-                </h3>
-                <p className="mt-1 text-Brand/Text/Text-600 text-[16px] font-medium leading-normal font-DarkerGrotesque ">
-                  {description}
-                </p>
-              </article>
-            );
-          })}
-        </div>
+        <AiWritercards />
       </div>
     </section>
   );
