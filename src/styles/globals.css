@@ -35,7 +35,8 @@ body {
     -webkit-text-fill-color: transparent;
   }
 
-  input {
+  input,
+  textarea {
     @apply focus-within:outline-none;
   }
 }
