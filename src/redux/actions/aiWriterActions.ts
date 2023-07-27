@@ -17,14 +17,18 @@ export const fetchAiWriters = () => async (dispatch: any) => {
     dispatch(aiListStartFailure({ error }));
   }
 };
-export const fetchAiWriter = () => async (dispatch: any) => {
-  try {
-    dispatch(aiSingleStart());
-    const response = await http().get("dashboard/user/blogifyai", {});
-    console.log(response);
-    dispatch(aiListStartSuccess({ aiList: response?.data.data }));
-  } catch (error) {
-    console.log(error);
-    dispatch(aiListStartFailure({ error }));
-  }
-};
+export const fetchAiWriter =
+  (slug: string | string[] | undefined) => async (dispatch: any) => {
+    try {
+      dispatch(aiSingleStart());
+      const response = await http().get(
+        `dashboard/user/blogifyai/generator/${slug}`,
+        {}
+      );
+      console.log(response);
+      dispatch(aiListStartSuccess({ aiListSingle: response?.data.data }));
+    } catch (error) {
+      console.log(error);
+      dispatch(aiListStartFailure({ error }));
+    }
+  };

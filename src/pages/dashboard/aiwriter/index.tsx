@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/src/redux/hooks";
 import { fetchAiWriters } from "@/src/redux/actions/aiWriterActions";
 import Image from "next/image";
 import { ClipLoader } from "react-spinners";
+import Link from "next/link";
 
 const AiWriter = () => {
   // const [data, setData] = useState([]);
@@ -30,13 +31,17 @@ const AiWriter = () => {
       ) : (
         <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 justify-between">
           {aiList?.aiList?.map((elem: any, index: number) => {
-            const { title, description, image } = elem;
+            const { title, description, image, slug } = elem;
             return (
-              <article
+              <Link
                 key={index}
-                onClick={() =>
-                  router.push("/dashboard/aiwriter/article-generator")
-                }
+                href={{
+                  pathname: "/dashboard/aiwriter/[slug]",
+                  query: { slug: slug },
+                }}
+                // onClick={() =>
+                //   router.push("/dashboard/aiwriter/article-generator")
+                // }
                 className="flex flex-col w-full   items-start justify-start p-5  rounded-lg bg-Brand/Surface/surface-50 cursor-pointer"
               >
                 <div
@@ -50,7 +55,7 @@ const AiWriter = () => {
                 <p className="mt-1 text-Brand/Text/Text-600 text-[16px] font-medium leading-normal font-DarkerGrotesque ">
                   {description}
                 </p>
-              </article>
+              </Link>
             );
           })}
         </div>
