@@ -131,22 +131,22 @@ const DashboardLayout = ({ children }: PropType) => {
     <Provider store={store}>
       <EntireAppLayout>
         <ProtectRoute>
-          <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
+          <div className="bg-Brand/Surface/surface-200 w-full ">
             <header className="w-full px-5 sm:px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between h-[76px] items-center z-[1000] fixed top-0">
               <Logo
                 onClick={() => router.push("/")}
-                className="cursor-pointer hidden sm:block"
+                className="cursor-pointer hidden md:block"
               />
-              <div className="flex rounded-[50px] sm:hidden bg-Surface/surface-400 w-10 h-10 p-2">
+              <div className="flex rounded-[50px] md:hidden bg-Surface/surface-400 w-10 h-10 p-2">
                 <MenuLine />
               </div>
 
               <div className="flex items-center gap-[24px]">
-                <div className="flex sm:hidden w-10 h-10 items-center p-2 justify-center rounded-[50%] bg-Surface/surface-400">
+                <div className="flex md:hidden w-10 h-10 items-center p-2 justify-center rounded-[50%] bg-Surface/surface-400">
                   {" "}
                   <Search className=" " />
                 </div>
-                <div className="relative sm:w-[320px] sm:flex hidden justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
+                <div className="relative md:w-[320px] md:flex hidden justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
                   <input
                     type="text"
                     className="w-[82%]  pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
@@ -166,8 +166,8 @@ const DashboardLayout = ({ children }: PropType) => {
               </div>
             </header>
             <section className="mt-[76px]">
-              <div className=" w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
-                <ul className="md:flex hidden flex-col fixed top-[76px] left-0 md:w-[25%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
+              <div className=" w-full h-[calc(100vh-76px)] bg-Brand/Surface/surface-200">
+                <ul className="md:flex hidden flex-col fixed top-[76px] left-0 md:w-[25%] lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
                   {SidebarValues.map((content, index) => {
                     const { LogoImg, displayValue, link } = content;
                     return (

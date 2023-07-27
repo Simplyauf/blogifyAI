@@ -15,7 +15,7 @@ import ArrowRight from "@/assets/right-arrow.svg";
 const Contact = () => {
   const router = useRouter();
   return (
-    <div className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex items-start gap-6">
+    <div className="pt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex items-start gap-6">
       <section className="w-[35%] lg:w-[40%] xl:w-[35%]">
         <div
           className="gap-2 items-center flex cursor-pointer text-[18px] font-normal text-Text/Text-600 underline underline-offset-1 leading-[26px] font-DarkerGrotesque"

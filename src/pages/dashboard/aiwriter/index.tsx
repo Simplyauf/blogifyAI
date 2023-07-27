@@ -23,7 +23,7 @@ const AiWriter = () => {
   // setData(ai)
   // console.log(aiList?.aiList?.aiList);
   return (
-    <section className="mt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 pb-[102px] sm:pb-[119px] px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
       {loadingAll ? (
         <div className="mt-[10px]">
           <ClipLoader />

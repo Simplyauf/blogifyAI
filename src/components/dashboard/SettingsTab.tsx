@@ -7,7 +7,7 @@ const SettingsTab = () => {
 
   console.log(pathname);
   return (
-    <div className="w-fit flex gap-1 h-[50px] mt-4 bg-Brand/Surface/surface-50 border-Surface/surface-600 rounded-[8px] border p-1 ">
+    <div className="w-full  sm:w-fit overflow-x-auto horizontal-overflow flex gap-1 min-h-[50px] sm:h-[50px] mt-4 bg-Brand/Surface/surface-50 border-Surface/surface-600 rounded-[8px] border p-1 ">
       <button
         className={`flex min-w-fit h-full px-4 py-2   text-Brand/Primary/Primary-800 text-[18px] font-semibold leading-normal font-DarkerGrotesque ${
           pathname === "/dashboard/settings"

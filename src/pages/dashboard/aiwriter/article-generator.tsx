@@ -24,7 +24,7 @@ import DashboardLayout from "@/src/layouts/DashboardLayout";
 
 const ArticleGenerator = () => {
   return (
-    <section className="mt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 b-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
         Article Generator
       </h2>

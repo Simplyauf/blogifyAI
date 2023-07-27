@@ -15,14 +15,14 @@ import SettingsTab from "@/src/components/dashboard/SettingsTab";
 
 const Settings = () => {
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 pb-[92px] sm:pb-0 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute md:w-[75%] w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Settings
       </h2>
       <SettingsTab />
-      <div className="flex gap-4 w-full items-start mt-4 ">
-        <section className=" bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col  w-[70%]">
-          <div className="flex w-full justify-between items-center pb-5">
+      <div className="flex gap-4 w-full items-start mt-6 flex-col md:flex-row">
+        <section className=" bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col  w-full md:w-[60%]">
+          <div className="flex flex-col md:flex-row w-full md:gap-2 justify-between items-start md:items-center pb-5">
             <div className="flex flex-col gap-2">
               <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
                 Password
@@ -32,7 +32,7 @@ const Settings = () => {
                 settings
               </p>
             </div>
-            <div className="flex gap-3 items-center w-auto mr-6">
+            <div className="flex gap-3 items-center w-auto mr-6 mt-4 md:mt-0">
               <button className="flex  border-[1.5px] items-center justify-center  w-[71px] h-[35px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-4 font-DarkerGrotesque">
                 <span>Cancel</span>
               </button>
@@ -88,7 +88,7 @@ const Settings = () => {
             </div>
           </form>
         </section>
-        <section className="flex flex-col p-6 w-[30%] bg-Brand/Surface/surface-50 gap-8 h-[397px] overflow-y-auto custom-overflow">
+        <section className="flex flex-col p-6 w-full md:w-[40%] bg-Brand/Surface/surface-50 gap-8 h-[397px] overflow-y-auto custom-overflow">
           <div>
             <div className="w-[56px] h-[56px] rounded-[50%] flex justify-center items-center p-4 bg-Brand/Primary/Primary-100">
               <Computer />
@@ -100,8 +100,8 @@ const Settings = () => {
               Sign out all devices
             </button>
           </div>
-          <div className="flex flex-col gap-4 w-full">
-            <div className="w-full flex items-center justify-center gap-3">
+          <div className="flex flex-col gap-4 w-full items-start">
+            <div className="w-full flex items-center justify-start  gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -115,7 +115,7 @@ const Settings = () => {
               </div>
               <Delete />
             </div>
-            <div className="w-full flex items-center justify-center gap-3">
+            <div className="w-full flex items-center justify-start  gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -129,7 +129,7 @@ const Settings = () => {
               </div>
               <Delete />
             </div>
-            <div className="w-full flex items-center justify-center gap-3">
+            <div className="w-full flex items-center justify-start  gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -143,7 +143,7 @@ const Settings = () => {
               </div>
               <Delete />
             </div>
-            <div className="w-full flex items-center justify-center gap-3">
+            <div className="w-full flex items-center justify-start  gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">

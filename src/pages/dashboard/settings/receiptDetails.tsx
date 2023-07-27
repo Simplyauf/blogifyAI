@@ -22,7 +22,7 @@ const ReceiptOpen = ({ receiptOpen, setreceiptOpen }: PropTypes) => {
         ></div>
 
         <div
-          className={`relative w-[640px] max-w-[96%] overflow-y-auto overflow-x-hidden custom-overflow  max-h-[96vh] xl:max-h-[90vh] h-[695px]   bg-Brand/Surface/surface-50  rounded-[8px] transition-opacity duration-100 p-6 ${
+          className={`relative w-[640px] max-w-[70%] overflow-y-auto overflow-x-hidden custom-overflow  max-h-[96vh] xl:max-h-[90vh] h-[695px]   bg-Brand/Surface/surface-50  rounded-[8px] transition-opacity duration-100 p-6 ${
             receiptOpen ? "opacity-100 z-[1005]" : "opacity-0 z-[-5]"
           } `}
         >
