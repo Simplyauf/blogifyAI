@@ -68,6 +68,9 @@ module.exports = {
         Poppins: ["Poppins", "sans-serif"],
         DMSans: ["DM Sans"],
       },
+      screens: {
+        BigMobile: { min: "393px", max: "639px" },
+      },
     },
   },
   plugins: [],

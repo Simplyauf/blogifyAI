@@ -40,7 +40,7 @@ const AiWriter = () => {
                 className="flex flex-col w-full   items-start justify-start p-5  rounded-lg bg-Brand/Surface/surface-50 cursor-pointer"
               >
                 <div
-                  className="flex p-2 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px]"
+                  className="flex p-2 items-center justify-center rounded-[50%] bg-Brand/Primary/Primary-100 w-[40px] h-[40px] "
                   dangerouslySetInnerHTML={{ __html: image }}
                 />
 

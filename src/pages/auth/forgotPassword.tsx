@@ -25,12 +25,12 @@ const ForgotPassword = () => {
   const router = useRouter();
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
-      <div className="md:w-[476px] mt-[94px]">
+      <div className="sm:w-[476px] max-w-[480px] w-full mt-[94px]">
         <div>
-          <h3 className="text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
+          <h3 className="text-[24px] sm:text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
             Forgot password?
           </h3>
-          <p className="text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
+          <p className="text-[18px] sm:text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
             Enter your email to receive a reset link
           </p>
         </div>
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
               <div className="w-full mt-[16px]">
                 <button
                   type="submit"
-                  className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
+                  className="h-12 sm:h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
                   // onClick={() => console.log("power")}
                 >
                   {!isSubmitting ? (
