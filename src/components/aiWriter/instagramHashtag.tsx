@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowDown from "@/assets/DownArrow.svg";
 
-export const YoutubeVideoDescription = () => {
+export const InstagramHashTag = () => {
   return (
     <form action="" className="w-[40%]">
       <div className="">

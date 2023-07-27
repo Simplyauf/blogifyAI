@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowDown from "@/assets/DownArrow.svg";
 
-export const YinstagramCaptions = () => {
+export const InstagramCaptions = () => {
   return (
     <form action="" className="w-[40%]">
       <div className="">

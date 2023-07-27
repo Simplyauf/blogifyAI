@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowDown from "@/assets/direction-down 01.svg";
 
-export const ArticleGenerator = () => {
+export const ArticleGeneratorComp = () => {
   return (
     <form action="" className="w-[40%]">
       <div className="">
