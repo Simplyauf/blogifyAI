@@ -29,7 +29,7 @@ const Plans = () => {
     },
   ];
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="mt-8 px-4 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full  md:w-[75%] lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Plans
       </h2>
@@ -45,7 +45,7 @@ const Plans = () => {
           Billed Anually
         </h2>
       </div>
-      <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:w-[65%] xl:w-full xl:grid-cols-2 2xl:grid-cols-2 justify-between">
+      <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:grid-cols-2  xl:w-full xl:grid-cols-2 2xl:grid-cols-2 justify-between">
         {planArr.map((elem, index) => {
           const { currentPlan, desc, price, type, span } = elem;
           return (
@@ -71,7 +71,7 @@ const Plans = () => {
                   </span>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4  pt-6">
+              <div className="grid xl:grid-cols-2 grid-cols-1  gap-x-6 gap-y-4  pt-6">
                 <div className="gap-2 items-center flex">
                   <CheckCircle />{" "}
                   <p className="font-DarkerGrotesque text-[20px] font-medium leading-normal text-Brand/Text/Text-800">

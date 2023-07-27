@@ -15,6 +15,7 @@ import {
 import { analytic } from ".";
 import Decrease from "@/assets/arrow-down-circle.svg";
 import Increase from "@/assets/arrow-up-circle.svg";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const data = [
   {
@@ -62,16 +63,18 @@ const data = [
 ];
 
 const Analytic = () => {
+  const currentWidth = useWindowWidth();
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="mt-8 px-4 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full  md:w-[75%] lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
-        Visitors
+        Analytics
       </h2>
-      <section className="w-full flex items-center gap-6 mt-4">
-        <div className="w-[70%] p-6 bg-Brand/Surface/surface-50 rounded-lg">
+      <section className="w-full flex flex-col lg:flex-row items-center gap-6 mt-4">
+        <div className="w-full  lg:w-[70%] px-4 sm:p-6 bg-Brand/Surface/surface-50 rounded-lg">
           <div className="w-full flex justify-between items-center">
             <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
-              Analytics
+              {" "}
+              Visitors{" "}
             </h4>
             <button className="flex border-2 w-[133px] h-[38px] p-2 border-Surface/surface-600 min-w-fit justify-center items-center rounded-lg gap-2">
               <Calendar />{" "}
@@ -82,7 +85,11 @@ const Analytic = () => {
           </div>
           <div className="my-8 w-full h-[291px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart width={500} height={500} data={data}>
+              <LineChart
+                width={currentWidth >= 768 ? 500 : 321}
+                height={currentWidth >= 768 ? 500 : 247}
+                data={data}
+              >
                 <CartesianGrid
                   vertical
                   horizontal={false}
@@ -101,7 +108,7 @@ const Analytic = () => {
                 />
 
                 <YAxis
-                  dx={-25}
+                  dx={currentWidth >= 768 ? -25 : -12}
                   domain={[0, 4000]}
                   tick={{
                     fontSize: 14,
@@ -155,7 +162,7 @@ const Analytic = () => {
             </div>
           </div>
         </div>
-        <div className="w-[35%] grid-cols-1 gap-4 grid">
+        <div className="w-full lg:w-[35%] grid-cols-1 gap-4 grid">
           {analytic.map((elem, index) => {
             const { title, data, direction, rating, since, image } = elem;
             return (
@@ -203,7 +210,7 @@ const Analytic = () => {
           })}
         </div>
       </section>
-      <section className="mt-6 w-full grid-cols-2 grid">
+      <section className="mt-6 w-full grid-cols-1 sm:grid-cols-2 grid">
         <article className="p-8 bg-Brand/Surface/surface-50 rounded-lg">
           <h2 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
             Visitors

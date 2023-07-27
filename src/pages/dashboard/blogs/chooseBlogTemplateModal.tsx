@@ -27,7 +27,7 @@ const ChooseBlogTemplateModal = ({
       ></div>
 
       <div
-        className={`relative w-[1000px] max-w-[96%] pl-[112px] overflow-y-auto overflow-x-hidden p-6 h-[650px] max-h-[96vh] xl:max-h-[90vh]   bg-Brand/Surface/surface-50  rounded-[8px] transition-opacity duration-100 ${
+        className={`relative w-[1000px] max-w-[96%] pl-5 md:pl-[112px] overflow-y-auto overflow-x-hidden p-6 h-[650px] max-h-[96vh] xl:max-h-[90vh]   bg-Brand/Surface/surface-50  rounded-[8px] transition-opacity duration-100 ${
           ChooseBlogTemplateModalOpen
             ? "opacity-100 z-[1010]"
             : "opacity-0 z-[-5]"
@@ -42,11 +42,11 @@ const ChooseBlogTemplateModal = ({
           </div>
         </div>
 
-        <h2 className="text-[#000] text-[26px] font-bold  leading-[34px] font-DarkerGrotesque w-[305px]">
+        <h2 className="text-[#000] text-[26px] font-bold  leading-[34px] font-DarkerGrotesque sm:w-[305px]">
           Customize any template effortlessly to make it uniquely yours
         </h2>
-        <div className="mt-6 w-full flex flex-wrap gap-[33px]">
-          <article className="flex flex-col gap-4 w-[237px] rounded-t-lg">
+        <div className="mt-6 md:w-full flex-nowrap overflow-x-auto flex md:flex-wrap gap-[33px]">
+          <article className="flex flex-col gap-4 min-w-[237px] rounded-t-lg">
             <BlogTemplateImg className="w-full rounded-t-lg" />
             <div className="flex w-full justify-between items-center">
               <div className="flex flex-col gap-1">
@@ -62,7 +62,7 @@ const ChooseBlogTemplateModal = ({
               </button>
             </div>
           </article>
-          <article className="flex flex-col gap-4 w-[237px] rounded-t-lg">
+          <article className="flex flex-col gap-4 min-w-[237px] rounded-t-lg">
             <BlogTemplateImg className="w-full rounded-t-lg" />
             <div className="flex w-full justify-between items-center">
               <div className="flex flex-col gap-1">
@@ -78,7 +78,7 @@ const ChooseBlogTemplateModal = ({
               </button>
             </div>
           </article>
-          <article className="flex flex-col gap-4 w-[237px] rounded-t-lg">
+          <article className="flex flex-col gap-4 min-w-[237px] rounded-t-lg">
             <BlogTemplateImg className="w-full rounded-t-lg" />
             <div className="flex w-full justify-between items-center">
               <div className="flex flex-col gap-1">
@@ -94,7 +94,7 @@ const ChooseBlogTemplateModal = ({
               </button>
             </div>
           </article>
-          <article className="flex flex-col gap-4 w-[237px] rounded-t-lg">
+          <article className="flex flex-col gap-4 min-w-[237px] rounded-t-lg">
             <BlogTemplateImg className="w-full rounded-t-lg" />
             <div className="flex w-full justify-between items-center">
               <div className="flex flex-col gap-1">
@@ -110,7 +110,7 @@ const ChooseBlogTemplateModal = ({
               </button>
             </div>
           </article>
-          <article className="flex flex-col gap-4 w-[237px] rounded-t-lg">
+          <article className="flex flex-col gap-4 min-w-[237px] rounded-t-lg">
             <BlogTemplateImg className="w-full rounded-t-lg" />
             <div className="flex w-full justify-between items-center">
               <div className="flex flex-col gap-1">

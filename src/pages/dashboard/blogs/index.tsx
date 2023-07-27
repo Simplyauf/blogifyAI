@@ -15,6 +15,7 @@ import StatusIcon from "@/assets/broadcast.svg";
 import ActionIcon from "@/assets/information.svg";
 import CreateBlogModal from "./createBlogModal";
 import Image from "next/image";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const Blogs = () => {
   const [currentView, setCurrentView] = useState("Grid");
@@ -30,15 +31,17 @@ const Blogs = () => {
   const SingleListView = ({ key, status }: BlogListProp) => {
     return (
       <div className="mt-3 flex items-center bg-Brand/Surface/surface-50 rounded-lg">
-        <Image
-          src={SmallBlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-cover rounded-l-lg"
-          style={{ width: "170px", height: "88px" }}
-        />
+        <div className="bg-Brand/Primary/Primary-100 rounded-l-lg p-4 pb-0">
+          <Image
+            src={SmallBlogImg.src}
+            alt="blog-image"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full object-cover  "
+            style={{ width: "170px", height: "88px" }}
+          />
+        </div>
         <div className="flex w-[80%] justify-between ml-auto gap-2 items-center ">
           <h2 className="text-Brand/Text/Text-800 text-[20px] font-bold line-clamp-1 text-ellipsis leading-7 font-DarkerGrotesque w-[25%]">
             Blogsite Title
@@ -66,17 +69,19 @@ const Blogs = () => {
 
   const SingleGridView = ({ key, status }: BlogListProp) => {
     return (
-      <div className="flex flex-col gap-3 rounded-lg min-w-[267px]   h-[354px]  bg-Brand/Surface/surface-50">
+      <div className="flex flex-col gap-3 rounded-lg min-w-[267px]   h-[360px]  bg-Brand/Surface/surface-50">
         <>
-          <Image
-            src={BlogImg.src}
-            alt="blog-image"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full object-cover rounded-t-lg"
-            style={{ width: "100%", height: "187px" }}
-          />
+          <div className="bg-Brand/Primary/Primary-100 rounded-t-lg p-6 h-[187px] sm:p-8 pb-0">
+            <Image
+              src={BlogImg.src}
+              alt="blog-image"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full object-cover h-["
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
 
           <div className="pt-3 flex flex-col gap-3 p-6 ">
             <div className="justify-between flex items-center ">
@@ -224,14 +229,14 @@ const Blogs = () => {
         CreateBlogModalOpen={CreateBlogModalOpen}
         setCreateBlogModalOpen={setCreateBlogModalOpen}
       />
-      <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
+      <section className="mt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%]  md:w-[75%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
         <div className="w-full justify-between items-center flex">
           <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
             Blogs
           </h2>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-[4px]">
+            <div className="sm:flex items-center gap-[4px] hidden ">
               <div
                 className={`w-[54px] h-[40px] rounded-[4px]  flex justify-center items-center cursor-pointer ${
                   currentView === "Grid"
@@ -255,7 +260,7 @@ const Blogs = () => {
             </div>
             <button
               onClick={() => setCreateBlogModalOpen(true)}
-              className="flex mx-auto items-center text-Brand/Surface/surface-50 justify-center gap-2 w-[134px] h-[48px] min-w-fit  bg-Brand/Primary/Primary-800 rounded-[4px] p-4 "
+              className="flex mx-auto items-center text-Brand/Surface/surface-50 justify-center gap-2 w-[127px] sm:w-[134px] h-[40px] sm:h-[48px] min-w-fit  bg-Brand/Primary/Primary-800 rounded-[4px] py-2 px-4 "
             >
               <span className="font-DarkerGrotesque text-[16px] font-medium leading-[26px] text-Brand/Surface/surface-50">
                 Create Blog
@@ -299,7 +304,7 @@ const Blogs = () => {
             })}
         </div>
         {currentView === "Grid" && (
-          <div className="w-full grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
+          <div className="w-full grid sm:grid-cols-2 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
             {blogs.map((elem, index) => {
               const { status } = elem;
 
