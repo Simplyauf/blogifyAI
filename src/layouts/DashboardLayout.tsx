@@ -137,7 +137,7 @@ const DashboardLayout = ({ children }: PropType) => {
                 onClick={() => router.push("/")}
                 className="cursor-pointer hidden sm:block"
               />
-              <div className="flex rounded-[50px] bg-Surface/surface-400 w-10 h-10 p-2">
+              <div className="flex rounded-[50px] sm:hidden bg-Surface/surface-400 w-10 h-10 p-2">
                 <MenuLine />
               </div>
 
