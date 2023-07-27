@@ -201,7 +201,7 @@ const Dashboard = () => {
   >([]);
 
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full  lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 px-6 pb-[102px] sm:pb-[125px] min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full  lg:w-[80%]  xl:w-[85%] right-0">
       <div className="w-full">
         <h2 className="font-DarkerGrotesque text-[20px] sm:text-[24px] md:text-[26px] font-bold leading-7 md:leading-[34px] text-[#000] ">
           Blog Analytics

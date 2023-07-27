@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 const Chat = () => {
   const router = useRouter();
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 pb-[143px] px-4 sm:px-6  bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[75%] lg:w-[80%] h-auto xl:w-[85%] right-0">
       <div
         className="gap-2 items-center flex cursor-pointer text-[18px] font-normal text-Text/Text-600 underline underline-offset-1 leading-[26px] font-DarkerGrotesque"
         onClick={() => router.back()}
@@ -19,9 +19,9 @@ const Chat = () => {
       <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
         Support #3066
       </h2>
-      <div className="w-full rounded-lg mt-4 gap-[14px] bg-Brand/Surface/surface-50 flex h-[494px]">
+      <div className="w-full rounded-lg mt-4 gap-[14px] bg-Brand/Surface/surface-50 flex h-[494px] lg:h-[calc(100vh-220px)] ">
         <section className="w-full  relative">
-          <div className="pb-9 p-6 h-[411px] overflow-y-auto custom-overflow">
+          <div className="pb-9 p-6  h-[414px] lg:h-[calc(100vh-250px)] overflow-y-auto custom-overflow">
             <AIChat />
             <DateDivider />
             <UserChat />

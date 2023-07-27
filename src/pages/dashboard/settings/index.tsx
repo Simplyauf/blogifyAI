@@ -13,13 +13,13 @@ import SettingsTab from "@/src/components/dashboard/SettingsTab";
 
 const Settings = () => {
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 pb-[62px] px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] md:w-[75%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Settings
       </h2>
       <SettingsTab />
-      <section className="mt-4 w-full bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col gap-6">
-        <div className="flex w-full justify-between items-center pb-6 border-b border-b-Surface/surface-400">
+      <section className="mt-6 w-full bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col  gap-6">
+        <div className="flex w-full flex-col sm:flex-row items-start justify-between sm:items-center pb-6 border-b border-b-Surface/surface-400">
           <div className="flex flex-col gap-2">
             <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
               Personal info
@@ -28,24 +28,24 @@ const Settings = () => {
               Update your photo and personal details here.
             </p>
           </div>
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center mt-4">
             <button className="flex  border-[1.5px] items-center justify-center  w-[76px] h-[40px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-4 font-DarkerGrotesque">
               <span>Cancel</span>
             </button>
             <button className="flex  items-center justify-center py-3 w-[147px] gap-2 h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] px-4 ">
               <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
-                Save Changes
+                Save changes
               </span>
               <CheckCircle />
             </button>
           </div>
         </div>
         <form action="" className="flex flex-col ">
-          <div className="w-full flex items-start gap-8 pb-5 border-b border-b-Surface/surface-400">
+          <div className="w-full flex BigMobile:flex-row sm:flex-row flex-col items-start gap-8 pb-5 border-b border-b-Surface/surface-400">
             <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
               Name
             </h5>
-            <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+            <div className=" w-full  BigMobile:w-[512px] sm:w-[512px]  h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
               <SmileRectangle />
               <input
                 type="text"
@@ -54,11 +54,11 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="w-full flex items-start gap-8 py-5 border-b border-b-Surface/surface-400">
+          <div className="w-full flex BigMobile:flex-row sm:flex-row flex-col items-start gap-8 py-5 border-b border-b-Surface/surface-400">
             <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
               Email address
             </h5>
-            <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+            <div className="w-full  BigMobile:w-[512px] sm:w-[512px]   h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
               <Gmail />
               <input
                 type="text"
@@ -67,7 +67,7 @@ const Settings = () => {
               />
             </div>
           </div>
-          <div className="w-full flex items-start gap-8 py-5 border-y border-y-Surface/surface-400">
+          <div className="w-full  sm:flex-row flex-col flex items-start gap-8 py-5 border-y border-y-Surface/surface-400">
             <div className="flex flex-col gap-2 w-[280px]">
               <p className="font-DarkerGrotesque text-[16px] font-medium leading-normal text-Brand/Text/Text-600 ">
                 Your photo
@@ -77,7 +77,7 @@ const Settings = () => {
                 This will be displayed on your profile.
               </p>
             </div>
-            <div className="w-[512px] flex items-start gap-5 ">
+            <div className="sm:w-[512px] w-full justify-center sm:justify-normal flex flex-col sm:flex-row items-start gap-5  ">
               <Image
                 src={Avatar.src}
                 alt="blog-image"
@@ -87,7 +87,7 @@ const Settings = () => {
                 className="w-full object-cover rounded-[50%]"
                 style={{ width: "64px", height: "64px" }}
               />
-              <div className="flex  flex-col items-center justify-between gap-3 w-[80%]">
+              <div className="flex w-full flex-col items-center justify-between gap-3 px-6  py-4 sm:w-[80%] border-Surface/surface-400 rounded-md border sm:border-none">
                 <div className="w-10 h-10 p-[10px]">
                   <UploadCloud />
                 </div>
@@ -107,11 +107,11 @@ const Settings = () => {
               </div>
             </div>
           </div>
-          <div className="w-full mt-5 flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
+          <div className="w-full flex-col BigMobile:flex-row sm:flex-row mt-5 flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
             <h5 className="w-[280px] text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
               Country
             </h5>
-            <div className="w-[512px] h-[48px] py-[4px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+            <div className="sm:w-[512px] w-full h-[48px] py-[4px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
               <Globe />
               <input
                 type="text"
@@ -121,7 +121,7 @@ const Settings = () => {
               <DownArrow />
             </div>
           </div>
-          <div className="w-full  flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
+          <div className="w-full flex-col sm:flex-row  flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
             <h5 className="w-[280px] text-Accent/Danger/Danger-800  text-[16px] leading-normal font-DarkerGrotesque font-semibold">
               Delete Account
             </h5>

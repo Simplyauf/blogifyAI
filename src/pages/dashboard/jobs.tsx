@@ -30,7 +30,7 @@ const Jobs = () => {
     "Email Generator",
   ];
   return (
-    <section className="mt-8 px-4 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[75%] lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 px-4 pb-10 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[75%] lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Jobs
       </h2>
