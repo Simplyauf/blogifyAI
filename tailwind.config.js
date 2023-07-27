@@ -69,7 +69,7 @@ module.exports = {
         DMSans: ["DM Sans"],
       },
       screens: {
-        BigMobile: { min: "393px", max: "639px" },
+        BigMobile: { min: "420px", max: "639px" },
       },
     },
   },

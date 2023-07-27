@@ -30,13 +30,13 @@ const Jobs = () => {
     "Email Generator",
   ];
   return (
-    <section className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="mt-8 px-4 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[75%] lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
         Jobs
       </h2>
-      <div className="w-full flex gap-6 mt-4">
+      <div className="w-full sm:flex-row flex-col flex gap-6  md:gap-4 lg:gap-6 mt-4">
         <section className="flex flex-col gap-4 max-w-[752px]">
-          <article className="flex p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
+          <article className="flex flex-col lg:flex-row p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
             <div className="flex flex-col gap-5">
               <div>
                 <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -51,7 +51,7 @@ const Jobs = () => {
                 found on our shopping cart widget. Looking to improve the
                 design, and content, and possibly add some animation.
               </p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600 min-w-fit ">
                   Web design
                 </button>
@@ -63,17 +63,17 @@ const Jobs = () => {
                 </button>
               </div>
             </div>
-            <div className="basis-[122px] flex flex-col  justify-between items-end h-full">
+            <div className="lg:basis-[122px] w-full lg:w-full flex lg:flex-col flex-row justify-end gap-6 lg:gap-0 lg:justify-between items-end h-auto ">
               <div className="font-DarkerGrotesque text-[18px]  font-semibold leading-normal text-Brand/Text/Text-800">
                 {" "}
                 $50 - $1K
               </div>
-              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[122px] lg:w-[100px] xl:w-[122px]">
+              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[97px] lg:w-[90px] xl:w-[122px]">
                 Bid
               </button>
             </div>
           </article>
-          <article className="flex p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
+          <article className="flex flex-col lg:flex-row p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
             <div className="flex flex-col gap-5">
               <div>
                 <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -88,7 +88,7 @@ const Jobs = () => {
                 found on our shopping cart widget. Looking to improve the
                 design, and content, and possibly add some animation.
               </p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] min-w-fit font-semibold leading-normal text-Text/Text-600">
                   Web design
                 </button>
@@ -100,17 +100,17 @@ const Jobs = () => {
                 </button>
               </div>
             </div>
-            <div className="basis-[122px] flex flex-col  justify-between items-end h-full">
+            <div className="lg:basis-[122px] w-full lg:w-full flex lg:flex-col flex-row justify-end gap-6 lg:gap-0 lg:justify-between items-end h-auto ">
               <div className="font-DarkerGrotesque text-[18px]  font-semibold leading-normal text-Brand/Text/Text-800">
                 {" "}
                 $50 - $1K
               </div>
-              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[122px] lg:w-[100px] xl:w-[122px]">
+              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[97px] lg:w-[90px] xl:w-[122px]">
                 Bid
               </button>
             </div>
           </article>
-          <article className="flex p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
+          <article className="flex flex-col lg:flex-row p-6 gap-6 w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px]">
             <div className="flex flex-col gap-5">
               <div>
                 <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -125,7 +125,7 @@ const Jobs = () => {
                 found on our shopping cart widget. Looking to improve the
                 design, and content, and possibly add some animation.
               </p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <button className="border-[#e7e7e9] h-8 p-2 lg:p-1 xl:p-2 flex items-center min-w-fit  justify-center border rounded-[4px] font-DarkerGrotesque text-[12px] font-semibold leading-normal text-Text/Text-600">
                   Web design
                 </button>
@@ -137,18 +137,18 @@ const Jobs = () => {
                 </button>
               </div>
             </div>
-            <div className="basis-[122px] flex flex-col  justify-between items-end h-full">
+            <div className="lg:basis-[122px] w-full lg:w-full flex lg:flex-col flex-row justify-end gap-6 lg:gap-0 lg:justify-between items-end h-auto ">
               <div className="font-DarkerGrotesque text-[18px]  font-semibold leading-normal text-Brand/Text/Text-800">
                 {" "}
                 $50 - $1K
               </div>
-              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[122px] lg:w-[100px] xl:w-[122px]">
+              <button className="flex justify-center items-center h-8 rounded-lg px-4 py-2 bg-Brand/Primary/Primary-800 font-DarkerGrotesque text-[14px] font-medium leading-4 text-Brand/Surface/surface-50 w-[97px] lg:w-[90px] xl:w-[122px]">
                 Bid
               </button>
             </div>
           </article>
         </section>
-        <section className="w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px] p-6 mb-[64px] max-w-[364px]">
+        <section className="w-full border border-[#E7E7E9] bg-Brand/Surface/surface-50 rounded-[8px] p-6 md:p-4 lg:p-6 mb-[64px] max-w-[364px]">
           <h3 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800">
             Filter
           </h3>
@@ -167,7 +167,10 @@ const Jobs = () => {
             <div className="flex flex-col gap-3  mt-[21px] justify-start">
               {specialitiesArr.map((elem, index) => {
                 return (
-                  <div key={index} className="flex items-center gap-2">
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 flex-wrap"
+                  >
                     <input type="checkbox" name="" id="" className="w-6 h-6" />
                     <span className="font-DarkerGrotesque text-[14px] font-medium leading-normal text-Text/Text-600">
                       {" "}
@@ -185,7 +188,7 @@ const Jobs = () => {
             <div className="flex flex-col gap-3  mt-[21px] justify-start">
               {budgetArr.map((elem, index) => {
                 return (
-                  <div key={index} className="flex items-center gap-2">
+                  <div key={index} className="flex items-center gap-2 ">
                     <input type="checkbox" name="" id="" className="w-6 h-6" />
                     <span className="font-DarkerGrotesque text-[14px] font-medium leading-normal text-Text/Text-600">
                       {" "}

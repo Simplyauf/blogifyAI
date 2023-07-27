@@ -39,7 +39,7 @@ const CreateBlogModal = ({
           } `}
         >
           <div className="flex w-full justify-between p-2 pl-0">
-            <h2 className="text-[#000] text-[20px] font-bold line-clamp-1 text-ellipsis leading-7 font-DarkerGrotesque w-[25%]">
+            <h2 className="text-[#000] text-[20px] font-bold  leading-7 font-DarkerGrotesque ">
               Create Blog
             </h2>
             <Close

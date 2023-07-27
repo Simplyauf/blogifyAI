@@ -132,7 +132,7 @@ const DashboardLayout = ({ children }: PropType) => {
       <EntireAppLayout>
         <ProtectRoute>
           <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
-            <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between h-[76px] items-center z-[1000] fixed top-0">
+            <header className="w-full px-5 sm:px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between h-[76px] items-center z-[1000] fixed top-0">
               <Logo
                 onClick={() => router.push("/")}
                 className="cursor-pointer hidden sm:block"
@@ -167,7 +167,7 @@ const DashboardLayout = ({ children }: PropType) => {
             </header>
             <section className="mt-[76px]">
               <div className=" w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
-                <ul className="md:flex hidden flex-col fixed top-[76px] left-0 lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
+                <ul className="md:flex hidden flex-col fixed top-[76px] left-0 md:w-[25%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
                   {SidebarValues.map((content, index) => {
                     const { LogoImg, displayValue, link } = content;
                     return (
