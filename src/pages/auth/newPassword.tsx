@@ -8,12 +8,12 @@ import Link from "next/link";
 const NewPassword = () => {
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
-      <div className="md:w-[476px] w-full mt-[94px]">
+      <div className="=sm:w-[476px] max-w-[480px] w-full mt-[94px]">
         <div>
-          <h3 className="text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
+          <h3 className="sm:text-[32px] text-[24px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
             Input your new password
           </h3>
-          <p className="text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
+          <p className="sm:text-[22px] text-[18px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
             Set a new password for your account
           </p>
 
@@ -53,7 +53,7 @@ const NewPassword = () => {
                 </div>
               </div>
 
-              <button className="h-[56px] mt-[24px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
+              <button className="h-12 sm:h-[56px] mt-[24px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50">
                 Set new password
               </button>
               <div className="mt-[24px] cursor-pointer text-center flex w-full justify-center items-centerml-[2px] gap-[2px]  font-DarkerGrotesque font-medium">

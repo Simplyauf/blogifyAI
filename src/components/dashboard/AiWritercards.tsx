@@ -19,7 +19,7 @@ const AiWritercards = () => {
           <ClipLoader />
         </div>
       ) : (
-        <div className="grid mt-4 gap-6 w-full grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 justify-between">
+        <div className="grid mt-4 gap-6 w-full grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 justify-between">
           {aiList?.aiList?.slice(0, 14).map((elem: any, index: number) => {
             const { title, description, image } = elem;
             return (

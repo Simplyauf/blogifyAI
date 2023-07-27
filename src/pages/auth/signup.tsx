@@ -86,25 +86,25 @@ const Signup = () => {
   const router = useRouter();
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
-      <div className="md:w-[476px] w-full mt-[24px]">
+      <div className="sm:w-[476px] max-w-[480px] w-full mt-[24px]">
         <div>
-          <h3 className="text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
+          <h3 className="text-[24px] sm:text-[32px] text-center font-DarkerGrotesque font-bold leading-[34px] text-Brand/Text/Text-800">
             Getting Started
           </h3>
-          <p className="text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
+          <p className="text-[18px] sm:text-[22px] text-center font-DarkerGrotesque mt-[8px] font-semibold leading-normal text-text/text-secondary">
             Create an account to continue
           </p>
-          <div className="flex w-full mt-[16px] items-center md:justify-between justify-center md:gap-[16px] gap-x-[35px]">
-            <button className="h-[55.6px] rounded-lg md:w-[230px] md:px-0 px-[20px]  flex items-center justify-center gap-[10px] bg-Surface/surface-400">
+          <div className="flex w-full mt-[16px] items-center justify-between  md:gap-[16px] gap-[12px]">
+            <button className="h-[55.6px] rounded-lg md:w-[230px] md:px-0 w-full px-[10px] sm:px-[20px]  flex items-center justify-center gap-[10px] bg-Surface/surface-400">
               <GMark />
-              <span className="text-[16px] md:flex hidden font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
-                Sign Up with Google
+              <span className="text-[16px] font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
+                Sign In with Google
               </span>
             </button>
-            <button className="h-[55.6px] rounded-lg  md:w-[230px] md:px-0 px-[20px]  flex items-center justify-center gap-[10px] bg-Surface/surface-400">
+            <button className="h-[55.6px] rounded-lg  md:w-[230px] md:px-0 w-full px-[10px] sm:px-[20px] flex items-center justify-center gap-[10px] bg-Surface/surface-400">
               <Apple />
-              <span className="text-[16px] md:flex hidden font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
-                Sign Up with Apple
+              <span className="text-[16px]  font-DarkerGrotesque  font-medium leading-normal text-Brand/Text/Text-800">
+                Sign In with Apple
               </span>
             </button>
           </div>
@@ -292,7 +292,7 @@ const Signup = () => {
 
                   <button
                     type="submit"
-                    className="h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
+                    className="h-12 sm:h-[56px] mt-[26px] w-full cursor-pointer rounded-lg bg-Brand/Primary/Primary-800 text-Brand/Surface/surface-50"
                     // onClick={() => console.log("power")}
                   >
                     {!isSubmitting ? (
@@ -303,7 +303,7 @@ const Signup = () => {
                       <ClipLoader color="white" size={20} />
                     )}
                   </button>
-                  <div className="mt-[24px] text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
+                  <div className="mt-[24px]  text-center text-Brand/Text/Text-800 text-[16px] leading-normal font-DarkerGrotesque font-medium">
                     Already have an account?{" "}
                     <Link
                       href="/auth/login"
