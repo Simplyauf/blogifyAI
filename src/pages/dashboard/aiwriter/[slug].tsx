@@ -51,14 +51,13 @@ const Page = () => {
   }, [dispatch, slugVal]);
   console.log(aiListSingle, "hello");
   return (
-
     <section className="pt-8 px-4 sm:px-6 pb-[80px] sm:pb-8 min-h-screen bg-Brand/Surface/surface-200  md:w-[75%] 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       {loadingSingle ? (
         <ClipLoader />
       ) : (
         <div>
           <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
-            {aiListSingle?.aiListSingle?.title}
+            Article Generator
           </h2>
 
           {/* <ArticleGenerator /> */}
@@ -80,13 +79,12 @@ const Page = () => {
             <div className="w-full lg:w-[60%] lg:px-4 lg:border-l-[0.8px] lg:border-l-Surface/surface-400">
               <div className="flex items-center gap-[10px]">
                 <Undo /> <Redo /> <Copy /> <Download /> <MinusCircle />
-
-           </div>
+              </div>
               <div className="mt-[32px]">
                 <h2 className="font-DarkerGrotesque text-ellipsis mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
                   Untitled Document
                 </h2>
-                <div className="w-[320px] h-[48px] py-[4px] my-4  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+                <div className="lg:w-[320px] w-full h-[48px] py-[4px] my-4  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
                   <input
                     type="text"
                     placeholder="Paragraph"
@@ -94,26 +92,41 @@ const Page = () => {
                   />
                   <ArrowDown />
                 </div>
-              </div
-          <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 gap-x-4 sm:gap-x-6 ">
-            <div className="flex items-center gap-2 w-[45%]  lg:w-auto sm:w-auto BigMobile:w-auto ">
-              <div className="flex items-center">
-                <FontColor />
-                <ArrowDown />
-
-            </div>
-            <LinkIcon className="w-[15%] sm:w-auto BigMobile:w-auto block lg:hidden " />
-            <div className="flex items-center justify-end lg:justify-normal w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto">
-              <BoldIcon />
-              <Italic />
-              <Underline />
-            </div>
-            <LinkIcon className="hidden lg:block w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto" />
-            <div className="flex items-center gap-2 w-[50%]  lg:w-auto sm:w-auto BigMobile:w-auto">
-              <div className="flex items-center">
-                <ListViewCircle />
-                <ArrowDown />
-
+              </div>
+              <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 gap-x-4 sm:gap-x-6 ">
+                <div className="flex items-center gap-2 w-[45%]  lg:w-auto sm:w-auto BigMobile:w-auto ">
+                  <div className="flex items-center">
+                    <FontColor />
+                    <ArrowDown />
+                  </div>
+                  <div className="flex items-center">
+                    <FontRectangle />
+                    <ArrowDown />
+                  </div>
+                </div>
+                <LinkIcon className="w-[15%] sm:w-auto BigMobile:w-auto block lg:hidden " />
+                <div className="flex items-center justify-end lg:justify-normal w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto">
+                  <BoldIcon />
+                  <Italic />
+                  <Underline />
+                </div>
+                <LinkIcon className="hidden lg:block w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto" />
+                <div className="flex items-center gap-2 w-[50%]  lg:w-auto sm:w-auto BigMobile:w-auto">
+                  <div className="flex items-center">
+                    <ListViewCircle />
+                    <ArrowDown />
+                  </div>
+                  <div className="flex items-center">
+                    <Frame />
+                    <ArrowDown />
+                  </div>
+                </div>
+                <div className="flex items-center  sm:w-auto BigMobile:w-auto gap-2 w-[50%] lg:w-auto justify-end lg:justify-normal">
+                  <AlignLeft />
+                  <AlignCenter />
+                  <AlignRight />
+                  <AlignJustify />
+                </div>
               </div>
               <div className="mt-4">
                 <h5 className=" text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque  font-medium">
@@ -130,7 +143,6 @@ const Page = () => {
                 Save
               </button>
             </div>
-
           </div>
         </div>
       )}
