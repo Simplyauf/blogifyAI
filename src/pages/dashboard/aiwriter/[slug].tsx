@@ -57,7 +57,7 @@ const Page = () => {
       ) : (
         <div>
           <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
-            Article Generator
+            {aiListSingle?.aiListSingle?.title}
           </h2>
 
           {/* <ArticleGenerator /> */}
