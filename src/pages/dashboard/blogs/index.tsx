@@ -16,10 +16,19 @@ import ActionIcon from "@/assets/information.svg";
 import CreateBlogModal from "./createBlogModal";
 import Image from "next/image";
 import { useWindowWidth } from "@react-hook/window-size";
+import { useEffect } from "react";
 
 const Blogs = () => {
   const [currentView, setCurrentView] = useState("Grid");
   const [CreateBlogModalOpen, setCreateBlogModalOpen] = useState(false);
+
+  const currentWidth = useWindowWidth();
+
+  useEffect(() => {
+    if (currentWidth < 1280) {
+      setCurrentView("Grid");
+    }
+  }, [currentWidth]);
 
   console.log(BlogImg);
 
@@ -42,7 +51,7 @@ const Blogs = () => {
             style={{ width: "170px", height: "88px" }}
           />
         </div>
-        <div className="flex w-[80%] justify-between ml-auto gap-2 items-center ">
+        <div className="flex w-[76%] justify-between ml-auto gap-2 items-center ">
           <h2 className="text-Brand/Text/Text-800 text-[20px] font-bold line-clamp-1 text-ellipsis leading-7 font-DarkerGrotesque w-[25%]">
             Blogsite Title
           </h2>
@@ -229,7 +238,7 @@ const Blogs = () => {
         CreateBlogModalOpen={CreateBlogModalOpen}
         setCreateBlogModalOpen={setCreateBlogModalOpen}
       />
-      <section className="mt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%]  md:w-[75%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
+      <section className="pt-8 px-5 pb-[102px] sm:pb-[81px] sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%]  md:w-[75%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
         <div className="w-full justify-between items-center flex">
           <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
             Blogs
@@ -271,7 +280,7 @@ const Blogs = () => {
         </div>
         <div className="w-full mt-9 ">
           {currentView === "List" && (
-            <div className="flex items-center w-[80%] justify-between ml-auto gap-2 ">
+            <div className="flex items-center w-[76%] justify-between ml-auto gap-2 ">
               <div className="flex items-center gap-[3px] w-[25%]">
                 <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
                   Blog title

@@ -13,7 +13,7 @@ import FontRectangle from "@/assets/font-rectangle.svg";
 import Frame from "@/assets/Frame.svg";
 import Undo from "@/assets/undo.svg";
 import Redo from "@/assets/redo.svg";
-import Link from "@/assets/link.svg";
+import LinkIcon from "@/assets/link.svg";
 import MinusCircle from "@/assets/minus-circle.svg";
 import ListViewCircle from "@/assets/list view-circle.svg";
 import ArrowCenter from "@/assets/align-center.svg";
@@ -24,7 +24,7 @@ import DashboardLayout from "@/src/layouts/DashboardLayout";
 
 const ArticleGenerator = () => {
   return (
-    <section className="mt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 b-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
         Article Generator
       </h2>
@@ -63,6 +63,7 @@ const ArticleGenerator = () => {
               <Italic />
               <Underline />
             </div>
+            <LinkIcon />
             <div className="flex items-center gap-2">
               <div className="flex items-center">
                 <ListViewCircle />

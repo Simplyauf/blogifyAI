@@ -73,7 +73,7 @@ const Support = () => {
         CreateTicketModalOpen={CreateTicketModalOpen}
         setCreateTicketModalOpen={setCreateTicketModalOpen}
       />
-      <div className="mt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%]  right-0">
+      <div className="pt-8 md:w-[75%] pb-[125px] md:pb-[80px] px-4 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute w-full lg:w-[80%]  xl:w-[85%]  right-0">
         <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
           Support Channels
         </h2>
@@ -117,7 +117,7 @@ const Support = () => {
             </button>
           </article>
         </section>
-        <section className="w-full mt-6">
+        <section className="w-full mt-6 ">
           <div className="w-full justify-between items-center flex">
             <h2 className="font-DarkerGrotesque text-[26px] font-bold leading-[34px] text-[#000] ">
               Support Tickets
@@ -133,7 +133,7 @@ const Support = () => {
               <Add />
             </button>
           </div>
-          <div className="mt-4 w-full bg-Brand/Surface/surface-50 rounded-lg">
+          <div className="mt-4 w-full bg-Brand/Surface/surface-50 rounded-lg overflow-x-auto custom-overflow">
             <table className="w-full bg-Brand/Surface/surface-50 whitespace-no-wrap rounded-t-lg overflow-hidden">
               <>
                 {" "}
@@ -212,11 +212,15 @@ const Support = () => {
               </>
             </table>
             <div className="w-full px-6 py-3 flex items-center justify-between">
-              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[108px] h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
+              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit sm:w-[108px] w-9 h-9 sm:h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
                 <ArrowLeft />
-                <span>Previous</span>
+                <span className="sm:block hidden">Previous</span>
               </button>
-              <div className="flex items-center text-[16px] font-semibold leading-normal  font-DarkerGrotesque">
+              <div className="text-Gray/700 text-[14px] font-normal  leading-normal font-DarkerGrotesque">
+                Page &nbsp; <span className="1 font-medium ">1</span> &nbsp; of
+                10
+              </div>
+              <div className="sm:flex hidden items-center text-[16px] font-semibold leading-normal  font-DarkerGrotesque">
                 <div className="p-3 text-Brand/Primary/Primary-800">1</div>
                 <div className="p-3 text-Gray/500">2</div>
                 <div className="p-3 text-Gray/500">3</div>
@@ -225,8 +229,8 @@ const Support = () => {
                 <div className="p-3 text-Gray/500">9</div>
                 <div className="p-3 text-Gray/500">10</div>
               </div>
-              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-[85px] h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
-                <span>Next</span>
+              <button className="flex  border-[1.5px] items-center justify-center  min-w-fit w-9 h-9 sm:w-[85px] sm:h-[38px]  text-Gray/700 border-Brand/Surface/surface-800 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-semibold  leading-normal font-DarkerGrotesque">
+                <span className="sm:block hidden"> Next</span>
                 <ArrowRight />
               </button>
             </div>
