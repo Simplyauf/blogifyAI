@@ -4,6 +4,8 @@ import {
   aiListStartFailure,
   aiListStartSuccess,
   aiSingleStart,
+  aiSingleStartFailure,
+  aiSingleStartSuccess,
 } from "../slices/aiwriterSlice";
 
 export const fetchAiWriters = () => async (dispatch: any) => {
@@ -25,10 +27,10 @@ export const fetchAiWriter =
         `dashboard/user/blogifyai/generator/${slug}`,
         {}
       );
-      console.log(response);
-      dispatch(aiListStartSuccess({ aiListSingle: response?.data.data }));
+      console.log(response.data.data);
+      dispatch(aiSingleStartSuccess({ aiListSingle: response?.data.data }));
     } catch (error) {
       console.log(error);
-      dispatch(aiListStartFailure({ error }));
+      dispatch(aiSingleStartFailure({ error }));
     }
   };

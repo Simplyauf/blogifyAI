@@ -138,25 +138,35 @@ const Login = () => {
                 </div>
 
                 <div className="w-full mt-[16px]">
-                  <div className="w-full relative h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800  flex items-center gap-[16px] px-[16px]">
-                    <Lock />
-                    <Field
-                      // value={values.password}
-                      type={`${showpassword ? "password" : "text"}`}
-                      name="password"
-                      placeholder="Create Password"
-                      className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showpassword)}
-                    >
-                      {showpassword ? (
-                        <Eye className="absolute right-3 top-3" />
-                      ) : (
-                        <EyeCross className="absolute right-3 top-3" />
-                      )}
-                    </button>
+                  <div>
+                    <div className="w-full relative h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800  flex items-center gap-[16px] px-[16px]">
+                      <Lock />
+                      <Field
+                        // value={values.password}
+                        type={`${showpassword ? "password" : "text"}`}
+                        name="password"
+                        placeholder="Create Password"
+                        className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400 focus:outline-none"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showpassword)}
+                      >
+                        {showpassword ? (
+                          <Eye className="absolute right-3 top-3" />
+                        ) : (
+                          <EyeCross className="absolute right-3 top-3" />
+                        )}
+                      </button>
+                    </div>
+                    {errors.password && touched.password ? (
+                      <div className="  gap-[4px] items-center flex">
+                        <RemoveCircle />
+                        <span className="text-[16px] leading-normal font-DarkerGrotesque font-medium text-Accent/Danger/Danger-800">
+                          {errors.password}
+                        </span>
+                      </div>
+                    ) : null}
                   </div>
                   <div className="mt-[24px] flex w-full justify-between items-center">
                     <div className="flex gap-[8px]">
