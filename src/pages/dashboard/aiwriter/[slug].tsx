@@ -82,7 +82,7 @@ const Page = () => {
               <ArrowDown />
             </div>
           </div>
-          <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 gap-x-4 sm:gap-x-6 ">
+          <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 smgap-x-4 sm:gap-x-6 ">
             <div className="flex items-center gap-2 w-[45%]  lg:w-auto sm:w-auto BigMobile:w-auto ">
               <div className="flex items-center">
                 <FontColor />

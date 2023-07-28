@@ -6,6 +6,7 @@ import AddCircle from "@/assets/add-circle.svg";
 import ArrowUp from "@/assets/up-arrow.svg";
 import ArrowDown from "@/assets/DownArrow.svg";
 import MenuLineHorizontal from "@/assets/menu-line-horizontal.svg";
+import Eye from "@/assets/eye.svg";
 import { useRouter } from "next/router";
 import Add from "@/assets/add.svg";
 import ImageTemp from "@/assets/image 3.png";
@@ -19,8 +20,8 @@ import ArrowRight from "@/assets/right-arrow.svg";
 const Design = () => {
   const router = useRouter();
   return (
-    <div className="pt-8 px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex items-start gap-6">
-      <section className="w-[35%] lg:w-[40%] xl:w-[35%]">
+    <div className="pt-8 pb-9 px-6 md:min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[85%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex md:flex-row flex-col-reverse items-start gap-6 top-[200px] md:top-[76px]">
+      <section className="w-full md:w-[35%] lg:w-[40%] xl:w-[35%]">
         <div
           className="gap-2 items-center flex cursor-pointer text-[18px] font-normal text-Text/Text-600 underline underline-offset-1 leading-[26px] font-DarkerGrotesque"
           onClick={() => router.push("/dashboard")}
@@ -78,9 +79,15 @@ const Design = () => {
           </div>
         </div>
       </section>
-      <section className="w-[65%] lg:w-[60%] xl:w-[65%] bg-Brand/Surface/surface-50  pb-[33px]">
+      <section className="w-full sm:hidden h-[50px] py-3 px-4  flex justify-center items-center border-2 border-[#E6ECF4] shadow-[0px_4px_6px_0px_rgba(23,44,85,0.01),0px_5px_10px_1px,rgba(23,44,85,0.02)] bg-Brand/Surface/surface-50 rounded-[8px] gap-[8px]">
+        <span className="text-[16px]  font-DarkerGrotesque font-medium text-Brand/Text/Text-800 leading-normal">
+          Preview Site
+        </span>
+        <Eye />
+      </section>
+      <section className="w-full hidden sm:block md:w-[65%] lg:w-[60%] xl:w-[65%] bg-Brand/Surface/surface-50  pb-[33px]">
         <div className="w-full flex justify-between items-center px-6 py-3 h-[53px] bg-Brand/Surface/surface-50 border-b-2 border-b-Surface/surface-400">
-          <div className="flex gap-4 items-center">
+          <div className="flex  gap-2 md:gap-4 items-center">
             <ArrowLeft className="cursor-pointer" />
             <ArrowRight className="cursor-pointer" />
             <Redo className="cursor-pointer" />
@@ -90,21 +97,23 @@ const Design = () => {
             placeholder="Samuel Omoraiyewa"
             className="text-Brand/Text/Text-800 text-[14px] h-[29px]  font-DarkerGrotesque font-semibold leading-normal w-[202px] border px-3 py-1 rounded-[8px] border-Surface/surface-400 bg-Brand/Surface/surface-50"
           />
-          <div className="flex gap-4 items-center">
+          <div className=" gap-4 items-center hidden lg:flex">
             <MobileIcon className="cursor-pointer" />
-            <ComputerIcon className="cursor-pointer" />
+            <ComputerIcon className="cursor-pointer " />
             <ZoomOut className="cursor-pointer" />
           </div>
         </div>
-        <Image
-          src={ImageTemp.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-cover rounded-t-lg"
-          style={{ width: "100%", height: "525px" }}
-        />
+        <div className="w-full h-auto max-h-[525x]">
+          <Image
+            src={ImageTemp.src}
+            alt="blog-image"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full object-cover rounded-t-lg"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
       </section>
     </div>
   );
