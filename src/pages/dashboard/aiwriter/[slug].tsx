@@ -34,6 +34,7 @@ import { FacebookAddCopy } from "@/src/components/aiWriter/facebookAddCopy";
 import { YoutubeVideoDescription } from "@/src/components/aiWriter/YoutubeVideoDescription";
 import { YoutubeVideoTag } from "@/src/components/aiWriter/Youtube-video-tag";
 import { InstagramCaptions } from "@/src/components/aiWriter/instagramCaptions";
+import LinkIcon from "@/assets/link.svg";
 import { InstagramHashTag } from "@/src/components/aiWriter/instagramHashtag";
 
 const Page = () => {
@@ -45,13 +46,13 @@ const Page = () => {
     dispatch(fetchAiWriter(slugVal));
   }, [dispatch, slugVal]);
   return (
-    <section className="pt-8 px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200  md:w-[75%] 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
+    <section className="pt-8 px-4 sm:px-6 pb-[80px] sm:pb-8 min-h-screen bg-Brand/Surface/surface-200  md:w-[75%] 2xl:px-[4%] absolute  w-full lg:w-[80%]  xl:w-[85%] right-0">
       <h2 className="font-DarkerGrotesque mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
         Article Generator
       </h2>
 
       {/* <ArticleGenerator /> */}
-      <div className="w-full mt-4 rounded-lg p-6 gap-[16px] bg-Brand/Surface/surface-50 flex ">
+      <div className="w-full mt-4 rounded-lg p-3 sm:p-5 lg:p-6  gap-8 lg:gap-[16px] bg-Brand/Surface/surface-50 flex flex-col lg:flex-row">
         {slugVal === "post_title_generator" && <PostTitleGenerator />}
         {slugVal === "article_generator" && <ArticleGeneratorComp />}
         {slugVal === "product_description" && <ProductDescription />}
@@ -64,7 +65,7 @@ const Page = () => {
         {slugVal === "instagram_captions" && <InstagramCaptions />}
         {slugVal === "instagram_hashtag" && <InstagramHashTag />}
 
-        <div className="w-[60%] px-4 border-l-[0.8px] border-l-Surface/surface-400">
+        <div className="w-full lg:w-[60%] lg:px-4 lg:border-l-[0.8px] lg:border-l-Surface/surface-400">
           <div className="flex items-center gap-[10px]">
             <Undo /> <Redo /> <Copy /> <Download /> <MinusCircle />
           </div>
@@ -72,7 +73,7 @@ const Page = () => {
             <h2 className="font-DarkerGrotesque text-ellipsis mt-4 text-[26px] font-bold leading-[34px] text-[#000] ">
               Untitled Document
             </h2>
-            <div className="w-[320px] h-[48px] py-[4px] my-4  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+            <div className="lg:w-[320px] w-full h-[48px] py-[4px] my-4  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
               <input
                 type="text"
                 placeholder="Paragraph"
@@ -81,8 +82,8 @@ const Page = () => {
               <ArrowDown />
             </div>
           </div>
-          <div className="flex justify-between items-center w-full">
-            <div className="flex items-center gap-2">
+          <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 gap-x-4 sm:gap-x-6 ">
+            <div className="flex items-center gap-2 w-[45%]  lg:w-auto sm:w-auto BigMobile:w-auto ">
               <div className="flex items-center">
                 <FontColor />
                 <ArrowDown />
@@ -92,12 +93,14 @@ const Page = () => {
                 <ArrowDown />
               </div>
             </div>
-            <div className="flex items-center">
+            <LinkIcon className="w-[15%] sm:w-auto BigMobile:w-auto block lg:hidden " />
+            <div className="flex items-center justify-end lg:justify-normal w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto">
               <BoldIcon />
               <Italic />
               <Underline />
             </div>
-            <div className="flex items-center gap-2">
+            <LinkIcon className="hidden lg:block w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto" />
+            <div className="flex items-center gap-2 w-[50%]  lg:w-auto sm:w-auto BigMobile:w-auto">
               <div className="flex items-center">
                 <ListViewCircle />
                 <ArrowDown />
@@ -107,7 +110,7 @@ const Page = () => {
                 <ArrowDown />
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center  sm:w-auto BigMobile:w-auto gap-2 w-[50%] lg:w-auto justify-end lg:justify-normal">
               <AlignLeft />
               <AlignCenter />
               <AlignRight />

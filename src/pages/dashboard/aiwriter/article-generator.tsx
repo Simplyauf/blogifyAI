@@ -13,7 +13,7 @@ import FontRectangle from "@/assets/font-rectangle.svg";
 import Frame from "@/assets/Frame.svg";
 import Undo from "@/assets/undo.svg";
 import Redo from "@/assets/redo.svg";
-import Link from "@/assets/link.svg";
+import LinkIcon from "@/assets/link.svg";
 import MinusCircle from "@/assets/minus-circle.svg";
 import ListViewCircle from "@/assets/list view-circle.svg";
 import ArrowCenter from "@/assets/align-center.svg";
@@ -63,6 +63,7 @@ const ArticleGenerator = () => {
               <Italic />
               <Underline />
             </div>
+            <LinkIcon />
             <div className="flex items-center gap-2">
               <div className="flex items-center">
                 <ListViewCircle />

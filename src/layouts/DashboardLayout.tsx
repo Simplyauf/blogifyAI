@@ -16,7 +16,7 @@ import SettingIcon from "@/assets/setting.svg";
 import DashboardIcon from "@/assets/dashboard.svg";
 import LogoutIcon from "@/assets/logout.svg";
 import { useRouter } from "next/router";
-
+import CloseFill from "@/assets/close-fill.svg";
 import { setIsAuthenticated } from "../redux/slices/authSlice";
 import { useAppDispatch } from "../redux/hooks";
 
@@ -29,6 +29,7 @@ import { store } from "../redux/store";
 import Layout from "../utils/entireAppLayout";
 import EntireAppLayout from "../utils/entireAppLayout";
 import MenuLine from "@/assets/menu-line-horizontal.svg";
+import { useWindowWidth } from "@react-hook/window-size";
 
 interface PropType {
   children: React.ReactNode;
@@ -108,6 +109,16 @@ const DashboardLayout = ({ children }: PropType) => {
 
   const [data, setData] = useState();
 
+  const [isSideBarOn, setIsSideBarOn] = useState(false);
+
+  const currentWidth = useWindowWidth();
+
+  useEffect(() => {
+    if (currentWidth > 767) {
+      setIsSideBarOn(false);
+    }
+  }, [currentWidth]);
+
   // useEffect(() => {
   //   const getUser = async () => {
   //     const user = Cookies.get("user");
@@ -127,6 +138,8 @@ const DashboardLayout = ({ children }: PropType) => {
   // if (!user) {
   //   router.push("/auth/login");
   // }
+
+  console.log(isSideBarOn);
   return (
     <Provider store={store}>
       <EntireAppLayout>
@@ -137,12 +150,15 @@ const DashboardLayout = ({ children }: PropType) => {
                 onClick={() => router.push("/")}
                 className="cursor-pointer hidden md:block"
               />
-              <div className="flex rounded-[50px] md:hidden bg-Surface/surface-400 w-10 h-10 p-2">
+              <div
+                className="flex rounded-[50px] md:hidden bg-Surface/surface-400 w-10 h-10 p-2 cursor-pointer"
+                onClick={() => setIsSideBarOn(true)}
+              >
                 <MenuLine />
               </div>
 
               <div className="flex items-center gap-[24px]">
-                <div className="flex md:hidden w-10 h-10 items-center p-2 justify-center rounded-[50%] bg-Surface/surface-400">
+                <div className="flex md:hidden cursor-pointer w-10 h-10 items-center p-2 justify-center rounded-[50%] bg-Surface/surface-400">
                   {" "}
                   <Search className=" " />
                 </div>
@@ -167,7 +183,25 @@ const DashboardLayout = ({ children }: PropType) => {
             </header>
             <section className="mt-[76px]">
               <div className=" w-full h-[calc(100vh-76px)] bg-Brand/Surface/surface-200">
-                <ul className="md:flex hidden flex-col fixed top-[76px] left-0 md:w-[25%] lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 justify-start items-start">
+                <ul
+                  className={`flex flex-col fixed  left-0 md:w-[25%] lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4  h-auto min-h-[747px] gap-4 justify-start items-start ${
+                    isSideBarOn
+                      ? "translate-x-0 h-screen duration-150 transition-all ease-out z-[2000] top-0 pt-4 pb-8 BigMobile:w-[240px] sm:w-[257px]"
+                      : "translate-x-[-100%]  top-[76px] py-8 md:translate-x-0    duration-150 transition-all ease-in"
+                  }`}
+                >
+                  <div className="flex w-full pl-4 mb-8 md:hidden items-center justify-between gap-2">
+                    <Logo
+                      onClick={() => router.push("/")}
+                      className="cursor-pointer "
+                    />
+                    <div
+                      className="flex rounded-[50px] bg-Surface/surface-400 w-10 h-10 p-2 cursor-pointer"
+                      onClick={() => setIsSideBarOn(false)}
+                    >
+                      <CloseFill />
+                    </div>
+                  </div>
                   {SidebarValues.map((content, index) => {
                     const { LogoImg, displayValue, link } = content;
                     return (

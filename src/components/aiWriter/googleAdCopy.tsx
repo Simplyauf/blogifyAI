@@ -3,7 +3,7 @@ import ArrowDown from "@/assets/direction-down 01.svg";
 
 export const GoogleAdCopy = () => {
   return (
-    <form action="" className="w-[40%]">
+    <form action="" className="lg:w-[40%] w-full">
       <div className="">
         <div className="mt-4">
           <h5 className=" text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque  font-medium">
