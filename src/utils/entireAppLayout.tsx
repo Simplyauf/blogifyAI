@@ -25,7 +25,7 @@ const EntireAppLayout = ({ children }: any) => {
 
   const getUserFromCookies = () => {
     const userCookie = Cookies.get("user");
-    console.log(userCookie);
+
     return Boolean(userCookie);
   };
 
