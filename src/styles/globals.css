@@ -54,6 +54,10 @@ body {
   textarea {
     @apply focus-within:outline-none;
   }
+
+  .swiper-pagination-bullet-active {
+    background-color: red !important;
+  }
 }
 
 /* builder icons */

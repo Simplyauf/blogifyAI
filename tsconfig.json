@@ -24,7 +24,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/aiWriter/instagramHashtag.stsx"
+    "src/components/aiWriter/instagramHashtag.stsx",
+    "src/pages/blogtemplates/template1/index.jsx",
+    "src/pages/blogtemplates/template1/category.js"
   ],
   "exclude": ["node_modules"]
 }
