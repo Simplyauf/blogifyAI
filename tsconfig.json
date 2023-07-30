@@ -26,7 +26,8 @@
     "**/*.tsx",
     "src/components/aiWriter/instagramHashtag.stsx",
     "src/pages/blogtemplates/template1/index.jsx",
-    "src/pages/blogtemplates/template1/category.js"
+    "src/pages/blogtemplates/template1/category.js",
+    "src/pages/blogtemplates/template1/about.jsx"
   ],
   "exclude": ["node_modules"]
 }

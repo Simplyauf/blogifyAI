@@ -19,6 +19,7 @@ import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { Header } from "./header";
 import Link from "next/link";
+import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter";
 
 const Category = () => {
   const sliderRef = useRef();
@@ -86,13 +87,16 @@ const Category = () => {
               </button>
             </article>
             <section className="flex flex-col gap-4 items-start">
-              <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
-                Categories
-              </h2>
-              <SingleCategory />
-              <SingleCategory />
-              <SingleCategory />
-              <SingleCategory />
+              <Newsletter />
+              <div className="flex flex-col gap-4 items-start">
+                <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
+                  Categories
+                </h2>
+                <SingleCategory />
+                <SingleCategory />
+                <SingleCategory />
+                <SingleCategory />
+              </div>
             </section>
           </section>
         </div>

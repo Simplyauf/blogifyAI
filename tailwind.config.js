@@ -23,7 +23,7 @@ module.exports = {
         "Surface/surface-400": "#E6ECF4",
         "Brand/Surface/surface-200": "#EEF2F7",
         "Brand/Surface/surface-50": "#F5F7FA",
-        "Brand/Surface/surface-800": "#aab1bc",
+        "Brand/Surface/surface-800": "#AAB1bc",
         "Brand/Text/Text-600": "#4E5668",
         "Brand/Text/Text-400": "#98A0B3",
         "Accent/Danger/Danger-800": "#C92014",
@@ -62,11 +62,14 @@ module.exports = {
         White: "#FFFFFF",
         "Red/1": "#FF3B30",
         "Green/1": "#34C759",
+        "Text/Base": "#161B3D",
       },
       fontFamily: {
         DarkerGrotesque: ["Darker Grotesque", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
         DMSans: ["DM Sans"],
+        Mulish: ["Mulish"],
+        Spartan: ["Spartan"],
       },
       screens: {
         BigMobile: { min: "420px", max: "639px" },

@@ -50,39 +50,18 @@ const Template1 = () => {
               background: `url(${BlogTemplate1.src})`,
               backgroundSize: "cover",
             }}
-            className="bg-no-repeat pb-8 w-full h-[calc(100vh-182px)] flex items-center  relative"
-          >
-            <div className="flex justify-between w-full px-[4%] lg:px-[80x] xl:px-[109px]">
-              <div
-                className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
-                onClick={() => sliderRef.current?.slidePrev()}
-              >
-                <ArrowLeft />
-              </div>
-              <div
-                className="rounded-[50%] p-3 flex justify-center items-center border-2 border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
-                onClick={() => sliderRef.current?.slideNext()}
-              >
-                <ArrowtRight />
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <div
-            style={{
-              background: `url(${BlogTemplate1.src})`,
-              backgroundSize: "cover",
-            }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between items-center w-full px-[4%] lg:px-[80x] xl:px-[109px]">
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
               >
                 <ArrowLeft />
               </div>
+              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+                About
+              </h3>
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slideNext()}
@@ -100,7 +79,31 @@ const Template1 = () => {
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between w-full px-[4%] items-center lg:px-[80x] xl:px-[109px]">
+              <div
+                className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
+                onClick={() => sliderRef.current?.slidePrev()}
+              >
+                <ArrowLeft />
+              </div>
+              <div
+                className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
+                onClick={() => sliderRef.current?.slideNext()}
+              >
+                <ArrowtRight />
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <div
+            style={{
+              background: `url(${BlogTemplate1.src})`,
+              backgroundSize: "cover",
+            }}
+            className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
+          >
+            <div className="flex justify-between w-full px-[4%] items-center lg:px-[80x] xl:px-[109px]">
               <div
                 className="rounded-[50%] p-3 flex justify-center items-center border-2 border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
