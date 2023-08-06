@@ -4,6 +4,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "Spartan";
+  src: url("../../public/Spartan-Bold.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,17 +35,19 @@ body {
   }
 
   .horizontal-overflow::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
   }
 
   .horizontal-overflow::-webkit-scrollbar-track {
-    background: grey;
+    background: white;
     border-radius: 0px;
+    height: 10px;
   }
 
   .horizontal-overflow::-webkit-scrollbar-thumb {
     border-radius: 14px;
     border: 3px solid #ebeef0;
+    height: 10px;
   }
 
   .clipped-Link-text {
@@ -48,9 +57,21 @@ body {
     -webkit-text-fill-color: transparent;
   }
 
+  .post-content {
+    font-feature-settings: "clig" off, "liga" off;
+  }
+
+  .post-content p span strong {
+    @apply font-bold font-Spartan text-[20px] leading-8;
+  }
+
   input,
   textarea {
     @apply focus-within:outline-none;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: red !important;
   }
 }
 

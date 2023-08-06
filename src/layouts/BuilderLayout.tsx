@@ -552,16 +552,21 @@ const BuilderLayout = ({ children }: PropType) => {
       <EntireAppLayout>
         <ProtectRoute>
           <div className="bg-Brand/Surface/surface-200 w-full min-h-screen">
-            <header className="w-full px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between items-center z-[1000] fixed top-0">
+            <header className="w-full px-5 sm:px-[24px] bg-Brand/Surface/surface-50 border border-Surface/surface-400 py-[16px] flex justify-between h-[76px] items-center z-[1000] fixed top-0">
               <Logo
                 onClick={() => router.push("/")}
-                className="cursor-pointer"
+                className="cursor-pointer "
               />
+
               <div className="flex items-center gap-[24px]">
-                <div className="relative w-[320px] flex justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
+                <div className="flex md:hidden cursor-pointer w-10 h-10 items-center p-2 justify-center rounded-[50%] bg-Surface/surface-400">
+                  {" "}
+                  <Search className=" " />
+                </div>
+                <div className="relative md:w-[320px] md:flex hidden justify-betwesen items-center bg-Brand/Surface/surface-50 rounded-lg  border-Brand/Surface/surface-800 border">
                   <input
                     type="text"
-                    className="w-[82%] pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
+                    className="w-[82%]  pr-4 ml-4 h-10  focus-visible:bg-Brand/Surface/surface-50 bg-Brand/Surface/surface-50  focus-visible:outline-0 border-0"
                     placeholder="Explore"
                   />
                   <Search className=" " />
@@ -577,10 +582,10 @@ const BuilderLayout = ({ children }: PropType) => {
                 </div>
               </div>
             </header>
-            <section className="mt-[76px]">
-              <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200">
-                <div className="  fixed top-[76px] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-[252px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto min-h-[747px] gap-4 ">
-                  <div className="grid grid-cols-2 w-full gap-4">
+            <section className="mt-[76px] ">
+              <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200 flex-col md:flex-row">
+                <div className="  fixed top-[76px] md:w-[15%] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-full bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto md:min-h-[747px]  gap-4 ">
+                  <div className="sm:grid flex  sm:grid-cols-6 md:grid-cols-1 lg:grid-cols-2 w-full sm:gap-4 gap-6 overflow-x-auto horizontal-overflow sm:overflow-x-hidden">
                     {SidebarValues.map((content, index) => {
                       const { LogoImg, displayValue, link, activeLogoImg } =
                         content;
@@ -588,7 +593,7 @@ const BuilderLayout = ({ children }: PropType) => {
                         <div
                           key={index}
                           onClick={() => navigateToSideItems(link)}
-                          className={`flex flex-col justify-center self-auto min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
+                          className={`flex min-w-fit sm:min-w-full flex-row md:flex-col justify-center self-auto md:min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
                             pathname.startsWith(link) &&
                             "bg-Brand/Primary/Primary-100"
                           }

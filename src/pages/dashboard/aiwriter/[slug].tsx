@@ -144,6 +144,55 @@ const Page = () => {
               </button>
             </div>
           </div>
+          <div className="flex justify-between items-center w-full flex-wrap xl:flex-nowrap gap-y-8 smgap-x-4 sm:gap-x-6 ">
+            <div className="flex items-center gap-2 w-[45%]  lg:w-auto sm:w-auto BigMobile:w-auto ">
+              <div className="flex items-center">
+                <FontColor />
+                <ArrowDown />
+              </div>
+              <div className="flex items-center">
+                <FontRectangle />
+                <ArrowDown />
+              </div>
+            </div>
+            <LinkIcon className="w-[15%] sm:w-auto BigMobile:w-auto block lg:hidden " />
+            <div className="flex items-center justify-end lg:justify-normal w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto">
+              <BoldIcon />
+              <Italic />
+              <Underline />
+            </div>
+            <LinkIcon className="hidden lg:block w-[35%] lg:w-auto sm:w-auto BigMobile:w-auto" />
+            <div className="flex items-center gap-2 w-[50%]  lg:w-auto sm:w-auto BigMobile:w-auto">
+              <div className="flex items-center">
+                <ListViewCircle />
+                <ArrowDown />
+              </div>
+              <div className="flex items-center">
+                <Frame />
+                <ArrowDown />
+              </div>
+            </div>
+            <div className="flex items-center  sm:w-auto BigMobile:w-auto gap-2 w-[50%] lg:w-auto justify-end lg:justify-normal">
+              <AlignLeft />
+              <AlignCenter />
+              <AlignRight />
+              <AlignJustify />
+            </div>
+          </div>
+          <div className="mt-4">
+            <h5 className=" text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque  font-medium">
+              Output
+            </h5>
+            <textarea
+              name=""
+              placeholder="AI text"
+              id=""
+              className="h-[343px] focus-within:outline-none w-full border rounded-lg border-Brand/Surface/surface-800 py-[4px] mt-[10px] resize-none px-[16px] bg-Brand/Surface/surface-50"
+            ></textarea>
+          </div>
+          <button className="h-12 mt-5 rounded-[8px] w-full flex justify-center items-center px-4 py-3 border-[1.5px] border-Brand/Text/Text-400 bg-Brand/Surface/surface-50 text-[16px] leading-6 font-DarkerGrotesque font-medium text-Brand/Text/Text-800">
+            Save
+          </button>
         </div>
       )}
     </section>
