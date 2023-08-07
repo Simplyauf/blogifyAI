@@ -25,11 +25,11 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/aiWriter/instagramHashtag.stsx",
-    "src/pages/blogtemplates/template1/index.jsx",
-    "src/pages/blogtemplates/template1/category.tsx",
-    "src/pages/blogtemplates/template1/about.jsx",
-    "src/pages/blogtemplates/template2/index.js",
-    "src/pages/blogtemplates/template1/contact.jsx"
+    "src/pages/blogtemplates/templateOne/index.jsx",
+    "src/pages/blogtemplates/templateOne/category.tsx",
+    "src/pages/blogtemplates/templateOne/about.jsx",
+    "src/pages/blogtemplates/second-template/index.js",
+    "src/pages/blogtemplates/templateOne/contact.jsx"
   ],
   "exclude": ["node_modules"]
 }
