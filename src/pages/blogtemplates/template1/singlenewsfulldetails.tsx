@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "./header";
+import { Header } from "../../../components/blogTemplates/template1/header";
 import Twitter from "@/assets/twitter2.svg";
 import Facebook from "@/assets/facebook2.svg";
 import Linkedin from "@/assets/Linkedin.svg";
