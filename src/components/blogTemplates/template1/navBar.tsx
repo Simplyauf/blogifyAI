@@ -13,10 +13,15 @@ export const NavBar = () => {
         {" "}
         <span>About</span>
       </Link>
-      <div className="flex items-center gap-1">
-        {" "}
-        <span>Categories</span> <DownArrow />
-      </div>
+      <Link
+        href="/blogtemplates/template1/postdetails"
+        className="cursor-pointer"
+      >
+        <div className="flex items-center gap-1">
+          {" "}
+          <span>Categories</span> <DownArrow />
+        </div>
+      </Link>
       <Link href="/blogtemplates/template1/contact" className="cursor-pointer">
         {" "}
         <span>Contact</span>

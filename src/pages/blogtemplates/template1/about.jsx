@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
-import { Header } from "./header";
+import { Header } from "../../../components/blogTemplates/template1/header";
 import ArrowLeft from "@/assets/arrow left2.svg";
 import BlogTemplate1 from "@/assets/Template1Hero.jpeg";
 import ArrowRight from "@/assets/arrow right2.svg";
@@ -20,6 +20,7 @@ import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter"
 
 const About = () => {
   const sliderRef = useRef();
+  console.log(BlogTemplate1);
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
