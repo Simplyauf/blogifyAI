@@ -17,7 +17,7 @@ import { SingleNewsCard } from "@/src/components/blogTemplates/template1/singleN
 import { SingleCategory } from "@/src/components/blogTemplates/template1/singleCategory";
 import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
-import { Header } from "./header";
+import { Header } from "../../../components/blogTemplates/template1/header";
 
 const Template1 = () => {
   const sliderRef = useRef();

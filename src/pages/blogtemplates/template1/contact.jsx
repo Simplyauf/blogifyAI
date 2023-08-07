@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
-import { Header } from "./header";
+import { Header } from "@/src/components/blogTemplates/template1/header";
 import ArrowLeft from "@/assets/arrow left2.svg";
 import BlogTemplate1 from "@/assets/Template1Hero.jpeg";
 import Mail from "@/assets/mail notification.svg";

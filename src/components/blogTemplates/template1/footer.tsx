@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import Instagram from "@/assets/Instagram.svg";
+import Instagram from "@/assets/InstagramTemp.svg";
 import Twitter from "@/assets/Twitter.svg";
 import Dribble from "@/assets/Dribbble.svg";
-import Youtube from "@/assets/Youtube.svg";
+import Youtube from "@/assets/YoutubeTemp.svg";
 import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 
 export const Footer = () => {
