@@ -11,6 +11,7 @@ import MobileIcon from "@/assets/mobile.svg";
 import ComputerIcon from "@/assets/computer.svg";
 import ZoomOut from "@/assets/zoom out.svg";
 import ArrowRight from "@/assets/right-arrow.svg";
+import Eye from "@/assets/eye.svg";
 
 const About = () => {
   const router = useRouter();
