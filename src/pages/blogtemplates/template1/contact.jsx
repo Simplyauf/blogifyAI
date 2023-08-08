@@ -53,8 +53,8 @@ const Contact = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
-                About
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
+                Contact
               </h3>
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
@@ -80,7 +80,7 @@ const Contact = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
                 Contact
               </h3>
               <div
@@ -107,7 +107,7 @@ const Contact = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
                 Contact
               </h3>
               <div
@@ -121,8 +121,8 @@ const Contact = () => {
         </SwiperSlide>
       </Swiper>
       <section className="mt-[120px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full">
-        <div className="flex gap-8 items-center w-full">
-          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff] w-[33%] rounded-[8px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-center w-full">
+          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]  rounded-[8px]">
             <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
               <Location />
             </div>
@@ -136,7 +136,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]  w-[33%] rounded-[8px]">
+          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]   rounded-[8px]">
             <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
               <Mail />
             </div>
@@ -150,7 +150,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]  w-[33%] rounded-[8px]">
+          <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]   rounded-[8px]">
             <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
               <Call />
             </div>
@@ -167,7 +167,7 @@ const Contact = () => {
         <div className="mt-[120px] ">
           <form
             action=""
-            className="w-[799px] mx-auto p-[56px] gap-4 flex flex-col"
+            className="w-full lg:w-[799px] mx-auto bg-[#fff] p-[12px] BigMobile:p-[32px] sm:p-[56px] gap-4 flex flex-col"
           >
             <input
               type="text"

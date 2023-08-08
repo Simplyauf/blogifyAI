@@ -10,7 +10,7 @@ const SingleNewsFullDetails = () => {
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
       <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
-        <h2 className="font-DarkerGrotesque  text-[90px] text-center leading-normal font-bold text-[#00000]">
+        <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px] text-center leading-normal font-bold text-[#00000]">
           About
         </h2>
         <article className="mt-[46px] w-full flex flex-col">

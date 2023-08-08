@@ -57,7 +57,7 @@ const About = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
                 About
               </h3>
               <div
@@ -84,7 +84,7 @@ const About = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
                 About
               </h3>
               <div
@@ -111,7 +111,7 @@ const About = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
+              <h3 className="font-DarkerGrotesque leading-normal lg:leading-[128px] font-bold tracking-[-0.8px]  text-[56px] BigMobile:text-[72px] sm:text-[96px] mt-[-10px] text-Brand/Text/Text-100">
                 About
               </h3>
               <div
@@ -125,7 +125,7 @@ const About = () => {
         </SwiperSlide>
       </Swiper>
       <section className="w-full mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] ">
-        <div className="w-full mt-6 grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
+        <div className="w-full mt-6 grid-cols-1 lg:grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
           <article className="mt-[46px] w-full flex flex-col">
             <div className=" h-[471px] pb-0 bg-Brand/Primary/Primary-100">
               <Image
@@ -249,9 +249,9 @@ const About = () => {
               </p>
             </div>
           </article>
-          <section className="flex flex-col gap-4 items-start">
+          <section className="flex w-full flex-col-reverse lg:flex-col gap-8 items-start">
             <Newsletter />
-            <div className="flex flex-col gap-4 items-start">
+            <div className="flex w-full flex-col gap-4 items-start">
               <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                 Categories
               </h2>

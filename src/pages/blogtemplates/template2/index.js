@@ -75,13 +75,13 @@ const Template2 = () => {
         <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
           Recent posts
         </h2>
-        <div className="w-full mt-6 grid-cols-3  grid gap-8 ">
+        <div className="w-full mt-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[37px] 2xl:grid-cols-4 grid ">
           {RecentpostArr.map((post, index) => {
             return <SinglerecentPost key={index} imageLink={post.image} />;
           })}
         </div>
       </section>
-      <div className="w-full mt-6 lg:pl-[50px] pl-[4%] xl:pl-[112px] 2xl:pl-[150px]">
+      <div className="w-full mt-6 lg:pl-[50px] px-[4%] lg:pr-0 xl:pl-[112px] 2xl:pl-[150px]">
         <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
           Popular posts
         </h2>{" "}
@@ -90,8 +90,11 @@ const Template2 = () => {
             modules={[Autoplay, Navigation, Pagination, A11y, EffectFade]}
             spaceBetween={50}
             pagination={{ clickable: true }}
-            slidesPerView={1.3}
+            slidesPerView={1}
             visibilityFullFit={true}
+            breakpoints={{
+              1024: { slidesPerView: 1.3 },
+            }}
             autoResize={false}
             // navigation
             autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -106,7 +109,7 @@ const Template2 = () => {
           >
             {popularPost.map((post, index) => {
               return (
-                <SwiperSlide key={index} className="w-[800px]">
+                <SwiperSlide key={index} className="w-full sm:w-[800px]">
                   <SinglePopularPost imageLink={post.image} />
                 </SwiperSlide>
               );
@@ -114,7 +117,7 @@ const Template2 = () => {
           </Swiper>
         </div>
       </div>
-      <section className="w-full mt-[72px]  pb-[58px] lg:px-[50px] px-[4%] xl:px-[112px] grid grid-cols-2 gap-[27px]">
+      <section className="w-full mt-[72px]  pb-[58px] lg:px-[50px] px-[4%] xl:px-[112px] grid grid-cols-1 lg:grid-cols-2 gap-[27px]">
         <div className="flex flex-col gap-8">
           <h2 className="font-DarkerGrotesque text-[34px]  leading-[42px] font-bold text-[#00000]">
             Sports

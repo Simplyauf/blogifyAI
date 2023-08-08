@@ -15,7 +15,7 @@ export const Footer = () => {
         </h3>
         <NavBar />
       </div>
-      <div className="pt-6 w-full flex justify-between items-center">
+      <div className="w-full flex-col gap-6 sm:gap-0 sm:flex-row flex justify-between items-center py-[24px] border-t border-t-Surface/surface-600">
         <p className="text-[14px]   leading-6">
           {" "}
           © {new Date().getFullYear()} Blogify Template. All rights reserved

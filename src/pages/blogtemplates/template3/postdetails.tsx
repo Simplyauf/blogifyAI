@@ -16,7 +16,7 @@ const Singlenewsfulldetails = () => {
   return (
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
-      <section className="flex justify-center relative items-center min-h-[calc(100vh-128px)]">
+      <section className="flex justify-center relative items-center h-[400px] lg:min-h-[calc(100vh-128px)]">
         <div className="absolute inset-0">
           <Image
             src={hero}
@@ -27,20 +27,20 @@ const Singlenewsfulldetails = () => {
         </div>
         <div className="absolute inset-0 bg-black/50 z-[10]"></div>
 
-        <div className="relative max-w-[796px] mx-auto z-[20]">
-          <h1 className="text-Brand/Text/Text-100 text-[58px] leading-[66px] font-bold font-DarkerGrotesque text-center">
+        <div className="relative max-w-[796px] mx-auto z-[20] px-[4%]">
+          <h1 className="text-Brand/Text/Text-100 text-[26px] sm:text-[58px] leading-[140%] sm:leading-[66px] font-bold font-DarkerGrotesque text-center">
             Your most unhappy customers are your greatest source of learning.
           </h1>
-          <p className="font-DarkerGrotesque mt-6 text-[22px] font-medium  leading-normal text-center text-Brand/Text/Text-100">
+          <p className="font-DarkerGrotesque mt-6 text-[18px] sm:text-[22px] font-medium  leading-normal text-center text-Brand/Text/Text-100">
             Business, Travel
-            <span className="font-DarkerGrotesque text-[18px] font-medium  leading-normal text-Brand/Text/Text-200 ">
+            <span className="font-DarkerGrotesque text-[14px] sm:text-[18px] font-medium  leading-normal text-Brand/Text/Text-200 ">
               {" "}
               — July 2, 2020
             </span>{" "}
           </p>
         </div>
       </section>
-      <section className="mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full grid grid-cols-[55%_45%] gap-8">
+      <section className="mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full grid grid-cols-1  lg:grid-cols-[55%_45%] gap-8">
         <section>
           <article className="mt-[46px] w-full flex flex-col">
             <div className="flex items-center gap-[21px]">
@@ -59,7 +59,7 @@ const Singlenewsfulldetails = () => {
                 <Pinterest />
               </div>
             </div>
-            <h2 className="text-[#000]  font-DarkerGrotesque text-[40px] lg:text-[60px] font-bold leading-[50x] lg:leading-[88px] tracking-[-0.7px]">
+            <h2 className="text-[#000] my-6  font-DarkerGrotesque text-[40px] xl:text-[60px] font-bold xl:leading-[50px] leading-[150%] tracking-[-0.7px]">
               We design and build ultimate{" "}
             </h2>
             <div className=" h-[471px] pb-0 bg-Brand/Primary/Primary-100">
@@ -151,7 +151,7 @@ const Singlenewsfulldetails = () => {
           </article>
         </section>
         <section className="flex flex-col gap-8">
-          <div className="mt-[137px] grid grid-cols-1 gap-8">
+          <div className="mt-[137px] grid grid-cols-1 max-w-[650px] gap-8">
             <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
               Related
             </h2>
@@ -161,7 +161,7 @@ const Singlenewsfulldetails = () => {
             <SingleCategoryHorizontal />
             <SingleCategoryHorizontal />
           </div>
-          <div className="flex flex-col gap-4 items-start">
+          <div className="grid grid-cols-1 gap-4 items-start  lg:grid-cols-1  max-w-full md:max-w-[600px]  xl:max-w-full">
             <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
               Categories
             </h2>
@@ -172,7 +172,7 @@ const Singlenewsfulldetails = () => {
           </div>
         </section>
       </section>
-      <section className=" 2xl:ml-[150px] pb-[132px] lg:ml-[50px] ml-[4%] xl:ml-[112px] w-[768px] 2xl:w-[800px]">
+      <section className=" 2xl:ml-[150px] pb-[132px] lg:ml-[50px] lg:px-0 px-[4%] xl:ml-[112px] w-full lg:w-[768px] 2xl:w-[800px]">
         <div className="mt-[32px] w-full">
           <h3 className="py-[44px]  leading-[42px] font-DarkerGrotesque text-[34px] font-bold">
             Comments (25)

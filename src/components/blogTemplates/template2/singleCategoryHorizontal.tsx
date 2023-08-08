@@ -8,8 +8,8 @@ interface Proptype {
 export const SingleCategoryHorizontal = ({ imageLink }: Proptype) => {
   console.log(imageLink);
   return (
-    <div className="flex items-start  gap-4 w-full">
-      <div className="bg-Brand/Primary/Primary-100 w-[150px]  rounded-lg h-full pb-0">
+    <div className="flex flex-col  sm:flex-row items-start  gap-4 w-full">
+      <div className="bg-Brand/Primary/Primary-100 w-full sm:w-[150px]  rounded-lg h-full pb-0">
         <Image
           src={imageLink}
           alt="blog-image"
@@ -20,7 +20,7 @@ export const SingleCategoryHorizontal = ({ imageLink }: Proptype) => {
           style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <div className="flex flex-col gap-[8px] w-[426px]">
+      <div className="flex flex-col gap-[8px] w-full sm:w-[426px]">
         <p className="font-DarkerGrotesque text-[18px] font-medium  leading-[32px] text-Text/Text-600">
           Business,{" "}
           <span className="font-DarkerGrotesque text-[18px] font-medium  leading-[32px] text-[#222]">

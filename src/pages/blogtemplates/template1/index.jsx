@@ -59,9 +59,7 @@ const Template1 = () => {
               >
                 <ArrowLeft />
               </div>
-              <h3 className="font-DarkerGrotesque leading-[128px] font-bold tracking-[-0.8px] text-[96px] text-Brand/Text/Text-100">
-                About
-              </h3>
+
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slideNext()}
@@ -126,7 +124,7 @@ const Template1 = () => {
         <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
           Trending
         </h2>
-        <div className="w-full mt-6 grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
+        <div className="w-full mt-6 grid-cols-1 lg:grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
           <section className="flex flex-col gap-8">
             <SingleNewsCard />
             <SingleNewsCard />
@@ -135,14 +133,14 @@ const Template1 = () => {
               <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                 Trending
               </h2>
-              <div className="w-full mt-6 grid grid-cols-2 gap-8">
+              <div className="w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <SingleNewsCard />
                 <SingleNewsCard />
               </div>
             </section>
           </section>
           <section className="flex flex-col gap-8">
-            <article className="flex flex-col p-6 gap-3 border border-Surface/surface-600 bg-white rounded-[8px]">
+            <article className="flex flex-col p-6 mt-10 lg:mt-0 gap-3 border border-Surface/surface-600 bg-white rounded-[8px]">
               <div className="bg-Brand/Primary/Primary-100 rounded-lg h-[198px] pb-0">
                 <Image
                   src={DummyNewsImg}

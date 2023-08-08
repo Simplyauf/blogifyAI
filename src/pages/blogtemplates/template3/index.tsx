@@ -12,8 +12,8 @@ const Index = () => {
   return (
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
-      <section className=" px-[100px] bg-[#F8F9FA] py-[48px] my-[48px] w-full xl:px-[112px] 2xl:px-[140px] grid grid-cols-3 gap-8 grid-rows-2">
-        <div className="row-span-1 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] ">
+      <section className="px-[4%] lg:px-[100px] bg-[#F8F9FA] py-[48px] my-[48px] w-full xl:px-[112px] 2xl:px-[140px] grid lg:grid-cols-3 gap-8 lg:grid-rows-2 grid-cols-1 sm:grid-cols-2">
+        <div className="row-span-1 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px] 2xl:h-[250px] ">
           <div
             style={{
               background:
@@ -38,7 +38,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-        <div className="row-start-2 row-end-3 col-span-1 row-span-2 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-auto gap-8">
+        <div className="lg:col-span-1 lg:col-start-2 lg:row-end-3 lg:row-span-2 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px]  lg:h-auto gap-8">
           <div
             style={{
               background:
@@ -63,7 +63,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-        <div className="row-span-1 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] gap-8">
+        <div className="row-span-1 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px] 2xl:h-[250px] gap-8">
           <div
             style={{
               background:
@@ -88,7 +88,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-        <div className=" flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] gap-8 ">
+        <div className=" flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px] 2xl:h-[250px] gap-8 ">
           <div
             style={{
               background:
@@ -113,7 +113,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-        <div className=" flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] gap-8">
+        <div className=" flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px] 2xl:h-[250px] gap-8">
           <div
             style={{
               background:
@@ -139,11 +139,11 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <div className="w-full bg-[#F8F9FA] px-[100px] mt-[48px] xl:px-[112px] 2xl:px-[140px]">
-        <h1 className="text-[42px]  font-DarkerGrotesque font-bold leading-[50px] text-[#000]">
+      <div className="w-full bg-[#F8F9FA]  mt-[48px] xl:px-[112px] px-[4%] lg:px-[100px] 2xl:px-[140px]">
+        <h1 className="text-[42px]  font-DarkerGrotesque font-bold text-center mb-[48px] leading-[50px] text-[#000]">
           Recent Posts
         </h1>
-        <section className=" grid grid-cols-3 gap-[37px] ">
+        <section className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[37px] 2xl:grid-cols-4">
           {RecentpostArr.map((post, index) => {
             return <SinglerecentPost key={index} imageLink={post.image.src} />;
           })}

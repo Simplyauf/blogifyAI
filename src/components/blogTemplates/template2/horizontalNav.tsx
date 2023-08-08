@@ -31,15 +31,12 @@ export const HorizontalNav = ({ isNavOpen, setIsNavOpen }: Proptype) => {
         {" "}
         <span className="text-[26px] font-bold  leading-[34px]">Contact</span>
       </Link>
-      <Link
-        href="/blogtemplates/template2/categorydetails"
-        className="cursor-pointer"
-      >
+      <Link href="/blogtemplates/template2/category" className="cursor-pointer">
         {" "}
         <span className="text-[26px] font-bold  leading-[34px]">Travel</span>
       </Link>
       <Link
-        href="/blogtemplates/template2/categorydetails"
+        href="/blogtemplates/template2/postdetails"
         className="cursor-pointer"
       >
         {" "}
@@ -48,14 +45,14 @@ export const HorizontalNav = ({ isNavOpen, setIsNavOpen }: Proptype) => {
         </span>
       </Link>
       <Link
-        href="/blogtemplates/template2/categorydetails"
+        href="/blogtemplates/template2/postdetails"
         className="cursor-pointer"
       >
         {" "}
         <span className="text-[26px] font-bold  leading-[34px]">Business</span>
       </Link>
       <Link
-        href="/blogtemplates/template2/categorydetails"
+        href="/blogtemplates/template2/postdetails"
         className="cursor-pointer"
       >
         {" "}

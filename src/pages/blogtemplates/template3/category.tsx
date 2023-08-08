@@ -9,7 +9,7 @@ const Category = () => {
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
 
-      <section className=" px-[100px]  py-[64px] bg-Brand/Text/Text-400 w-full xl:px-[112px] 2xl:px-[140px] flex flex-col justify-center">
+      <section className=" px-[4%] lg:px-[100px]  py-[64px] bg-Brand/Text/Text-400 w-full xl:px-[112px] 2xl:px-[140px] flex flex-col justify-center">
         <p className="text-[18px] font-DarkerGrotesque text-[#555] font-medium leading-[110%]">
           Category
         </p>
@@ -17,8 +17,8 @@ const Category = () => {
           Travel
         </h1>
       </section>
-      <div className="w-full px-[100px] mt-[48px] xl:px-[112px] 2xl:px-[140px]">
-        <section className=" grid grid-cols-3 gap-[37px] ">
+      <div className="w-full px-[4%] lg:px-[100px] mt-[48px] xl:px-[112px] 2xl:px-[140px]">
+        <section className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[37px] ">
           {RecentpostArr.map((post, index) => {
             return <SinglerecentPost key={index} imageLink={post.image.src} />;
           })}

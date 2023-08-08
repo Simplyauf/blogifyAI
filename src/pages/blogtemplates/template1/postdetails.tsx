@@ -17,7 +17,7 @@ const SingleNewsFullDetails = () => {
       <Header />
       <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
         <div className="flex flex-col gap-4 items-start pb-6 border-b border-Surface/surface-600">
-          <h2 className="font-DarkerGrotesque  text-[90px]  leading-normal font-bold text-[#00000]">
+          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000]">
             Travel
           </h2>
           <div className="flex items-center gap-[21px]">
@@ -161,7 +161,7 @@ const SingleNewsFullDetails = () => {
               </span>
             </p>
           </div>
-          <div className="mt-[32px] w-[768px] 2xl:w-[800px]">
+          <div className="2xl:ml-[150px] mt-9 pb-[132px] lg:ml-[50px]  xl:ml-[112px] w-full lg:w-[768px] 2xl:w-[800px]">
             <h3 className="py-[44px]  leading-[42px] font-DarkerGrotesque text-[34px] font-bold">
               Comments (25)
             </h3>

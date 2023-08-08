@@ -8,7 +8,7 @@ const CategoryPage = () => {
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
-      <section className="w-full grid grid-cols-1 pt-[137px] pb-[72px] xl:px-[320px] 2xl:px-[360px] lg:px-[280px] gap-8 ">
+      <section className="w-full grid grid-cols-1 pt-[137px] pb-[72px] xl:px-[320px] px-[4%] 2xl:px-[360px] lg:px-[280px] gap-8 ">
         <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
           Business
         </h2>

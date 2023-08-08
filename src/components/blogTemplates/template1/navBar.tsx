@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const NavBar = () => {
   return (
-    <nav className="p-6 w-full flex justify-center items-center gap-8 text-[18px] font-DarkerGrotesque font-semibold leading-normal text-Brand/Text/Text-800">
+    <nav className="p-6 w-full flex justify-center items-center gap-4 sm:gap-8 text-[18px] font-DarkerGrotesque font-semibold leading-normal text-Brand/Text/Text-800">
       <Link href="/blogtemplates/template1/" className="cursor-pointer">
         {" "}
         <span className="">Home</span>

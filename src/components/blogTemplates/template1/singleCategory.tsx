@@ -10,7 +10,7 @@ export const SingleCategory = () => {
       className="cursor-pointer w-full"
     >
       <article className="w-full rounded-lg">
-        <div className="bg-Brand/Primary/Primary-100 rounded-lg h-[131px] pb-0">
+        <div className="bg-Brand/Primary/Primary-100 rounded-lg sm:h-[200px] lg:h-[131px] 2xl:h-[200px] h-[131px] pb-0">
           <Image
             src={categoryImg}
             alt="blog-image"

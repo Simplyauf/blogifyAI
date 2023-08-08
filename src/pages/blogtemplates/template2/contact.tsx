@@ -11,12 +11,12 @@ const Contact = () => {
 
       <section className="mt-[120px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full">
         <div className="mt-[120px] ">
-          <h2 className="font-DarkerGrotesque text-[96px] text-center  font-bold text-[#00000]">
+          <h2 className="font-DarkerGrotesque text-[72px] sm:text-[96px] text-center  font-bold text-[#00000]">
             Contact
           </h2>
           <form
             action=""
-            className="w-[799px] mx-auto p-[56px] gap-4 flex flex-col"
+            className="w-full lg:w-[799px] mx-auto bg-[#fff] p-[12px] BigMobile:p-[32px] sm:p-[56px] gap-4 flex flex-col"
           >
             <input
               type="text"

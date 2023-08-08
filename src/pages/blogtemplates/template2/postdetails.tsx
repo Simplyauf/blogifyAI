@@ -15,7 +15,7 @@ const SingleNewsFullDetails = () => {
       <Header />
       <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
         <div className="flex flex-col gap-4 items-start pb-6 border-b border-Surface/surface-600">
-          <h2 className="font-DarkerGrotesque  text-[90px]  leading-normal font-bold text-[#00000]">
+          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000]">
             Title
           </h2>
           <div className="flex items-center gap-[21px]">
@@ -160,7 +160,7 @@ const SingleNewsFullDetails = () => {
             </p>
           </div>
         </article>
-        <div className="mt-[137px] grid grid-cols-1 gap-8">
+        <div className="mt-[137px] grid grid-cols-1 gap-8 px-[4%] sm:px-0 w-full">
           <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
             Related
           </h2>
