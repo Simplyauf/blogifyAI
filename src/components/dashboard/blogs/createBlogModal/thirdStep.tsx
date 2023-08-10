@@ -26,6 +26,7 @@ import { clsx } from "clsx";
 import { Select, Option } from "@material-tailwind/react";
 import { BlogArrType } from "@/src/pages/dashboard/blogs";
 import Image from "next/image";
+import { useEffect } from "react";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -56,6 +57,11 @@ export const ThirdStep = ({
     console.log(value);
     setSelectedOption(value);
   };
+
+  let DatePickerCont = null;
+  if (document) {
+    DatePickerCont = document.querySelector("#date-cont");
+  }
 
   return (
     <div
@@ -126,8 +132,13 @@ export const ThirdStep = ({
         <h2 className="text-Brand/Text/Text-800 text-[18px] font-bold  text-ellipsis leading-7 font-DarkerGrotesque ">
           Choose day
         </h2>
-
-        <DateTimePicker onChange={onChange} value={value} />
+        <div className="relative date-cont">
+          <DateTimePicker
+            portalContainer={document.getElementById("date-cont")}
+            onChange={onChange}
+            value={value}
+          />
+        </div>
       </div>
 
       <div className="mt-6 w-full ">
@@ -141,14 +152,6 @@ export const ThirdStep = ({
             className="border h-[50px] px-2 border-Brand/Surface/surface-800 focus-visible:outline-none rounded-lg w-[68px] bg-Brand/Surface/surface-50"
           />
 
-          {/* <div className="w-full h-full flex px-4 gap-4 items-center border border-Brand/Surface/surface-800 py-1 focus-visible:outline-none bg-Brand/Surface/surface-50 rounded-lg">
-            <input
-              type="text"
-              placeholder="Blog name"
-              className="w-full  mt-2 h-full bg-Brand/Surface/surface-50  py-1 "
-            />
-            <ArrowDown />
-          </div> */}
           <div className="w-full ">
             <Select
               arrow={<ArrowDown className="absolute right-0" />}

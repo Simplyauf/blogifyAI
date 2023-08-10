@@ -13,7 +13,7 @@ const SingleNewsFullDetails = () => {
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
-      <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
+      <section className="w-full mt-[48px] md:mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
         <div className="flex flex-col gap-4 items-start pb-6 border-b border-Surface/surface-600">
           <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000]">
             Title
