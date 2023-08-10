@@ -9,18 +9,42 @@ import BlogImg from "@/assets/Blog Image.png";
 import Edit from "@/assets/edit.svg";
 import MenuCircle from "@/assets/menu-circle-vertical.svg";
 import { useState } from "react";
+import NoContent from "@/assets/noContent.svg";
 import Globe from "@/assets/globe.svg";
 import SmallBlogImg from "@/assets/smallBlogImg.png";
 import StatusIcon from "@/assets/broadcast.svg";
 import ActionIcon from "@/assets/information.svg";
-import CreateBlogModal from "./createBlogModal";
+import CreateBlogModal from "../../../components/dashboard/blogs/createBlogModal/";
 import Image from "next/image";
 import { useWindowWidth } from "@react-hook/window-size";
 import { useEffect } from "react";
+import ChooseBlogTemplateModal from "../../../components/dashboard/blogs/chooseBlogTemplateModal";
+import { DatePicker } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import "dayjs/locale/de";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import dayjs, { Dayjs } from "dayjs";
+import { blogArr } from "../../../components/dashboard/blogs/blogArr";
+
+export interface BlogArrType {
+  GridImg: (className: any) => React.ReactNode;
+  ListImg: (className: any) => React.ReactNode;
+  title: string;
+  url: string;
+  status: string;
+}
 
 const Blogs = () => {
   const [currentView, setCurrentView] = useState("Grid");
-  const [CreateBlogModalOpen, setCreateBlogModalOpen] = useState(false);
+  const [day, setDay] = useState(dayjs(dayjs().format("MM-DD-YYYY")));
+  const [blogs, setBlog] = useState<BlogArrType[]>([]);
+
+  useEffect(() => {
+    setBlog(blogArr);
+  }, []);
+
+  const [ChooseBlogTemplateModalOpen, setChooseBlogTemplateModalOpen] =
+    useState(false);
 
   const currentWidth = useWindowWidth();
 
@@ -146,97 +170,12 @@ const Blogs = () => {
     }
   }
 
-  const blogs = [
-    {
-      GridImg: (className: string) => (
-        <Image
-          src={BlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "100%", height: "187px" }}
-        />
-      ),
-      ListImg: (className: string) => (
-        <Image
-          src={SmallBlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "170px", height: "88px" }}
-        />
-      ),
-      title: "Blogsite Title",
-      url: "blogsitetitle.com",
-      status: "Live",
-    },
-    {
-      GridImg: (className: string) => (
-        <Image
-          src={BlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "100%", height: "187px" }}
-        />
-      ),
-      ListImg: (className: string) => (
-        <Image
-          src={SmallBlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "170px", height: "88px" }}
-        />
-      ),
-
-      title: "Blogsite Title",
-      url: "blogsitetitle.com",
-      status: "action-needed",
-    },
-    {
-      GridImg: (className: string) => (
-        <Image
-          src={BlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "100%", height: "187px" }}
-        />
-      ),
-      ListImg: (className: string) => (
-        <Image
-          src={SmallBlogImg.src}
-          alt="blog-image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="w-full object-fill"
-          style={{ width: "170px", height: "88px" }}
-        />
-      ),
-
-      title: "Blogsite Title",
-      url: "blogsitetitle.com",
-      status: "Inactive",
-    },
-  ];
-
   return (
     <>
-      <CreateBlogModal
-        CreateBlogModalOpen={CreateBlogModalOpen}
-        setCreateBlogModalOpen={setCreateBlogModalOpen}
+      <ChooseBlogTemplateModal
+        setBlog={setBlog}
+        ChooseBlogTemplateModalOpen={ChooseBlogTemplateModalOpen}
+        setChooseBlogTemplateModalOpen={setChooseBlogTemplateModalOpen}
       />
       <section className="pt-8 px-5 pb-[102px] sm:pb-[81px] sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%]  md:w-[75%] absolute w-full lg:w-[80%]  xl:w-[85%] right-0">
         <div className="w-full justify-between items-center flex">
@@ -268,7 +207,7 @@ const Blogs = () => {
               </div>
             </div>
             <button
-              onClick={() => setCreateBlogModalOpen(true)}
+              onClick={() => setChooseBlogTemplateModalOpen(true)}
               className="flex mx-auto items-center text-Brand/Surface/surface-50 justify-center gap-2 w-[127px] sm:w-[134px] h-[40px] sm:h-[48px] min-w-fit  bg-Brand/Primary/Primary-800 rounded-[4px] py-2 px-4 "
             >
               <span className="font-DarkerGrotesque text-[16px] font-medium leading-[26px] text-Brand/Surface/surface-50">
@@ -278,47 +217,60 @@ const Blogs = () => {
             </button>
           </div>
         </div>
-        <div className="w-full mt-9 ">
-          {currentView === "List" && (
-            <div className="flex items-center w-[76%] justify-between ml-auto gap-2 ">
-              <div className="flex items-center gap-[3px] w-[25%]">
-                <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Blog title
-                </span>
-                <Globe />
+        {blogs.length > 0 ? (
+          <div className="w-full mt-9 ">
+            {currentView === "List" && (
+              <div className="flex items-center w-[76%] justify-between ml-auto gap-2 ">
+                <div className="flex items-center gap-[3px] w-[25%]">
+                  <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
+                    Blog title
+                  </span>
+                  <Globe />
+                </div>
+                <div className="flex items-center gap-[3px]  w-[15%]">
+                  <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
+                    Status
+                  </span>
+                  <StatusIcon />
+                </div>
+                <div className="flex items-center gap-[3px]  w-[25%]">
+                  <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
+                    Domain
+                  </span>
+                  <LightMaximize />
+                </div>
+                <div className="flex items-center gap-[3px]  w-[25%]">
+                  <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
+                    Actions
+                  </span>
+                  <ActionIcon />
+                </div>
               </div>
-              <div className="flex items-center gap-[3px]  w-[15%]">
-                <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Status
-                </span>
-                <StatusIcon />
-              </div>
-              <div className="flex items-center gap-[3px]  w-[25%]">
-                <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Domain
-                </span>
-                <LightMaximize />
-              </div>
-              <div className="flex items-center gap-[3px]  w-[25%]">
-                <span className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-400 ">
-                  Actions
-                </span>
-                <ActionIcon />
-              </div>
-            </div>
-          )}
-          {currentView === "List" &&
-            blogs.map((elem, index) => {
-              return <SingleListView key={index} status={elem.status} />;
-            })}
-        </div>
-        {currentView === "Grid" && (
-          <div className="w-full grid sm:grid-cols-2 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
-            {blogs.map((elem, index) => {
-              const { status } = elem;
+            )}
+            {currentView === "List" &&
+              blogs.map((elem, index) => {
+                return <SingleListView key={index} status={elem.status} />;
+              })}
 
-              return <SingleGridView key={index} status={status} />;
-            })}
+            {currentView === "Grid" && (
+              <div className="w-full grid sm:grid-cols-2 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 mt-6 gap-6 ">
+                {blogs.map((elem, index) => {
+                  const { status } = elem;
+
+                  return <SingleGridView key={index} status={status} />;
+                })}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="w-full mt-[72px] flex-col flex justify-center items-center ">
+            <div className=" py-[60px] sm:py-[92px] px-[82px]">
+              {" "}
+              <NoContent />
+            </div>
+            <h3 className="text-[18px] text-center font-DarkerGrotesque  text-Brand/Text/Text-600 font-semibold leading-normal">
+              Nothing to see here, click “Create blog” to start your journey{" "}
+            </h3>
           </div>
         )}
       </section>

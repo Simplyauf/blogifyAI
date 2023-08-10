@@ -20,6 +20,17 @@ body {
   background-color: white;
 }
 
+.select-input div {
+  @apply right-1;
+}
+
+.react-datetime-picker {
+  @apply border  mt-2 px-2 bg-Brand/Surface/surface-50 rounded-lg border-Brand/Surface/surface-800   w-full h-[50px];
+}
+.react-datetime-picker .react-datetime-picker__wrapper {
+  @apply border-none;
+}
+
 @layer components {
   .custom-overflow::-webkit-scrollbar {
     width: 5px;

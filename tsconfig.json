@@ -29,7 +29,9 @@
     "src/pages/blogtemplates/templateOne/category.tsx",
     "src/pages/blogtemplates/templateOne/about.jsx",
     "src/pages/blogtemplates/second-template/index.js",
-    "src/pages/blogtemplates/templateOne/contact.jsx"
+    "src/pages/blogtemplates/templateOne/contact.jsx",
+, "src/components/dashboard/blogs/blogArr.js"    "src/components/dashboard/blogs/blogArr.js",
+    "src/components/dashboard/blogs/blogArr.js"
   ],
   "exclude": ["node_modules"]
 }
