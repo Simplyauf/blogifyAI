@@ -5,14 +5,14 @@ import HeroBlogTemplate from "@/assets/heroBlogTemplate2.png";
 
 export const SingleHeroSection = () => {
   return (
-    <div className="bg-no-repeat mt-[40px] md:mt-[48px] lg:px-[50px] px-[4%] xl:px-[112px] w-full min-h-[calc(100vh-192px)] flex ">
-      <div className="flex flex-col  w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+    <div className="bg-no-repeat mt-[40px] md:mt-[48px] lg:px-[50px] px-[4%] xl:px-[120px] 2xl:px-[250px] w-full min-h-[calc(100vh-192px)] flex ">
+      <div className="flex flex-col  w-full px-[4%] sm:px-0">
         <h2 className="font-DarkerGrotesque text-center text-[58px]  font-bold text-[#00000] leading-[66px]">
           Trending
         </h2>
         <div className="flex items-center justify-center min-h-[calc(100vh-300px)]">
           <div className="gap-8 flex py-8 items-center flex-col sm:flex-row relative">
-            <div className="bg-Brand/Primary/Primary-100 xl:min-w-[384px] rounded-lg h-[350px] sm:h-[385px] pb-0 ">
+            <div className="bg-Brand/Primary/Primary-100 w-full sm:w-auto xl:min-w-[384px] rounded-lg h-[350px] sm:h-[385px] pb-0 ">
               <Image
                 src={HeroBlogTemplate.src}
                 alt="blog-image"

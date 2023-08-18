@@ -161,7 +161,7 @@ const SingleNewsFullDetails = () => {
               </span>
             </p>
           </div>
-          <div className="2xl:ml-[150px] mt-9 pb-[132px] lg:ml-[50px]  xl:ml-[112px] w-full lg:w-[768px] 2xl:w-[800px]">
+          <div className=" mt-9 pb-[132px] lg:ml-[50px]  xl:ml-[112px] w-full 2xl:ml-0 lg:w-[768px] 2xl:w-[800px]">
             <h3 className="py-[44px]  leading-[42px] font-DarkerGrotesque text-[34px] font-bold">
               Comments (25)
             </h3>

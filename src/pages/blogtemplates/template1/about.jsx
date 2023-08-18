@@ -15,8 +15,9 @@ import "swiper/css/scrollbar";
 import { useRef } from "react";
 import Image from "next/image";
 
-import { SingleCategory } from "@/src/components/blogTemplates/template1/singleCategory";
+import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter";
+import Link from "next/link";
 
 const About = () => {
   const sliderRef = useRef();
@@ -45,12 +46,13 @@ const About = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between items-center w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between items-center w-full 2xl:px-[250px]  lg:px-[50px] px-[4%] xl:px-[120px]">
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
@@ -72,12 +74,13 @@ const About = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between items-center w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between items-center w-full 2xl:px-[250px]  lg:px-[50px] px-[4%] xl:px-[120px]">
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
@@ -99,12 +102,13 @@ const About = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between items-center w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between items-center w-full 2xl:px-[250px]  lg:px-[50px] px-[4%] xl:px-[120px]">
               <div
                 className="rounded-[50%] p-3 flex justify-center items-center border-2 border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
@@ -124,9 +128,9 @@ const About = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <section className="w-full mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] ">
-        <div className="w-full mt-6 grid-cols-1 lg:grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
-          <article className="mt-[46px] w-full flex flex-col">
+      <section className="w-full mt-[56px]  2xl:px-[250px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[120px] ">
+        <div className="w-full justify-between grid-cols-1 lg:grid-cols-[66%_30%] 2xl:grid-cols-[62%_33%] 2xl:gap-12 grid gap-8 ">
+          <article className="w-full flex flex-col">
             <div className=" h-[471px] pb-0 bg-Brand/Primary/Primary-100">
               <Image
                 src={SingleNewsImg}
@@ -255,10 +259,34 @@ const About = () => {
               <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                 Categories
               </h2>
-              <SingleCategory />
-              <SingleCategory />
-              <SingleCategory />
-              <SingleCategory />
+              <Link
+                href="/blogtemplates/template1/postdetails"
+                className="cursor-pointer w-full"
+              >
+                {" "}
+                <SingleCategory />
+              </Link>
+              <Link
+                href="/blogtemplates/template1/postdetails"
+                className="cursor-pointer w-full"
+              >
+                {" "}
+                <SingleCategory />
+              </Link>
+              <Link
+                href="/blogtemplates/template1/postdetails"
+                className="cursor-pointer w-full"
+              >
+                {" "}
+                <SingleCategory />
+              </Link>
+              <Link
+                href="/blogtemplates/template1/postdetails"
+                className="cursor-pointer w-full"
+              >
+                {" "}
+                <SingleCategory />
+              </Link>
             </div>
           </section>
         </div>

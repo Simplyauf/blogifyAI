@@ -27,6 +27,7 @@ import { Select, Option } from "@material-tailwind/react";
 import { BlogArrType } from "@/src/pages/dashboard/blogs";
 import Image from "next/image";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -49,7 +50,7 @@ export const ThirdStep = ({
   const [frequency, setFrequency] = useState("Monthly");
 
   const [value, onChange] = useState<Value>(new Date());
-  const [selectedOption, setSelectedOption] = useState();
+  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   console.log(selectedOption);
 
@@ -63,6 +64,7 @@ export const ThirdStep = ({
     DatePickerCont = document.querySelector("#date-cont");
   }
 
+  const router = useRouter();
   return (
     <div
       className={`relative w-[468px] max-w-[96%] overflow-y-auto overflow-x-hidden p-6 max-h-[96vh] xl:max-h-[90vh] h-[520px]   bg-Brand/Surface/surface-50  rounded-[8px] transition-opacity duration-100 ${
@@ -154,6 +156,7 @@ export const ThirdStep = ({
 
           <div className="w-full ">
             <Select
+              value={selectedOption}
               arrow={<ArrowDown className="absolute right-0" />}
               className="w-full h-[50px] flex items-center justify-between rounded-lg border  px-2 border-Brand/Surface/surface-800 focus-visible:outline-none select-input bg-Brand/Surface/surface-50"
               onChange={handleSelectedOption}
@@ -208,6 +211,7 @@ export const ThirdStep = ({
               },
             ]);
             setCreateBlogModalOpen(false);
+            router.push("/builder/settings");
           }}
         >
           <span>Next</span>

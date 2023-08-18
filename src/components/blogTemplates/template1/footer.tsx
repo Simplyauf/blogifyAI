@@ -8,7 +8,7 @@ import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 
 export const Footer = () => {
   return (
-    <footer className="px-[4%] lg:px-[80x] xl:px-[109px] py-6 border-t border-t-Surface/surface-600">
+    <footer className="px-[4%] 2xl:px-[250px] lg:px-[50px] xl:px-[120px]  py-6 border-t border-t-Surface/surface-600">
       <div className="flex flex-col w-full gap-6 justify-center pb-6 border-b border-b-Surface/surface-600">
         <h3 className="text-[58px] text-center  font-bold font-DarkerGrotesque leading-[66px]">
           LOGO

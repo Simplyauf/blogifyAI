@@ -7,7 +7,7 @@ interface Proptype {
 export const SinglePopularPost = ({ imageLink }: Proptype) => {
   console.log(imageLink);
   return (
-    <div className="flex flex-col gap-4 w-[700px] xl:w-[800px]">
+    <div className="flex flex-col gap-4 w-full ">
       <div className="bg-Brand/Primary/Primary-100 w-full  rounded-lg h-[514px] pb-0">
         <Image
           src={imageLink}

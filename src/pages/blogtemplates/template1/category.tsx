@@ -14,7 +14,7 @@ import DummyNewsImg from "@/assets/dummyNewsImg.png";
 import Share from "@/assets/share2.svg";
 import Image from "next/image";
 import { SingleNewsCard } from "@/src/components/blogTemplates/template1/singleNewsCard";
-import { SingleCategory } from "@/src/components/blogTemplates/template1/singleCategory";
+import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { Header } from "../../../components/blogTemplates/template1/header";
@@ -30,7 +30,7 @@ const Category = () => {
       <Header />
 
       {/* news section */}
-      <section className="w-full mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] ">
+      <section className="w-full mt-[56px]  2xl:px-[250px] pb-[132px] sm:px-[60px] md:px-[120px] lg:px-[50px] px-[4%] xl:px-[120px] ">
         <h4 className="text-Text/Text-600  text-[18px] font-DarkerGrotesque font-medim  leading-[26px] ">
           {" "}
           Category
@@ -38,7 +38,7 @@ const Category = () => {
         <h2 className="font-DarkerGrotesque text-[58px]  leading-[66px] font-bold text-[#00000]">
           Travel
         </h2>
-        <div className="w-full mt-6 grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
+        <div className="w-full mt-6 grid-cols-1  lg:grid-cols-[66%_30%] justify-between 2xl:grid-cols-[62%_34%] 2xl:gap-12 grid gap-8 ">
           <section className="flex flex-col gap-8">
             <Link href="/blogtemplates/template1/singlenewsfulldetails">
               <SingleNewsCard />
@@ -88,14 +88,38 @@ const Category = () => {
             </article>
             <section className="flex flex-col gap-4 items-start">
               <Newsletter />
-              <div className="flex flex-col gap-4 items-start">
+              <div className="flex flex-col w-full gap-4 items-start">
                 <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                   Categories
                 </h2>
-                <SingleCategory />
-                <SingleCategory />
-                <SingleCategory />
-                <SingleCategory />
+                <Link
+                  href="/blogtemplates/template1/postdetails"
+                  className="cursor-pointer w-full"
+                >
+                  {" "}
+                  <SingleCategory />
+                </Link>
+                <Link
+                  href="/blogtemplates/template1/postdetails"
+                  className="cursor-pointer w-full"
+                >
+                  {" "}
+                  <SingleCategory />
+                </Link>
+                <Link
+                  href="/blogtemplates/template1/postdetails"
+                  className="cursor-pointer w-full"
+                >
+                  {" "}
+                  <SingleCategory />
+                </Link>
+                <Link
+                  href="/blogtemplates/template1/postdetails"
+                  className="cursor-pointer w-full"
+                >
+                  {" "}
+                  <SingleCategory />
+                </Link>
               </div>
             </section>
           </section>

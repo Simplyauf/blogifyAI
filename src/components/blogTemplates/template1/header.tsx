@@ -5,7 +5,7 @@ import Search from "@/assets/search 04.svg";
 export const Header = () => {
   return (
     <>
-      <header className="w-full px-[4%] border-b border-b-Surface/surface-400 lg:px-[120px] gap-4  py-[20px] bg-Brand/Surface/surface-50 sticky top-0 z-[500] flex justify-between items-center ">
+      <header className="w-full px-[4%] 2xl:px-[250px] px-auto border-b border-b-Surface/surface-400 lg:px-[50px] xl:px-[120px] gap-4  py-[20px] bg-Brand/Surface/surface-50 sticky top-0 z-[500] flex justify-between items-center ">
         <h3 className="sm:text-[58px] text-[44px]  font-bold font-DarkerGrotesque  leading-[52px] sm:leading-[66px]">
           LOGO
         </h3>

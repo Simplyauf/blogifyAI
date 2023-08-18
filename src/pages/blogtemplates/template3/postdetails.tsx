@@ -8,9 +8,10 @@ import Facebook from "@/assets/facebook2.svg";
 import Linkedin from "@/assets/Linkedin.svg";
 import Pinterest from "@/assets/Pinterest.svg";
 import { SingleCategoryHorizontal2 } from "@/src/components/blogTemplates/template2/singleCategoryHorizontal2";
-import { SingleCategory } from "@/src/components/blogTemplates/template1/singleCategory";
+import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { SingleCategoryHorizontal } from "@/src/components/blogTemplates/template3/singleCategoryHorizontal";
 import { SingleCommentCard } from "@/src/components/blogTemplates/singleCommentCard";
+import Link from "next/link";
 
 const Singlenewsfulldetails = () => {
   return (
@@ -40,7 +41,7 @@ const Singlenewsfulldetails = () => {
           </p>
         </div>
       </section>
-      <section className="mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full grid grid-cols-1  lg:grid-cols-[55%_45%] gap-8">
+      <section className="mt-[56px] 2xl:px-[250px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[120px] w-full grid grid-cols-1  lg:grid-cols-[55%_45%] gap-8">
         <section>
           <article className="mt-[46px] w-full flex flex-col">
             <div className="flex items-center gap-[21px]">
@@ -165,14 +166,38 @@ const Singlenewsfulldetails = () => {
             <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
               Categories
             </h2>
-            <SingleCategory />
-            <SingleCategory />
-            <SingleCategory />
-            <SingleCategory />
+            <Link
+              href="/blogtemplates/template3/category"
+              className="cursor-pointer w-full"
+            >
+              {" "}
+              <SingleCategory />
+            </Link>
+            <Link
+              href="/blogtemplates/template3/category"
+              className="cursor-pointer w-full"
+            >
+              {" "}
+              <SingleCategory />
+            </Link>
+            <Link
+              href="/blogtemplates/template3/category"
+              className="cursor-pointer w-full"
+            >
+              {" "}
+              <SingleCategory />
+            </Link>
+            <Link
+              href="/blogtemplates/template3/category"
+              className="cursor-pointer w-full"
+            >
+              {" "}
+              <SingleCategory />
+            </Link>
           </div>
         </section>
       </section>
-      <section className=" 2xl:ml-[150px] pb-[132px] lg:ml-[50px] lg:px-0 px-[4%] xl:ml-[112px] w-full lg:w-[768px] 2xl:w-[800px]">
+      <section className="  pb-[132px] lg:ml-[50px] lg:px-0 px-[4%] xl:ml-[120px] 2xl:ml-[250px] w-full lg:w-[768px] 2xl:w-[800px]">
         <div className="mt-[32px] w-full">
           <h3 className="py-[44px]  leading-[42px] font-DarkerGrotesque text-[34px] font-bold">
             Comments (25)

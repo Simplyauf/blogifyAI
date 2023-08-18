@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
-      <section className="px-[4%] lg:px-[100px] bg-[#F8F9FA] py-[48px] my-[48px] w-full xl:px-[112px] 2xl:px-[140px] grid lg:grid-cols-3 gap-8 lg:grid-rows-2 grid-cols-1 sm:grid-cols-2">
+      <section className="px-[4%] lg:px-[50px] bg-[#F8F9FA] py-[48px] my-[48px] w-full xl:px-[120px] 2xl:px-[250px] grid lg:grid-cols-3 gap-8 lg:grid-rows-2 grid-cols-1 sm:grid-cols-2">
         <div className="row-span-1 flex flex-col bg-black/50 justify-end relative rounded-[4px] h-[200px] BigMobile:h-[300px] 2xl:h-[250px] ">
           <div
             style={{
@@ -139,7 +139,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <div className="w-full bg-[#F8F9FA]  mt-[48px] xl:px-[112px] px-[4%] lg:px-[100px] 2xl:px-[140px]">
+      <div className="w-full bg-[#F8F9FA]  mt-[48px] xl:px-[120px] px-[4%] lg:px-[50px] 2xl:px-[250px]">
         <h1 className="text-[42px]  font-DarkerGrotesque font-bold text-center mb-[48px] leading-[50px] text-[#000]">
           Recent Posts
         </h1>

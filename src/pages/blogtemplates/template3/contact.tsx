@@ -9,7 +9,7 @@ const Contact = () => {
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
 
-      <section className="md:mt-[120px] mt-0 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full">
+      <section className="md:mt-[120px] mt-0  2xl:px-[250px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[120px] w-full">
         <div className="mt-[48px] md:mt-[120px] ">
           <h2 className="font-DarkerGrotesque text-[72px] sm:text-[96px] text-center  font-bold text-[#000000]">
             Contact

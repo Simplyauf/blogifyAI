@@ -16,8 +16,7 @@
 @tailwind utilities;
 
 body {
-  color: black;
-  background-color: white;
+  @apply bg-Brand/Surface/surface-200;
 }
 
 .select-input div {

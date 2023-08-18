@@ -5,6 +5,8 @@ import TextIcon from "@/assets/text.svg";
 import Upload from "@/assets/upload 01.svg";
 import Close from "@/assets/close-fill.svg";
 import { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import dummyImg from "@/assets/dummyNewsImg.png";
 
 interface PropTypes {
   setCreateBlogModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,7 +19,12 @@ export const FirstStep = ({
   setCurrentStep,
   CreateBlogModalOpen,
 }: PropTypes) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(0);
+  const [uploadedImg, setUploadedImg] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(dummyImg.src);
+
+  console.log(imageUrl);
+  console.log(uploadedImg);
 
   return (
     <>
@@ -62,11 +69,11 @@ export const FirstStep = ({
           <h2 className="text-Brand/Text/Text-800 text-[18px] font-bold  text-ellipsis leading-7 font-DarkerGrotesque ">
             Updated Logo
           </h2>
-          <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+          <Tab.Group selectedIndex={selectedTab} onChange={setSelectedTab}>
             <Tab.List className="flex mt-2 w-full justify-between rounded-[4px] font-medium font-DarkerGrotesque gap-1 leading-normal bg-Brand/Surface/surface-200 border border-Surface/surface-400">
               <Tab
                 className={`${
-                  selectedIndex === 0
+                  selectedTab === 0
                     ? " focus-visible:border-transparent"
                     : "bg-Brand/Surface/surface-50 "
                 } h-[40px]  w-full justify-center items-center text-[16px] focus-visible:border-transparent focus-visible:outline-none flex gap-2 `}
@@ -75,7 +82,7 @@ export const FirstStep = ({
               </Tab>
               <Tab
                 className={`${
-                  selectedIndex === 1
+                  selectedTab === 1
                     ? "focus-visible:border-transparent"
                     : "bg-Brand/Surface/surface-50 "
                 } h-[40px]  w-full  justify-center items-center text-[16px] focus-visible:border-transparent focus-visible:outline-none flex gap-2 `}
@@ -87,6 +94,13 @@ export const FirstStep = ({
               <Tab.Panel>
                 <div className="mt-4">
                   <input
+                    onChange={(e) => {
+                      if (e.target?.files?.[0]) {
+                        setUploadedImg(e.target?.files[0]);
+                        const url = URL.createObjectURL(e.target?.files?.[0]);
+                        setImageUrl(url);
+                      }
+                    }}
                     type="file"
                     name="icon-input"
                     id="icon-input"
@@ -100,6 +114,17 @@ export const FirstStep = ({
                       htmlFor="icon-input"
                       className="absolute top-0 left-0 h-full w-full cursor-pointer"
                     ></label>
+                    <div className="w-[40px] absolute right-2 h-[40px]">
+                      <Image
+                        src={imageUrl}
+                        alt="blog-image"
+                        width={48}
+                        height={48}
+                        sizes="100vw"
+                        className="rounded-lg relative "
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </div>
                   </button>
                 </div>
                 <button className="flex w-full mt-4 h-[50px] border border-Surface/surface-400 bg-Brand/Surface/surface-50 text-Brand/Surface/surface-800 text-[18px]  font-DarkerGrotesque font-semibold leading-6 p-2 rounded-[8px] gap-4 justify-center items-center">

@@ -10,13 +10,13 @@ import newsletterImg from "@/assets/BGMask.png";
 
 export const Footer = () => {
   return (
-    <footer className="px-[4%] lg:px-[100px] w-full xl:px-[165px] 2xl:px-[180px] ">
+    <footer className="px-[4%] lg:px-[500px] w-full xl:px-[120px] 2xl:px-[250px] ">
       <div className="my-[64px] rounded-[8px] md:rounded-[16px] flex flex-col justify-center items-center p-[12px] relative bg-no-repeat  h-[400px] gap-[33px]  bg-cover w-full">
         <div className="absolute inset-0">
           <Image src={newsletterImg} alt="background image" fill />
         </div>
 
-        <h2 className="font-DarkerGrotesque text-[42px] z-1 relative leading-[50px] font-bold text-[#00000]">
+        <h2 className="font-DarkerGrotesque text-[42px] leading-[36px] text-center z-1 relative md:leading-[50px] font-bold text-[#00000]">
           Subscribe to our Newsletter
         </h2>
         <div className="flex items-center z-1 relative w-full sm:max-w-[365px] h-[50px]">

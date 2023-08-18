@@ -4,7 +4,7 @@ import Image from "next/image";
 export const SingleNewsCard = () => {
   return (
     <article className="flex flex-col gap-3">
-      <div className="bg-Brand/Primary/Primary-100 rounded-lg h-[352px] pb-0">
+      <div className="bg-Brand/Primary/Primary-100 rounded-lg h-[352px] 2xl:h-[400px] pb-0">
         <Image
           src={DummyNewsImg}
           alt="blog-image"

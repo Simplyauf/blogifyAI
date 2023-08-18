@@ -71,7 +71,7 @@ const Template2 = () => {
       </Swiper>
 
       {/* news section */}
-      <section className="w-full mt-[56px]  pb-[72px] lg:px-[50px] px-[4%] xl:px-[112px] ">
+      <section className="w-full mt-[56px]  pb-[72px] lg:px-[50px] px-[4%] xl:px-[120px] 2xl:px-[250px] ">
         <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
           Recent posts
         </h2>
@@ -81,14 +81,15 @@ const Template2 = () => {
           })}
         </div>
       </section>
-      <div className="w-full mt-6 lg:pl-[50px] px-[4%] lg:pr-0 xl:pl-[112px] 2xl:pl-[150px]">
+      <div className="w-full mt-6 lg:pl-[50px] px-[4%] lg:pr-0 xl:pl-[120px] 2xl:pl-[250px]">
         <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
           Popular posts
         </h2>{" "}
         <div className="mt-8 w-full ">
           <Swiper
+            className="h-[800px] sm:h-[720px]"
             modules={[Autoplay, Navigation, Pagination, A11y, EffectFade]}
-            spaceBetween={50}
+            spaceBetween={32}
             pagination={{ clickable: true }}
             slidesPerView={1}
             visibilityFullFit={true}
@@ -104,12 +105,14 @@ const Template2 = () => {
               "--swiper-pagination-color": "#E39F17",
               "--swiper-pagination-bullet-size": "12px",
               "--swiper-pagination-bullet-horizontal-gap": "6px",
-              height: "720px",
             }}
           >
             {popularPost.map((post, index) => {
               return (
-                <SwiperSlide key={index} className="w-full sm:w-[800px]">
+                <SwiperSlide
+                  key={index}
+                  className="w-full sm:w-[800px] lg:w-full"
+                >
                   <SinglePopularPost imageLink={post.image} />
                 </SwiperSlide>
               );
@@ -117,7 +120,7 @@ const Template2 = () => {
           </Swiper>
         </div>
       </div>
-      <section className="w-full mt-[72px]  pb-[58px] lg:px-[50px] px-[4%] xl:px-[112px] grid grid-cols-1 lg:grid-cols-2 gap-[27px]">
+      <section className="w-full mt-[72px]  pb-[58px] lg:px-[50px] px-[4%] xl:px-[120px] 2xl:px-[250px] grid grid-cols-1 lg:grid-cols-2 gap-[27px]">
         <div className="flex flex-col gap-8">
           <h2 className="font-DarkerGrotesque text-[34px]  leading-[42px] font-bold text-[#00000]">
             Sports

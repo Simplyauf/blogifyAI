@@ -41,7 +41,8 @@ const Contact = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
@@ -68,7 +69,8 @@ const Contact = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
@@ -95,7 +97,8 @@ const Contact = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
@@ -120,10 +123,10 @@ const Contact = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <section className="mt-[120px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] w-full">
+      <section className="mt-[120px] mx-auto 2xl:px-[250px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[120px] w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-center w-full">
           <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]  rounded-[8px]">
-            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
+            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[56px] flex justify-center items-center h-[56px]">
               <Location />
             </div>
             <div>
@@ -137,7 +140,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]   rounded-[8px]">
-            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
+            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[56px] flex justify-center items-center h-[56px]">
               <Mail />
             </div>
             <div>
@@ -151,7 +154,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col py-8 px-6 gap-6 bg-[#fff]   rounded-[8px]">
-            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[44px] h-[44px]">
+            <div className="rounded-[50%] bg-Brand/Text/Text-800 w-[56px] flex justify-center items-center h-[56px]">
               <Call />
             </div>
             <div>

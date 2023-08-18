@@ -184,7 +184,7 @@ const DashboardLayout = ({ children }: PropType) => {
             <section className="mt-[76px]">
               <div className=" w-full h-[calc(100vh-76px)] bg-Brand/Surface/surface-200">
                 <ul
-                  className={`flex flex-col fixed  left-0 md:w-[25%] lg:w-[20%] xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4  h-auto min-h-[747px] gap-4 justify-start items-start ${
+                  className={`flex flex-col fixed  left-0 md:w-[25%] lg:w-[20%] h-[calc(100vh-76px)] overflow-y-auto xl:w-[15%] w-[220px] bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4   gap-4 justify-start items-start ${
                     isSideBarOn
                       ? "translate-x-0 h-screen duration-150 transition-all ease-out z-[2000] top-0 pt-4 pb-8 BigMobile:w-[240px] sm:w-[257px]"
                       : "translate-x-[-100%]  top-[76px] py-8 md:translate-x-0    duration-150 transition-all ease-in"
@@ -207,7 +207,10 @@ const DashboardLayout = ({ children }: PropType) => {
                     return (
                       <li
                         key={index}
-                        onClick={() => navigateToSideItems(link)}
+                        onClick={() => {
+                          navigateToSideItems(link);
+                          setIsSideBarOn(false);
+                        }}
                         className={`flex items-center gap-4 py-2 px-6 w-full cursor-pointer ${
                           displayValue === "Logout" &&
                           "text-Accent/Danger/Danger-800"

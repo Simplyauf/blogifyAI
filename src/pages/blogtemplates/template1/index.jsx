@@ -14,7 +14,7 @@ import DummyNewsImg from "@/assets/dummyNewsImg.png";
 import Share from "@/assets/share2.svg";
 import Image from "next/image";
 import { SingleNewsCard } from "@/src/components/blogTemplates/template1/singleNewsCard";
-import { SingleCategory } from "@/src/components/blogTemplates/template1/singleCategory";
+import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { Header } from "../../../components/blogTemplates/template1/header";
@@ -47,12 +47,13 @@ const Template1 = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
             className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between items-center w-full px-[4%] lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between items-center w-full 2xl:px-[250px]  lg:px-[50px] px-[4%] xl:px-[120px]">
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
@@ -72,12 +73,13 @@ const Template1 = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
-            className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
+            className="bg-no-repeat bg-[rgba(0,0,0,0.3)] w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
-            <div className="flex justify-between w-full px-[4%] items-center lg:px-[80x] xl:px-[109px]">
+            <div className="flex justify-between w-full 2xl:px-[250px]  lg:px-[50px] px-[4%] xl:px-[120px]">
               <div
                 className="rounded-[50%] p-3 border-2 flex justify-center items-center border-l-Brand/Surface/surface-50 w-[50px] h-[50px] cursor-pointer"
                 onClick={() => sliderRef.current?.slidePrev()}
@@ -96,10 +98,11 @@ const Template1 = () => {
         <SwiperSlide className="">
           <div
             style={{
-              background: `url(${BlogTemplate1.src})`,
+              background: `linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(${BlogTemplate1.src}), lightgray 0px -39.379px / 100% 249.653% `,
+              // dhhdhdhd
               backgroundSize: "cover",
             }}
-            className="bg-no-repeat  w-full h-[calc(100vh-182px)] flex items-center  relative"
+            className="bg-no-repeat   w-full h-[calc(100vh-182px)] flex items-center  relative"
           >
             <div className="flex justify-between w-full px-[4%] items-center lg:px-[80x] xl:px-[109px]">
               <div
@@ -120,11 +123,11 @@ const Template1 = () => {
       </Swiper>
 
       {/* news section */}
-      <section className="w-full mt-[56px] 2xl:px-[150px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[112px] ">
+      <section className="w-full mt-[56px]  2xl:px-[250px] pb-[132px] lg:px-[50px] px-[4%] xl:px-[120px] ">
         <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
           Trending
         </h2>
-        <div className="w-full mt-6 grid-cols-1 lg:grid-cols-[70%_30%] 2xl:grid-cols-[65%_35%] 2xl:gap-12 grid gap-8 ">
+        <div className="w-full mt-6 grid-cols-1 justify-between lg:grid-cols-[66%_30%] 2xl:grid-cols-[60%_35%] 2xl:gap-12 grid gap-8 ">
           <section className="flex flex-col gap-8">
             <SingleNewsCard />
             <SingleNewsCard />

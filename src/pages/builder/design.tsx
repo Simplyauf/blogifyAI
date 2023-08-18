@@ -16,9 +16,11 @@ import MobileIcon from "@/assets/mobile.svg";
 import ComputerIcon from "@/assets/computer.svg";
 import ZoomOut from "@/assets/zoom out.svg";
 import ArrowRight from "@/assets/right-arrow.svg";
+import { useState } from "react";
 
 const Design = () => {
   const router = useRouter();
+  const [color, setColor] = useState("#e39f17");
   return (
     <div className="pt-8 pb-9 px-6 md:min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[85%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex md:flex-row flex-col-reverse items-start gap-6 top-[200px] md:top-[76px]">
       <section className="w-full md:w-[35%] lg:w-[40%] xl:w-[35%]">
@@ -48,13 +50,15 @@ const Design = () => {
               </span>
               <input
                 type="color"
+                onChange={(e) => setColor(e.currentTarget.value)}
                 id="color"
+                value={color}
                 placeholder=""
-                className="w-full h-full hidden border-transparent bg-Brand/Surface/surface-50 focus-visible:border-transparent focus-visible:outline-transparent text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-semibold leading-normal"
+                className="w-full h-full bg-transparent absolute top-0 left-0 cursor-pointer  border-transparent opacity-0 focus-visible:border-transparent focus-visible:outline-transparent text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-semibold leading-normal"
               />
               <label
-                htmlFor="color"
-                className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 bg-Accent/Warning/Warning-800"
+                style={{ backgroundColor: `${color}` }}
+                className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 "
               ></label>
             </div>
           </div>

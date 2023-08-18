@@ -18,6 +18,17 @@ export const SecondStep = ({
   setCurrentStep,
   CreateBlogModalOpen,
 }: PropTypes) => {
+  const [color, setColor] = useState({
+    primary: "#e39f17",
+    secondary: "#e39f17",
+    tertiary: "#e39f17",
+  });
+
+  const handleColorChange = (e: any) => {
+    setColor((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
   return (
     <>
       <div
@@ -50,11 +61,16 @@ export const SecondStep = ({
             <input
               type="color"
               id="color"
-              value="#ffffff"
+              onChange={handleColorChange}
+              value={color.primary}
+              name="primary"
               placeholder=""
               className="w-full h-full bg-transparent absolute top-0 left-0 cursor-pointer  border-transparent opacity-0 focus-visible:border-transparent focus-visible:outline-transparent text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-semibold leading-normal"
             />
-            <label className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 bg-Accent/Warning/Warning-800"></label>
+            <label
+              style={{ backgroundColor: `${color.primary}` }}
+              className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 "
+            ></label>
           </div>
           <div className="w-full h-[50px] mt-6 py-[4px] border rounded-lg bg-Brand/Surface/surface-50 border-Surface/surface-400 flex items-center gap-[16px] px-[16px] relative">
             <span className="w-full text-Brand/Text/Text-800 text-[16px]   font-DarkerGrotesque font-semibold leading-normal">
@@ -62,12 +78,17 @@ export const SecondStep = ({
             </span>
             <input
               type="color"
+              name="secondary"
               id="color"
-              value="#ffffff"
+              onChange={handleColorChange}
+              value={color.secondary}
               placeholder=""
               className="w-full h-full bg-transparent absolute top-0 left-0 cursor-pointer  border-transparent opacity-0 focus-visible:border-transparent focus-visible:outline-transparent text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-semibold leading-normal"
             />
-            <label className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 bg-Accent/Warning/Warning-800"></label>
+            <label
+              style={{ backgroundColor: `${color.secondary}` }}
+              className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 "
+            ></label>
           </div>
           <div className="w-full h-[50px] mt-6 py-[4px] border rounded-lg bg-Brand/Surface/surface-50 border-Surface/surface-400 flex items-center gap-[16px] px-[16px] relative">
             <span className="w-full text-Brand/Text/Text-800 text-[16px]   font-DarkerGrotesque font-semibold leading-normal">
@@ -76,11 +97,16 @@ export const SecondStep = ({
             <input
               type="color"
               id="color"
-              value="#ffffff"
+              name="tertiary"
+              onChange={handleColorChange}
+              value={color.tertiary}
               placeholder=""
               className="w-full h-full bg-transparent absolute top-0 left-0 cursor-pointer  border-transparent opacity-0 focus-visible:border-transparent focus-visible:outline-transparent text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-semibold leading-normal"
             />
-            <label className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 bg-Accent/Warning/Warning-800"></label>
+            <label
+              style={{ backgroundColor: `${color.tertiary}` }}
+              className="w-6 h-6 rounded-[4px] cursor-pointer border-[0.5px] border-Surface/surface-400 "
+            ></label>
           </div>
         </div>
 
