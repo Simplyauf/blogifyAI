@@ -35,7 +35,7 @@ export const loginUser =
 
       Cookies.set("accessToken", accessToken);
 
-      router.prefetch("/dashboard");
+      router.push("/dashboard");
       // Save the access token in the Redux store
       dispatch(login(accessToken));
     } catch (error: any) {

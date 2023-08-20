@@ -18,6 +18,7 @@ import { loginUser } from "@/src/redux/actions/authActions";
 import { ClipLoader } from "react-spinners";
 import { ChangeEvent } from "react";
 import Cookies from "js-cookie";
+import { useEffect } from "react";
 const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [showpassword, setShowPassword] = useState(true);
@@ -44,6 +45,10 @@ const Login = () => {
       setRememberMe(false);
     }
   };
+
+  useEffect(() => {
+    router.prefetch("/dashboard");
+  }, [router]);
 
   return (
     <section className="w-full flex justify-center items-center lg:px-0 px-[20px]">
