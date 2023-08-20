@@ -12,8 +12,13 @@ import { useRouter } from "next/router";
 import ImageTemp from "@/assets/image 3.png";
 import Eye from "@/assets/eye.svg";
 import Image from "next/image";
+import dummyImg from "@/assets/dummyNewsImg.png";
+import { useState } from "react";
 
 const Settings = () => {
+  const [uploadedImg, setUploadedImg] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(dummyImg.src);
+
   const router = useRouter();
   return (
     <div className="pt-8 pb-9 px-6 md:min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[85%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex md:flex-row flex-col-reverse items-start gap-6 top-[200px] md:top-[76px]">
@@ -84,8 +89,15 @@ const Settings = () => {
                   Upload an icon to use for tabs
                 </p>
               </div>
-              <div>
+              <div className=" flex w-full items-center gap-2">
                 <input
+                  onChange={(e) => {
+                    if (e.target?.files?.[0]) {
+                      setUploadedImg(e.target?.files[0]);
+                      const url = URL.createObjectURL(e.target?.files?.[0]);
+                      setImageUrl(url);
+                    }
+                  }}
                   type="file"
                   name="icon-input"
                   id="icon-input"
@@ -100,6 +112,21 @@ const Settings = () => {
                     className="absolute top-0 left-0 h-full w-full cursor-pointer"
                   ></label>
                 </button>
+                <div className="w-[58px] h-[50px] relative  rounded-md">
+                  <Image
+                    src={imageUrl}
+                    alt="blog-image"
+                    width={48}
+                    height={48}
+                    sizes="100vw"
+                    className="rounded-md relative "
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                  <div
+                    style={{ backgroundColor: "#d3d3d380" }}
+                    className="absolute w-full h-full inset-0 "
+                  ></div>
+                </div>
               </div>
             </div>
           </div>

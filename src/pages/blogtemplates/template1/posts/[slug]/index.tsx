@@ -17,14 +17,12 @@ import { SingleNewsCard } from "@/src/components/blogTemplates/template1/singleN
 import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
-import { Header } from "../../../components/blogTemplates/template1/header";
+import { Header } from "@/src/components/blogTemplates/template1/header";
 import Link from "next/link";
 import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter";
+import { data } from "@/src/components/blogTemplates/template1/dataJson";
 
-const Category = () => {
-  const sliderRef = useRef();
-
-  console.log(DummyNewsImg);
+const Index = ({ slug }: any) => {
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
@@ -35,22 +33,21 @@ const Category = () => {
           {" "}
           Category
         </h4>
-        <h2 className="font-DarkerGrotesque text-[58px]  leading-[66px] font-bold text-[#00000]">
-          Travel
+        <h2 className="font-DarkerGrotesque capitalize text-[58px]  leading-[66px] font-bold text-[#00000]">
+          {slug.title}
         </h2>
         <div className="w-full mt-6 grid-cols-1  lg:grid-cols-[66%_30%] justify-between 2xl:grid-cols-[62%_34%] 2xl:gap-12 grid gap-8 ">
           <section className="flex flex-col gap-8">
-            <Link href="/blogtemplates/template1/singlenewsfulldetails">
-              <SingleNewsCard />
-            </Link>
-            <Link href="/blogtemplates/template1/singlenewsfulldetails">
-              {" "}
-              <SingleNewsCard />
-            </Link>
-            <Link href="/blogtemplates/template1/singlenewsfulldetails">
-              {" "}
-              <SingleNewsCard />
-            </Link>
+            {slug.posts.map((post: any, index: any) => {
+              return (
+                <Link
+                  key={index}
+                  href={`/blogtemplates/template1/posts/${slug.title}/${post.title}`}
+                >
+                  <SingleNewsCard />
+                </Link>
+              );
+            })}
 
             <section className="w-full mt-[24px] ">
               <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
@@ -88,39 +85,25 @@ const Category = () => {
             </article>
             <section className="flex flex-col gap-4 items-start">
               <Newsletter />
-              <div className="flex flex-col w-full gap-4 items-start">
-                <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
-                  Categories
-                </h2>
-                <Link
-                  href="/blogtemplates/template1/postdetails"
-                  className="cursor-pointer w-full"
-                >
-                  {" "}
-                  <SingleCategory />
-                </Link>
-                <Link
-                  href="/blogtemplates/template1/postdetails"
-                  className="cursor-pointer w-full"
-                >
-                  {" "}
-                  <SingleCategory />
-                </Link>
-                <Link
-                  href="/blogtemplates/template1/postdetails"
-                  className="cursor-pointer w-full"
-                >
-                  {" "}
-                  <SingleCategory />
-                </Link>
-                <Link
-                  href="/blogtemplates/template1/postdetails"
-                  className="cursor-pointer w-full"
-                >
-                  {" "}
-                  <SingleCategory />
-                </Link>
-              </div>
+              {slug?.sub && slug.sub.length < 0 && (
+                <div className="flex flex-col w-full gap-4 items-start">
+                  <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
+                    Categories
+                  </h2>
+                  {slug.sub.map((post: any, index: any) => {
+                    return (
+                      <Link
+                        key={index}
+                        href={`/blogtemplates/template1/posts/${slug}/${post.title}`}
+                        className="cursor-pointer w-full"
+                      >
+                        {" "}
+                        <SingleCategory />
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
             </section>
           </section>
         </div>
@@ -130,4 +113,33 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Index;
+
+export async function getStaticProps(context: { params: { slug: any } }) {
+  const { params } = context;
+
+  const actualData = data.find((elem: any) => elem.title === params.slug);
+
+  return {
+    props: {
+      slug: actualData,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  // const response = await fetch(`${a}`);
+  // const data = await response.json();
+
+  // console.log(response);
+
+  const paths = data.map((post: any) => {
+    return {
+      params: {
+        slug: `${post.title}`,
+      },
+    };
+  });
+
+  return { paths, fallback: false };
+}

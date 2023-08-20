@@ -12,8 +12,13 @@ import ComputerIcon from "@/assets/computer.svg";
 import ZoomOut from "@/assets/zoom out.svg";
 import ArrowRight from "@/assets/right-arrow.svg";
 import Eye from "@/assets/eye.svg";
+import { useState } from "react";
+import dummyImg from "@/assets/dummyNewsImg.png";
 
 const About = () => {
+  const [uploadedImg, setUploadedImg] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(dummyImg.src);
+
   const router = useRouter();
   return (
     <div className="pt-8 pb-9 px-6 md:min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[85%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex md:flex-row flex-col-reverse items-start gap-6 top-[200px] md:top-[76px]">
@@ -41,8 +46,15 @@ const About = () => {
                 Upload the main image for about page
               </p>
             </div>
-            <div>
+            <div className=" flex w-full items-center gap-2">
               <input
+                onChange={(e) => {
+                  if (e.target?.files?.[0]) {
+                    setUploadedImg(e.target?.files[0]);
+                    const url = URL.createObjectURL(e.target?.files?.[0]);
+                    setImageUrl(url);
+                  }
+                }}
                 type="file"
                 name="icon-input"
                 id="icon-input"
@@ -52,11 +64,27 @@ const About = () => {
               <button className="flex w-full h-[48px] border border-Surface/surface-400 bg-Brand/Surface/surface-50 text-Brand/Text/Text-800 text-[16px]  font-DarkerGrotesque font-medium leading-6 px-4 py-1 rounded-[8px] gap-2 justify-center items-center relative">
                 <Upload />
                 <span>Upload image</span>
+
                 <label
                   htmlFor="icon-input"
                   className="absolute top-0 left-0 h-full w-full cursor-pointer"
                 ></label>
               </button>
+              <div className="w-[58px] h-[48px] relative  rounded-md">
+                <Image
+                  src={imageUrl}
+                  alt="blog-image"
+                  width={48}
+                  height={48}
+                  sizes="100vw"
+                  className="rounded-md relative "
+                  style={{ width: "100%", height: "100%" }}
+                />
+                <div
+                  style={{ backgroundColor: "#d3d3d380" }}
+                  className="absolute w-full h-full inset-0 "
+                ></div>
+              </div>
             </div>
           </div>
           <div className="w-full h-[50px] py-[4px] border rounded-lg bg-Brand/Surface/surface-50 border-Surface/surface-400 flex items-center gap-[16px] px-[16px] relative cursor-pointer shadow-[0px_4px_6px_0px_rgba(23,44,85,0.01),0px_5px_10px_1px,rgba(23,44,85,0.02)] ">

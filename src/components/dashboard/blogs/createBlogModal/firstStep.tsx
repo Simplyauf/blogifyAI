@@ -23,9 +23,18 @@ export const FirstStep = ({
   const [uploadedImg, setUploadedImg] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string>(dummyImg.src);
 
-  console.log(imageUrl);
-  console.log(uploadedImg);
+  // percentage
+  const [range, setRange] = useState("10");
 
+  // in px
+  const [LogoRange, setLogoRange] = useState(0);
+
+  const GetLogoRange = (e: any) => {
+    setRange(e.currentTarget.value);
+    console.log((e.currentTarget.value / 275) * 275);
+    setLogoRange((e.currentTarget.value / 275) * 90);
+  };
+  console.log(range, LogoRange);
   return (
     <>
       <div
@@ -92,7 +101,7 @@ export const FirstStep = ({
             </Tab.List>
             <Tab.Panels>
               <Tab.Panel>
-                <div className="mt-4">
+                <div className="mt-4 flex w-full items-center gap-2">
                   <input
                     onChange={(e) => {
                       if (e.target?.files?.[0]) {
@@ -114,27 +123,35 @@ export const FirstStep = ({
                       htmlFor="icon-input"
                       className="absolute top-0 left-0 h-full w-full cursor-pointer"
                     ></label>
-                    <div className="w-[40px] absolute right-2 h-[40px]">
-                      <Image
-                        src={imageUrl}
-                        alt="blog-image"
-                        width={48}
-                        height={48}
-                        sizes="100vw"
-                        className="rounded-lg relative "
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    </div>
                   </button>
+                  <div className="w-[58px] h-[51px] relative  rounded-md">
+                    <Image
+                      src={imageUrl}
+                      alt="blog-image"
+                      width={48}
+                      height={48}
+                      sizes="100vw"
+                      className="rounded-md relative "
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                    <div
+                      style={{ backgroundColor: "#d3d3d380" }}
+                      className="absolute w-full h-full inset-0 "
+                    ></div>
+                  </div>
                 </div>
                 <button className="flex w-full mt-4 h-[50px] border border-Surface/surface-400 bg-Brand/Surface/surface-50 text-Brand/Surface/surface-800 text-[18px]  font-DarkerGrotesque font-semibold leading-6 p-2 rounded-[8px] gap-4 justify-center items-center">
                   <input
                     type="range"
                     name=""
                     id=""
-                    className="w-[75%] accent-Brand/Primary/Primary-800"
+                    min={200}
+                    max={275}
+                    value={range}
+                    onChange={GetLogoRange}
+                    className="w-[275px] accent-Brand/Primary/Primary-800"
                   />
-                  <span>90px</span>
+                  <span>{LogoRange.toFixed(2)}</span>
                 </button>
               </Tab.Panel>
               <Tab.Panel>

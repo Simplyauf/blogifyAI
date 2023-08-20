@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../../../components/blogTemplates/template1/header";
+import { Header } from "@/src/components/blogTemplates/template1/header";
 import Twitter from "@/assets/twitter2.svg";
 import Facebook from "@/assets/facebook2.svg";
 import Linkedin from "@/assets/Linkedin.svg";
@@ -10,15 +10,16 @@ import Women from "@/assets/Women.png";
 import Image from "next/image";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { SingleCommentCard } from "@/src/components/blogTemplates/singleCommentCard";
+import { data } from "@/src/components/blogTemplates/template1/dataJson";
 
-const SingleNewsFullDetails = () => {
+const PostDetails = ({ postDetails, slug }: any) => {
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
       <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
         <div className="flex flex-col gap-4 items-start pb-6 border-b border-Surface/surface-600">
-          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000]">
-            Travel
+          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000] capitalize">
+            {postDetails.title}
           </h2>
           <div className="flex items-center gap-[21px]">
             <p className="font-DarkerGrotesque text-[14px] font-normal  leading-normal text-[#555]">
@@ -225,4 +226,48 @@ const SingleNewsFullDetails = () => {
   );
 };
 
-export default SingleNewsFullDetails;
+export default PostDetails;
+
+export async function getStaticProps(context: {
+  params: { slug: any; postDetails: any };
+}) {
+  const { params } = context;
+
+  const slug = params.slug;
+  console.log(slug, "snail");
+
+  const findCategory = data.find((elem: any) => elem.title === params?.slug);
+  console.log(findCategory);
+  const actualData = findCategory.posts.find(
+    (elem: any) => elem.title === params.postDetails
+  );
+
+  console.log(actualData);
+
+  return {
+    props: {
+      slug: findCategory,
+      postDetails: actualData,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  // const response = await fetch(`${a}`);
+  // const data = await response.json();
+
+  // console.log(response);
+
+  const paths = data.flatMap((post: any) => {
+    return post.posts.map((elem: any) => {
+      return {
+        params: {
+          slug: `${post.title}`,
+          postDetails: `${elem.title}`,
+        },
+      };
+    });
+  });
+
+  return { paths, fallback: false };
+}

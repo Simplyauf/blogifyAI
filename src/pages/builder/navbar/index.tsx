@@ -16,10 +16,26 @@ import MobileIcon from "@/assets/mobile.svg";
 import ComputerIcon from "@/assets/computer.svg";
 import ZoomOut from "@/assets/zoom out.svg";
 import ArrowRight from "@/assets/right-arrow.svg";
+import dummyImg from "@/assets/dummyNewsImg.png";
 
 const Navbar = () => {
+  const [uploadedImg, setUploadedImg] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(dummyImg.src);
+
   const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // percentage
+  const [range, setRange] = useState("10");
+
+  // in px
+  const [LogoRange, setLogoRange] = useState(0);
+
+  const GetLogoRange = (e: any) => {
+    setRange(e.currentTarget.value);
+    console.log((e.currentTarget.value / 235) * 235);
+    setLogoRange((e.currentTarget.value / 235) * 90);
+  };
   return (
     <div className="pt-8 pb-9 px-6 md:min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  w-full md:w-[85%] lg:w-[75%] xl:w-[80%] 2xl:w-[85%] right-0 flex md:flex-row flex-col-reverse items-start gap-6 top-[200px] md:top-[76px]">
       <section className="w-full md:w-[35%] lg:w-[40%] xl:w-[35%]">
@@ -70,8 +86,15 @@ const Navbar = () => {
               </Tab.List>
               <Tab.Panels>
                 <Tab.Panel>
-                  <div className="mt-4">
+                  <div className="mt-4 flex w-full items-center gap-2">
                     <input
+                      onChange={(e) => {
+                        if (e.target?.files?.[0]) {
+                          setUploadedImg(e.target?.files[0]);
+                          const url = URL.createObjectURL(e.target?.files?.[0]);
+                          setImageUrl(url);
+                        }
+                      }}
                       type="file"
                       name="icon-input"
                       id="icon-input"
@@ -92,9 +115,13 @@ const Navbar = () => {
                       type="range"
                       name=""
                       id=""
-                      className="w-[75%] accent-Brand/Primary/Primary-800"
+                      min={180}
+                      max={235}
+                      value={range}
+                      onChange={GetLogoRange}
+                      className="w-[275px] accent-Brand/Primary/Primary-800"
                     />
-                    <span>90px</span>
+                    <span>{LogoRange.toFixed(2)}</span>
                   </button>
                 </Tab.Panel>
                 <Tab.Panel>

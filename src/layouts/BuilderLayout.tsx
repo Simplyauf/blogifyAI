@@ -584,43 +584,42 @@ const BuilderLayout = ({ children }: PropType) => {
             </header>
             <section className="mt-[76px] ">
               <div className="flex w-full min-h-[calc(100vh+76px)] bg-Brand/Surface/surface-200 flex-col md:flex-row">
-                <div className="  fixed top-[76px] md:w-[15%] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-full bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto md:min-h-[747px]  gap-4 ">
-                  <div className="sm:grid flex  sm:grid-cols-6 md:grid-cols-1 lg:grid-cols-2 w-full sm:gap-4 gap-6 overflow-x-auto horizontal-overflow sm:overflow-x-hidden">
-                    {SidebarValues.map((content, index) => {
-                      const { LogoImg, displayValue, link, activeLogoImg } =
-                        content;
-                      return (
-                        <div
-                          key={index}
-                          onClick={() => navigateToSideItems(link)}
-                          className={`flex min-w-fit sm:min-w-full flex-row md:flex-col justify-center self-auto md:min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
-                            pathname.startsWith(link) &&
-                            "bg-Brand/Primary/Primary-100"
-                          }
+                <div className="sm:pb-8 pb-[5px]  fixed top-[76px] md:w-[15%] left-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] w-full bg-Brand/Surface/surface-50 border border-Surface/surface-400  px-4 py-8 h-auto md:h-[758px] md:overflow-y-auto lg:h-auto  gap-4 sm:grid flex  sm:grid-cols-6 md:grid-cols-1 lg:grid-cols-2  sm:gap-4  overflow-x-auto horizontal-overflow sm:overflow-x-hidden sm:custom-overflow">
+                  {SidebarValues.map((content, index) => {
+                    const { LogoImg, displayValue, link, activeLogoImg } =
+                      content;
+                    return (
+                      <div
+                        key={index}
+                        onClick={() => navigateToSideItems(link)}
+                        className={`flex min-w-fit sm:min-w-full flex-row md:flex-col justify-center self-auto md:min-h-[102px] items-center gap-2 p-2  border-Surface/surface-400 w-full cursor-pointer border rounded-[4px]   ${
+                          pathname.startsWith(link) &&
+                          "bg-Brand/Primary/Primary-100"
+                        }
                     }
                   `}
-                        >
-                          <>
-                            {pathname.startsWith(link)
-                              ? activeLogoImg("")
-                              : LogoImg("")}
-                          </>
-                          <h3
-                            className={`font-DarkerGrotesque  leading-normal text-center text-[16px] font-medium self-stretch  ${
-                              pathname.startsWith(link)
-                                ? "text-Brand/Primary/Primary-800"
-                                : "text-Text/Text-600"
-                            }
+                      >
+                        <>
+                          {pathname.startsWith(link)
+                            ? activeLogoImg("")
+                            : LogoImg("")}
+                        </>
+                        <h3
+                          className={`font-DarkerGrotesque  leading-normal text-center text-[16px] font-medium self-stretch  ${
+                            pathname.startsWith(link)
+                              ? "text-Brand/Primary/Primary-800"
+                              : "text-Text/Text-600"
+                          }
                    
                    `}
-                          >
-                            {displayValue}
-                          </h3>
-                        </div>
-                      );
-                    })}
-                  </div>
+                        >
+                          {displayValue}
+                        </h3>
+                      </div>
+                    );
+                  })}
                 </div>
+
                 {children}
               </div>
             </section>
