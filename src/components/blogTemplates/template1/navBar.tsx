@@ -2,7 +2,7 @@ import React from "react";
 import DownArrow from "@/assets/direction-down 01.svg";
 import Link from "next/link";
 import { useState } from "react";
-import { data } from "@/src/components/blogTemplates/template1/dataJson";
+import { data } from "@/src/components/blogTemplates/dataJson";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 

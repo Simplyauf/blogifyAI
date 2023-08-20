@@ -11,7 +11,7 @@ import Women from "@/assets/Women.png";
 import Image from "next/image";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { SingleCommentCard } from "@/src/components/blogTemplates/singleCommentCard";
-import { data } from "@/src/components/blogTemplates/template1/dataJson";
+import { data } from "@/src/components/blogTemplates/dataJson";
 
 const PostDetails = ({ slug }: any) => {
   const category = slug.post;

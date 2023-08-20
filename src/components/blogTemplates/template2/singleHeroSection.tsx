@@ -11,8 +11,8 @@ export const SingleHeroSection = () => {
           Trending
         </h2>
         <div className="flex items-center justify-center min-h-[calc(100vh-300px)]">
-          <div className="gap-8 flex py-8 items-center flex-col sm:flex-row relative">
-            <div className="bg-Brand/Primary/Primary-100 w-full sm:w-auto xl:min-w-[384px] rounded-lg h-[350px] sm:h-[385px] pb-0 ">
+          <div className="gap-8 flex py-8 items-center flex-col md:flex-row relative">
+            <div className="bg-Brand/Primary/Primary-100 w-full md:w-auto sm:min-w-[384px] rounded-lg h-[350px] sm:h-[385px] pb-0 ">
               <Image
                 src={HeroBlogTemplate.src}
                 alt="blog-image"

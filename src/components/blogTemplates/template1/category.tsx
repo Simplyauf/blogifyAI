@@ -14,14 +14,11 @@ import { useRouter } from "next/router";
 const Category = ({ slug }: any) => {
   const router = useRouter();
 
-  console.log(router);
-
   const category = slug?.category || slug.sub;
-  console.log(category);
 
-  const j =
+  const isMainCategory =
     router?.query?.slug?.length === 2 ? `${router?.query?.slug[0]}/` : "";
-  console.log(j);
+
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
@@ -32,7 +29,7 @@ const Category = ({ slug }: any) => {
           {" "}
           Category
         </h4>
-        <h2 className="font-DarkerGrotesque capitalize text-[58px]  leading-[66px] font-bold text-[#00000]">
+        <h2 className="font-DarkerGrotesque  text-[58px] capitalize leading-[66px] font-bold text-[#00000]">
           {category.title}
         </h2>
         <div className="w-full mt-6 grid-cols-1  lg:grid-cols-[66%_30%] justify-between 2xl:grid-cols-[62%_34%] 2xl:gap-12 grid gap-8 ">
@@ -41,7 +38,7 @@ const Category = ({ slug }: any) => {
               return (
                 <Link
                   key={index}
-                  href={`/blogtemplates/template1/posts/${j}${category.title}/${post.title}`}
+                  href={`/blogtemplates/template1/posts/${isMainCategory}${category.title}/${post.title}`}
                 >
                   <SingleNewsCard />
                 </Link>

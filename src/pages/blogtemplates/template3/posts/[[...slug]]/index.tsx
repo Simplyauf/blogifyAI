@@ -1,30 +1,10 @@
-import React, { useRef } from "react";
-import Search from "@/assets/search 04.svg";
-import BlogTemplate1 from "@/assets/Template1Hero.jpeg";
-import DownArrow from "@/assets/direction-down 01.svg";
-import ArrowLeft from "@/assets/arrow left2.svg";
-import ArrowtRight from "@/assets/arrow right2.svg";
-import { Autoplay, Navigation, Pagination, A11y, EffectFade } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import DummyNewsImg from "@/assets/dummyNewsImg.png";
-import Share from "@/assets/share2.svg";
-import Image from "next/image";
-import { SingleNewsCard } from "@/src/components/blogTemplates/template1/singleNewsCard";
-import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
-import { NavBar } from "@/src/components/blogTemplates/template1/navBar";
-import { Footer } from "@/src/components/blogTemplates/template1/footer";
-import { Header } from "@/src/components/blogTemplates/template1/header";
-import Link from "next/link";
-import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter";
 import { data } from "@/src/components/blogTemplates/dataJson";
+import Category from "@/src/components/blogTemplates/template3/category";
+import PostDetails from "@/src/components/blogTemplates/template3/postDetails";
+
 import { useRouter } from "next/router";
+import React from "react";
 import { ClipLoader } from "react-spinners";
-import Category from "@/src/components/blogTemplates/template1/category";
-import PostDetails from "@/src/components/blogTemplates/template1/postDetails";
 
 const Index = ({ slug }: any) => {
   const router = useRouter();
@@ -52,10 +32,15 @@ export async function getStaticProps(context: { params: { slug: any } }) {
   const { params } = context;
   const slug = params.slug;
 
-  console.log(slug, "snail", slug.length);
-
   let b;
-  if (slug.length === 1) {
+
+  if (!slug) {
+    b = {
+      props: {
+        notFound: true,
+      },
+    };
+  } else if (slug.length === 1) {
     const actualData = data.find((elem: any) => elem.title === params.slug[0]);
     if (actualData) {
       b = {

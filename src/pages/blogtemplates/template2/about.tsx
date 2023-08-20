@@ -7,7 +7,6 @@ import Pinterest from "@/assets/Pinterest.svg";
 import SingleNewsImg from "@/assets/singleNewsImg.jpeg";
 import Image from "next/image";
 import { Footer } from "@/src/components/blogTemplates/template2/footer";
-import { SingleCategoryHorizontal2 } from "@/src/components/blogTemplates/template2/singleCategoryHorizontal2";
 
 const SingleNewsFullDetails = () => {
   return (

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Close from "@/assets/close-black.svg";
 import { useRouter } from "next/router";
+import { data } from "../dataJson";
 
 interface Proptype {
   isNavOpen: boolean;
@@ -9,6 +10,11 @@ interface Proptype {
 }
 
 export const HorizontalNav = ({ isNavOpen, setIsNavOpen }: Proptype) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [router]);
   return (
     <section
       className={`fixed min-h-screen z-[1000] overflow-y-auto w-full flex flex-col items-center justify-center text-Shade/Shade1 font-DarkerGrotesque leading-[34px] gap-[40px] transition-all duration-200 bg-Accent/Warning/Warning-800  ${
@@ -31,33 +37,20 @@ export const HorizontalNav = ({ isNavOpen, setIsNavOpen }: Proptype) => {
         {" "}
         <span className="text-[26px] font-bold  leading-[34px]">Contact</span>
       </Link>
-      <Link href="/blogtemplates/template2/category" className="cursor-pointer">
-        {" "}
-        <span className="text-[26px] font-bold  leading-[34px]">Travel</span>
-      </Link>
-      <Link
-        href="/blogtemplates/template2/postdetails"
-        className="cursor-pointer"
-      >
-        {" "}
-        <span className="text-[26px] font-bold  leading-[34px]">
-          Technology
-        </span>
-      </Link>
-      <Link
-        href="/blogtemplates/template2/postdetails"
-        className="cursor-pointer"
-      >
-        {" "}
-        <span className="text-[26px] font-bold  leading-[34px]">Business</span>
-      </Link>
-      <Link
-        href="/blogtemplates/template2/postdetails"
-        className="cursor-pointer"
-      >
-        {" "}
-        <span className="text-[26px] font-bold  leading-[34px]">Food</span>
-      </Link>
+      {data.map((category: any, index: any) => {
+        return (
+          <Link
+            key={index}
+            href={`/blogtemplates/template2/posts/${category.title}`}
+            className="cursor-pointer"
+          >
+            {" "}
+            <span className="text-[26px] font-bold  leading-[34px]">
+              {category.title}
+            </span>
+          </Link>
+        );
+      })}
     </section>
   );
 };

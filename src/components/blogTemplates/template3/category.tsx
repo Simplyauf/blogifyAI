@@ -1,10 +1,18 @@
+import React from "react";
 import { RecentpostArr } from "@/src/components/blogTemplates/recentPostsArr";
 import { Footer } from "@/src/components/blogTemplates/template3/footer";
 import { Header } from "@/src/components/blogTemplates/template3/header";
 import { SinglerecentPost } from "@/src/components/blogTemplates/template3/singleRecentPost";
-import React from "react";
+import { useRouter } from "next/router";
 
-const Category = () => {
+const Category = ({ slug }: any) => {
+  const router = useRouter();
+
+  const category = slug?.category || slug.sub;
+
+  const isMainCategory =
+    router?.query?.slug?.length === 2 ? `${router?.query?.slug[0]}/` : "";
+
   return (
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
@@ -13,8 +21,8 @@ const Category = () => {
         <p className="text-[18px] font-DarkerGrotesque text-[#555] font-medium leading-[110%]">
           Category
         </p>
-        <h1 className="text-[42px]  font-DarkerGrotesque font-bold leading-[50px] text-Text/Gray-900">
-          Travel
+        <h1 className="text-[42px] capitalize font-DarkerGrotesque font-bold leading-[50px] text-Text/Gray-900">
+          {category.title}
         </h1>
       </section>
       <div className="w-full px-[4%] lg:px-[50px] mt-[48px] xl:px-[120px] 2xl:px-[250px]">

@@ -7,9 +7,9 @@ import Pinterest from "@/assets/Pinterest.svg";
 import SingleNewsImg from "@/assets/singleNewsImg.jpeg";
 import Image from "next/image";
 import { Footer } from "@/src/components/blogTemplates/template2/footer";
-import { SingleCategoryHorizontal2 } from "@/src/components/blogTemplates/template2/singleCategoryHorizontal2";
+import { SinglePostHorizontal } from "@/src/components/blogTemplates/template2/singlePostHorizontal";
 
-const SingleNewsFullDetails = () => {
+const PostDetails = ({ slug }: any) => {
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
@@ -164,11 +164,11 @@ const SingleNewsFullDetails = () => {
           <h2 className="font-DarkerGrotesque text-[42px]  leading-[50px] font-bold text-[#00000]">
             Related
           </h2>
-          <SingleCategoryHorizontal2 />
-          <SingleCategoryHorizontal2 />
-          <SingleCategoryHorizontal2 />
-          <SingleCategoryHorizontal2 />
-          <SingleCategoryHorizontal2 />
+          <SinglePostHorizontal />
+          <SinglePostHorizontal />
+          <SinglePostHorizontal />
+          <SinglePostHorizontal />
+          <SinglePostHorizontal />
         </div>
       </section>
       <Footer />
@@ -176,4 +176,4 @@ const SingleNewsFullDetails = () => {
   );
 };
 
-export default SingleNewsFullDetails;
+export default PostDetails;

@@ -1,5 +1,5 @@
-import { Header } from "@/src/components/blogTemplates/template3/header";
 import React from "react";
+import { Header } from "@/src/components/blogTemplates/template3/header";
 import SingleNewsImg from "@/assets/singleNewsImg.jpeg";
 import hero from "@/assets/dummyNewsImg12.jpeg";
 import Image from "next/image";
@@ -7,13 +7,13 @@ import Twitter from "@/assets/twitter2.svg";
 import Facebook from "@/assets/facebook2.svg";
 import Linkedin from "@/assets/Linkedin.svg";
 import Pinterest from "@/assets/Pinterest.svg";
-import { SingleCategoryHorizontal2 } from "@/src/components/blogTemplates/template2/singleCategoryHorizontal2";
+import { SinglePostHorizontal } from "@/src/components/blogTemplates/template2/singlePostHorizontal";
 import { SingleCategory } from "@/src/components/blogTemplates/singleCategory";
 import { SingleCategoryHorizontal } from "@/src/components/blogTemplates/template3/singleCategoryHorizontal";
 import { SingleCommentCard } from "@/src/components/blogTemplates/singleCommentCard";
 import Link from "next/link";
 
-const Singlenewsfulldetails = () => {
+const PostDetails = ({ slug }: any) => {
   return (
     <section className=" w-full  min-h-screen bg-Brand/Surface/surface-50">
       <Header />
@@ -260,4 +260,4 @@ const Singlenewsfulldetails = () => {
   );
 };
 
-export default Singlenewsfulldetails;
+export default PostDetails;

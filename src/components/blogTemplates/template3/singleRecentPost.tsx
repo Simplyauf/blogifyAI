@@ -9,7 +9,7 @@ export const SinglerecentPost = ({ imageLink }: Proptype) => {
   console.log(imageLink);
   return (
     <div className="flex flex-col gap-4 w-full">
-      <div className="bg-Brand/Primary/Primary-100  rounded-lg h-[256px] pb-0">
+      <div className="bg-Brand/Primary/Primary-100 cursor-pointer  rounded-lg h-[256px] pb-0">
         <Image
           src={imageLink}
           alt="blog-image"

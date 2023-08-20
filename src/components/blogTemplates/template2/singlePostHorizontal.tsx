@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 import HeroBlogTemplate from "@/assets/heroBlogTemplate2.png";
 
-export const SingleCategoryHorizontal2 = () => {
+export const SinglePostHorizontal = () => {
   return (
     <div className="flex flex-col sm:flex-row items-start  gap-8 w-full sm:h-[213px]">
-      <div className="bg-Brand/Primary/Primary-100 w-full sm:w-[280px]  rounded-lg h-full pb-0">
+      <div className="bg-Brand/Primary/Primary-100 w-full sm:w-[280px] cursor-pointer rounded-lg h-full pb-0">
         <Image
           src={HeroBlogTemplate}
           alt="blog-image"
