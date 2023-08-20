@@ -1,15 +1,4 @@
-import React, { useRef } from "react";
-import Search from "@/assets/search 04.svg";
-import BlogTemplate1 from "@/assets/Template1Hero.jpeg";
-import DownArrow from "@/assets/direction-down 01.svg";
-import ArrowLeft from "@/assets/arrow left2.svg";
-import ArrowtRight from "@/assets/arrow right2.svg";
-import { Autoplay, Navigation, Pagination, A11y, EffectFade } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import React from "react";
 import DummyNewsImg from "@/assets/dummyNewsImg.png";
 import Share from "@/assets/share2.svg";
 import Image from "next/image";
@@ -20,9 +9,19 @@ import { Footer } from "@/src/components/blogTemplates/template1/footer";
 import { Header } from "@/src/components/blogTemplates/template1/header";
 import Link from "next/link";
 import { Newsletter } from "@/src/components/blogTemplates/template1/newsletter";
-import { data } from "@/src/components/blogTemplates/template1/dataJson";
+import { useRouter } from "next/router";
 
-const Index = ({ slug }: any) => {
+const Category = ({ slug }: any) => {
+  const router = useRouter();
+
+  console.log(router);
+
+  const category = slug?.category || slug.sub;
+  console.log(category);
+
+  const j =
+    router?.query?.slug?.length === 2 ? `${router?.query?.slug[0]}/` : "";
+  console.log(j);
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
@@ -34,15 +33,15 @@ const Index = ({ slug }: any) => {
           Category
         </h4>
         <h2 className="font-DarkerGrotesque capitalize text-[58px]  leading-[66px] font-bold text-[#00000]">
-          {slug.title}
+          {category.title}
         </h2>
         <div className="w-full mt-6 grid-cols-1  lg:grid-cols-[66%_30%] justify-between 2xl:grid-cols-[62%_34%] 2xl:gap-12 grid gap-8 ">
           <section className="flex flex-col gap-8">
-            {slug.posts.map((post: any, index: any) => {
+            {category.posts.map((post: any, index: any) => {
               return (
                 <Link
                   key={index}
-                  href={`/blogtemplates/template1/posts/${slug.title}/${post.title}`}
+                  href={`/blogtemplates/template1/posts/${j}${category.title}/${post.title}`}
                 >
                   <SingleNewsCard />
                 </Link>
@@ -85,16 +84,16 @@ const Index = ({ slug }: any) => {
             </article>
             <section className="flex flex-col gap-4 items-start">
               <Newsletter />
-              {slug?.sub && slug.sub.length < 0 && (
+              {category?.sub && category.sub.length > 0 && (
                 <div className="flex flex-col w-full gap-4 items-start">
                   <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                     Categories
                   </h2>
-                  {slug.sub.map((post: any, index: any) => {
+                  {category.sub.map((post: any, index: any) => {
                     return (
                       <Link
                         key={index}
-                        href={`/blogtemplates/template1/posts/${slug}/${post.title}`}
+                        href={`/blogtemplates/template1/posts/${category.title}/${post.title}`}
                         className="cursor-pointer w-full"
                       >
                         {" "}
@@ -113,33 +112,4 @@ const Index = ({ slug }: any) => {
   );
 };
 
-export default Index;
-
-export async function getStaticProps(context: { params: { slug: any } }) {
-  const { params } = context;
-
-  const actualData = data.find((elem: any) => elem.title === params.slug);
-
-  return {
-    props: {
-      slug: actualData,
-    },
-  };
-}
-
-export async function getStaticPaths() {
-  // const response = await fetch(`${a}`);
-  // const data = await response.json();
-
-  // console.log(response);
-
-  const paths = data.map((post: any) => {
-    return {
-      params: {
-        slug: `${post.title}`,
-      },
-    };
-  });
-
-  return { paths, fallback: false };
-}
+export default Category;

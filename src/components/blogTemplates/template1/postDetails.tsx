@@ -1,21 +1,27 @@
 import React from "react";
-import { Header } from "../../../components/blogTemplates/template1/header";
+
+import { Header } from "@/src/components/blogTemplates/template1/header";
 import Twitter from "@/assets/twitter2.svg";
 import Facebook from "@/assets/facebook2.svg";
 import Linkedin from "@/assets/Linkedin.svg";
 import Pinterest from "@/assets/Pinterest.svg";
 import SingleNewsImg from "@/assets/singleNewsImg.jpeg";
+import Send from "@/assets/sent-fast.svg";
+import Women from "@/assets/Women.png";
 import Image from "next/image";
 import { Footer } from "@/src/components/blogTemplates/template1/footer";
+import { SingleCommentCard } from "@/src/components/blogTemplates/singleCommentCard";
+import { data } from "@/src/components/blogTemplates/template1/dataJson";
 
-const SingleNewsFullDetails = () => {
+const PostDetails = ({ slug }: any) => {
+  const category = slug.post;
   return (
     <section className="w-full bg-Brand/Surface/surface-50 min-h-screen ">
       <Header />
       <section className="w-full mt-[56px] 2xl:px-[360px] pb-[132px] lg:px-[200px] px-[4%] xl:px-[320px] ">
         <div className="flex flex-col gap-4 items-start pb-6 border-b border-Surface/surface-600">
-          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000]">
-            Travel
+          <h2 className="font-DarkerGrotesque  text-[72px] sm:text-[90px]  leading-normal font-bold text-[#00000] capitalize">
+            {slug.title}
           </h2>
           <div className="flex items-center gap-[21px]">
             <p className="font-DarkerGrotesque text-[14px] font-normal  leading-normal text-[#555]">
@@ -158,10 +164,62 @@ const SingleNewsFullDetails = () => {
               </span>
             </p>
           </div>
-          <div className="mt-[32px]">
+          <div className=" mt-9 pb-[132px] lg:ml-[50px]  xl:ml-[112px] w-full 2xl:ml-0 lg:w-[768px] 2xl:w-[800px]">
             <h3 className="py-[44px]  leading-[42px] font-DarkerGrotesque text-[34px] font-bold">
               Comments (25)
             </h3>
+            <section className="w-full flex flex-col gap-4">
+              <SingleCommentCard />
+              <SingleCommentCard />
+
+              <section className="w-full">
+                <h2 className="font-DarkerGrotesque text-[32px] z-1 relative leading-[40px] font-bold text-[#00000]">
+                  Leave a comment
+                </h2>
+                <h2 className="font-DarkerGrotesque text-[18px] z-1 relative leading-[110%] font-medium text-[#00000]">
+                  Your email address will not be published. Required fields are
+                  marked
+                </h2>
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Subject"
+                  className="w-full h-[262px] py-[4px] mt-6   border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px] resize-none"
+                ></textarea>
+                <div className="grid w-full mt-6 grid-cols-2 gap-4">
+                  <div className="">
+                    <h5 className=" text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque  font-medium">
+                      Name
+                    </h5>
+                    <div className="w-full h-[48px] py-[4px] mt-[10px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+                      <input
+                        type="text"
+                        placeholder="name"
+                        className="w-full h-full border-transparent focus-visible:border-transparent bg-Brand/Surface/surface-50 focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
+                      />
+                    </div>
+                  </div>
+                  <div className="">
+                    <h5 className=" text-Brand/Text/Text-600  text-[16px] leading-normal font-DarkerGrotesque  font-medium">
+                      Email
+                    </h5>
+                    <div className="w-full h-[48px] py-[4px] mt-[10px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
+                      <input
+                        type="email"
+                        placeholder="email"
+                        className="w-full h-full border-transparent focus-visible:border-transparent bg-Brand/Surface/surface-50 focus-visible:outline-transparent text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="min-w-fit mt-6 w-[212px] h-[56px] bg-Brand/Text/Text-800 rounded-[8px] flex justify-center items-center font-medium font-DarkerGrotesque leading-8 text-Brand/Surface/surface-50 text-[20px] "
+                >
+                  Post a comment
+                </button>
+              </section>
+            </section>
           </div>
         </article>
       </section>
@@ -170,4 +228,4 @@ const SingleNewsFullDetails = () => {
   );
 };
 
-export default SingleNewsFullDetails;
+export default PostDetails;
