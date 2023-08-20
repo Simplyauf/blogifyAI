@@ -52,7 +52,7 @@ const Category = ({ slug }: any) => {
               <h2 className="font-DarkerGrotesque text-[32px]  leading-10 font-bold text-[#00000]">
                 Trending
               </h2>
-              <div className="w-full mt-6 grid grid-cols-2 gap-8">
+              <div className="w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <SingleNewsCard />
                 <SingleNewsCard />
               </div>
