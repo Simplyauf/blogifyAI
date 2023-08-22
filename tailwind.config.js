@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "Brand/Primary/Primary-200": "#8181AE",
         "Text/Base": "#161B3D",
         "Text/Lighten": "#7B7485",
         "Orange/1": "#FF9500",
@@ -70,6 +71,7 @@ module.exports = {
         DMSans: ["DM Sans"],
         Mulish: ["Mulish"],
         Spartan: ["Spartan"],
+        Manrope: ["Manrope"],
       },
       screens: {
         BigMobile: { min: "420px", max: "639px" },
