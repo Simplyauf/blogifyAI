@@ -125,20 +125,21 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="w-full flex justify-center items-center mt-12">
+        <div className="w-full flex justify-center items-center mt-12 relative">
           <button className=" h-[48px] flex justify-center items-center text-[20px] bg-Brand/Primary/Primary-800 rounded-lg text-Brand/Surface/surface-50 font-medium leading-8 font-DarkerGrotesque w-[148px] mx-auto">
             Get Started
           </button>
+          <Scribble146 className="absolute  hidden sm:block right-[-20px] md:right-[-30px] xl:right-[-100px] top-[30px]   z-[1] sm:z-0" />
         </div>
       </section>
-      <section className="py-[64px] w-full px-[4%] md:px-[80px] BigMobile:px-[8%] xl:px-[165px] 2xl:px-[15%] bg-Brand/Surface/surface-50">
+      <section className="py-[64px] w-full px-[4%] md:px-[80px] BigMobile:px-[8%] xl:px-[165px] 2xl:px-[15%] bg-Brand/Surface/surface-50 relative ">
         <div className="relative w-full">
-          <Scribble123 className="absolute -left-[60px] top-[120px]  sm:top-0 z-[1]" />
+          <Scribble123 className="absolute -left-[60px] top-[120px]  sm:top-0 z-[2]" />
           <h2 className="text-Brand/Primary/Primary-800 text-center font-bold leading-[50px] text-[42px] md:max-w-[361px]  max-w-[275px] mx-auto  font-DarkerGrotesque">
             Advanced AI Features for Professionals
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full mt-[48px] gap-8  z-[2]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full mt-[48px] gap-8  z-[3]">
           {AIFeatures.map((feature, index) => {
             return (
               <article key={index} className="w-full flex gap-4 items-start">
