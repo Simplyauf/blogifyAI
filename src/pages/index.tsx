@@ -308,7 +308,7 @@ export default function Home() {
           <Vector4SM className="absolute bottom-[2px] left-[6px]  md:hidden" />
           <Vector4LG className="absolute bottom-[2px] left-[6px] md:block hidden" />
         </article>
-        <article className="mt-[56px] py-[56px] px-[24px] md:px-[72px] xl:px-[128px] 2xl:px-[150px] flex flex-col justify-center items-center gap-12 rounded-[32px] bg-Brand/Primary/Primary-100">
+        <article className="mt-[56px] py-[56px] px-[16px] sm:px-[24px] md:px-[72px] xl:px-[128px] 2xl:px-[150px] flex flex-col justify-center items-center gap-12 rounded-[32px] bg-Brand/Primary/Primary-100">
           <div className="w-full flex gap-[70px] flex-col md:flex-row md:justify-between ">
             <div className="flex gap-2 items-center md:items-start">
               <div
@@ -358,7 +358,7 @@ export default function Home() {
             </div>
           </div>
           <article className="flex flex-wrap items-center justify-between gap-8 w-full">
-            <p className="w-full  md:w-auto font-DarkerGrotesque text-[22px] font-medium leading-normal text-Brand/Text/Text-600">
+            <p className="w-full  md:w-auto font-DarkerGrotesque text-[20px] sm:text-[22px] font-medium leading-normal text-Brand/Text/Text-600">
               © Blogify. {new Date().getFullYear()} — All rights reserved.
             </p>
             <div className="flex items-center gap-[10px] ">

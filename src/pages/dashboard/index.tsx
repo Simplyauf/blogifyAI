@@ -264,7 +264,7 @@ const Dashboard = () => {
               );
             })}
           {currentAnalytics.length < 1 && (
-            <div className="absolute top-[20%] left-[15%] BigMobile:left-[25%] flex sm:left-[30%] md:left-[40%] md:top-[10%]  flex-col items-center justify-center gap-[8px] ">
+            <div className="absolute top-[0 flex w-full h-full  flex-col items-center justify-center gap-[8px] ">
               <h3 className="text-[#000]  text-[20px] font-semibold  leading-normal font-DarkerGrotesque mt-4">
                 Create your blog to see analytics
               </h3>

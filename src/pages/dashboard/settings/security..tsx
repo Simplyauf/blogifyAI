@@ -1,6 +1,7 @@
 import DashboardLayout from "@/src/layouts/DashboardLayout";
 import React from "react";
-import CheckCircle from "@/assets/check-circle.svg";
+import CheckCircleSM from "@/assets/checkSM.svg";
+import CheckCircleLg from "@/assets/check-circle.svg";
 import { useState } from "react";
 import Gmail from "@/assets/gmail.svg";
 import SmileRectangle from "@/assets/smile-rectangle.svg";
@@ -20,8 +21,8 @@ const Settings = () => {
         Settings
       </h2>
       <SettingsTab />
-      <div className="flex gap-4 w-full items-start mt-6 flex-col md:flex-row">
-        <section className=" bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col  w-full md:w-[60%]">
+      <div className="flex gap-4 w-full items-start mt-6 flex-col lg:flex-row">
+        <section className=" bg-Brand/Surface/surface-50 rounded-lg p-6 flex flex-col  w-full lg:w-[60%]">
           <div className="flex flex-col md:flex-row w-full md:gap-2 justify-between items-start md:items-center pb-5">
             <div className="flex flex-col gap-2">
               <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
@@ -40,7 +41,7 @@ const Settings = () => {
                 <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
                   Save Changes
                 </span>
-                <CheckCircle />
+                <CheckCircleSM />
               </button>
             </div>
           </div>
@@ -50,7 +51,7 @@ const Settings = () => {
                 Current Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-                <SmileRectangle />
+                <SmileRectangle className="min-w-[24px]" />
                 <input
                   type="text"
                   placeholder=" Current Password"
@@ -63,7 +64,7 @@ const Settings = () => {
                 New Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-                <Gmail />
+                <SmileRectangle className="min-w-[24px]" />
                 <input
                   type="text"
                   placeholder="New Password"
@@ -77,21 +78,21 @@ const Settings = () => {
                 Confirm Password
               </h5>
               <div className="w-[512px] h-[48px] py-[4px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-                <Globe />
+                <SmileRectangle className="min-w-[24px]" />
                 <input
                   type="text"
                   placeholder="Confirm password"
                   className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent bg-Brand/Surface/surface-50 text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
                 />
-                <DownArrow />
+                <DownArrow className="min-w-[24px]" />
               </div>
             </div>
           </form>
         </section>
-        <section className="flex flex-col p-6 w-full md:w-[40%] bg-Brand/Surface/surface-50 gap-8 h-[397px] overflow-y-auto custom-overflow">
+        <section className="flex flex-col p-6 w-full lg:w-[40%] bg-Brand/Surface/surface-50 gap-8 h-[397px] overflow-y-auto custom-overflow">
           <div>
             <div className="w-[56px] h-[56px] rounded-[50%] flex justify-center items-center p-4 bg-Brand/Primary/Primary-100">
-              <Computer />
+              <Computer className="min-w-[24px]" />
             </div>
             <h4 className="font-DarkerGrotesque text-[20px] font-semibold leading-normal text-Brand/Text/Text-800 ">
               Password
@@ -101,7 +102,35 @@ const Settings = () => {
             </button>
           </div>
           <div className="flex flex-col gap-4 w-full items-start">
-            <div className="w-full flex items-center justify-start  gap-3">
+            <div className="w-full flex items-center justify-start  gap-3 sm:gap-6 lg:gap-3">
+              <Computer className="min-w-[24px]" />
+              <div className="flex flex-col gap-1  w-[70%]">
+                <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
+                  MacBook
+                </h3>
+                <div className="flex  gap-1 items-center font-DarkerGrotesque text-[14px] font-medium leading-normal text-Brand/Text/Text-600">
+                  <span>Lagos, Nigeria</span>
+                  <div className="w-1 h-1 rounded-[50%] text-Text/Text-600"></div>
+                  <span>Oct 25 at 10:15 am</span>
+                </div>
+              </div>
+              <Delete />
+            </div>
+            <div className="w-full flex items-center justify-start  gap-3 sm:gap-6 lg:gap-3 ">
+              <Computer className="min-w-[24px]" />
+              <div className="flex flex-col gap-1 w-[70%]">
+                <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
+                  MacBook
+                </h3>
+                <div className="flex  gap-1 items-center font-DarkerGrotesque text-[14px] font-medium leading-normal text-Brand/Text/Text-600">
+                  <span>Lagos, Nigeria</span>
+                  <div className="w-1 h-1 rounded-[50%] text-Text/Text-600"></div>
+                  <span>Oct 25 at 10:15 am</span>
+                </div>
+              </div>
+              <Delete />
+            </div>
+            <div className="w-full flex items-center justify-start  gap-3 sm:gap-6 lg:gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
@@ -115,35 +144,7 @@ const Settings = () => {
               </div>
               <Delete />
             </div>
-            <div className="w-full flex items-center justify-start  gap-3">
-              <Computer />
-              <div className="flex flex-col gap-1 w-[70%]">
-                <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
-                  MacBook
-                </h3>
-                <div className="flex  gap-1 items-center font-DarkerGrotesque text-[14px] font-medium leading-normal text-Brand/Text/Text-600">
-                  <span>Lagos, Nigeria</span>
-                  <div className="w-1 h-1 rounded-[50%] text-Text/Text-600"></div>
-                  <span>Oct 25 at 10:15 am</span>
-                </div>
-              </div>
-              <Delete />
-            </div>
-            <div className="w-full flex items-center justify-start  gap-3">
-              <Computer />
-              <div className="flex flex-col gap-1 w-[70%]">
-                <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">
-                  MacBook
-                </h3>
-                <div className="flex  gap-1 items-center font-DarkerGrotesque text-[14px] font-medium leading-normal text-Brand/Text/Text-600">
-                  <span>Lagos, Nigeria</span>
-                  <div className="w-1 h-1 rounded-[50%] text-Text/Text-600"></div>
-                  <span>Oct 25 at 10:15 am</span>
-                </div>
-              </div>
-              <Delete />
-            </div>
-            <div className="w-full flex items-center justify-start  gap-3">
+            <div className="w-full flex items-center justify-start  gap-3 sm:gap-6 lg:gap-3">
               <Computer />
               <div className="flex flex-col gap-1 w-[70%]">
                 <h3 className="font-DarkerGrotesque text-[18px] font-semibold leading-normal text-Brand/Text/Text-800">

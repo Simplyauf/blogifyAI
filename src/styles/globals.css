@@ -61,10 +61,11 @@ body {
   }
 
   .horizontal-overflow::-webkit-scrollbar {
-    width: 2px;
+    width: 6px;
+    height: 6px;
   }
 
-  .horizontal-overflow::-webkit-scrollbar-track {
+  .horizontal-overflow::-webkit-scrollbar-track:horizontal {
     background: white;
     border-radius: 0px;
     height: 10px;
@@ -72,8 +73,8 @@ body {
 
   .horizontal-overflow::-webkit-scrollbar-thumb {
     border-radius: 14px;
-    border: 3px solid #ebeef0;
-    height: 10px;
+
+    background-color: #ebeef0;
   }
 
   .clipped-Link-text {

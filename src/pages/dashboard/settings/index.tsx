@@ -1,6 +1,7 @@
 import DashboardLayout from "@/src/layouts/DashboardLayout";
 import React from "react";
-import CheckCircle from "@/assets/check-circle.svg";
+import CheckCircleSM from "@/assets/checkSM.svg";
+import CheckCircleLg from "@/assets/check-circle.svg";
 import { useState } from "react";
 import Gmail from "@/assets/gmail.svg";
 import SmileRectangle from "@/assets/smile-rectangle.svg";
@@ -28,15 +29,15 @@ const Settings = () => {
               Update your photo and personal details here.
             </p>
           </div>
-          <div className="flex gap-3 items-center mt-4">
-            <button className="flex  border-[1.5px] items-center justify-center  w-[76px] h-[40px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-4 font-DarkerGrotesque">
+          <div className="flex gap-3 items-center w-auto mr-6 mt-4 md:mt-0">
+            <button className="flex  border-[1.5px] items-center justify-center  w-[71px] h-[35px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-4 font-DarkerGrotesque">
               <span>Cancel</span>
             </button>
-            <button className="flex  items-center justify-center py-3 w-[147px] gap-2 h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] px-4 ">
-              <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
-                Save changes
+            <button className="flex  items-center justify-center py-3 w-[128px] gap-2 h-[35px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] px-4 ">
+              <span className="text-[14px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
+                Save Changes
               </span>
-              <CheckCircle />
+              <CheckCircleSM className="w-[14px] h-[14px] " />
             </button>
           </div>
         </div>
@@ -46,7 +47,7 @@ const Settings = () => {
               Name
             </h5>
             <div className=" w-full  BigMobile:w-[512px] sm:w-[512px]  h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-              <SmileRectangle />
+              <SmileRectangle className="min-w-[24px]" />
               <input
                 type="text"
                 placeholder="Your Name"
@@ -59,7 +60,7 @@ const Settings = () => {
               Email address
             </h5>
             <div className="w-full  BigMobile:w-[512px] sm:w-[512px]   h-[48px] py-[4px] border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-              <Gmail />
+              <Gmail className="min-w-[24px]" />
               <input
                 type="text"
                 placeholder="Your Name"
@@ -112,13 +113,13 @@ const Settings = () => {
               Country
             </h5>
             <div className="sm:w-[512px] w-full h-[48px] py-[4px]  border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-[16px] px-[16px]">
-              <Globe />
+              <Globe className="min-w-[24px]" />
               <input
                 type="text"
                 placeholder="country"
                 className="w-full h-full border-transparent focus-visible:border-transparent focus-visible:outline-transparent bg-Brand/Surface/surface-50 text-[16px] leading-normal font-DarkerGrotesque font-semibold text-Brand/Text/Text-400"
               />
-              <DownArrow />
+              <DownArrow className="min-w-[24px]" />
             </div>
           </div>
           <div className="w-full flex-col sm:flex-row  flex items-start gap-8 py-5 border-t border-t-Surface/surface-400">
@@ -126,7 +127,7 @@ const Settings = () => {
               Delete Account
             </h5>
             <div className="flex flex-col gap-[10px] items-start">
-              <button className="bg-Accent/Danger/Danger-800 h-[32px] flex justify-center items-center min-w-fit w-[112px] rounded-[4px] px-4 py-2 text-Brand/Surface/surface-50  text-[14px] leading-normal font-DarkerGrotesque font-medium ">
+              <button className="bg-Accent/Danger/Danger-800 h-[32px] flex justify-center items-center min-w-fit w-[112px] rounded-[4px] px-4 py-2 text-Brand/Surface/surface-50  text-[14px] leading-4 font-DarkerGrotesque font-medium ">
                 Delete Account
               </button>
               <p className="font-DarkerGrotesque text-[16px] font-medium leading-normal text-Brand/Text/Text-600 ">
@@ -136,14 +137,14 @@ const Settings = () => {
           </div>
           <div className="flex w-full justify-end pt-4 border-t border-t-Surface/surface-400">
             <div className="flex gap-3 items-center">
-              <button className="flex  border-[1.5px] items-center justify-center  w-[76px] h-[40px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-6 font-DarkerGrotesque">
+              <button className="flex  border-[1.5px] items-center justify-center  w-[76px] h-[48px] min-w-fit text-Brand/Text/Text-800 border-Brand/Text/Text-400 rounded-[8px] px-4 py-2 gap-[8px] text-[16px] font-medium  leading-6 font-DarkerGrotesque">
                 <span>Cancel</span>
               </button>
               <button className="flex  items-center justify-center py-3 w-[147px] gap-2 h-[48px] min-w-fit text-white bg-Brand/Primary/Primary-800 rounded-[8px] px-4 ">
                 <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
                   Save Changes
                 </span>
-                <CheckCircle />
+                <CheckCircleLg />
               </button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import DashboardLayout from "@/src/layouts/DashboardLayout";
 import React from "react";
-import CheckCircle from "@/assets/check-circle.svg";
+import CheckCircleSM from "@/assets/checkSM.svg";
+import CheckCircleLg from "@/assets/check-circle.svg";
 import { useState } from "react";
 import AddCircle from "@/assets/add-circle.svg";
 import MasterCard from "@/assets/master card.svg";
@@ -36,7 +37,7 @@ const Billing = () => {
                 <span className="text-[16px] font-medium  leading-6 text-Brand/Surface/surface-50 font-DarkerGrotesque ">
                   Save Changes
                 </span>
-                <CheckCircle />
+                <CheckCircleSM />
               </button>
             </div>
           </div>
@@ -73,7 +74,7 @@ const Billing = () => {
                   Card No
                 </h4>
                 <div className=" h-[48px] py-[4px] mt-4 border rounded-lg border-Brand/Surface/surface-800 bg-Brand/Surface/surface-50 flex items-center gap-2 px-2 md:gap-[16px] placeholder:text-ellipsis placeholder:line-clamp-2 md:px-[16px]">
-                  <MasterCard />
+                  <MasterCard className="min-w-[24px]" />
                   <input
                     type="text"
                     placeholder="You card number"

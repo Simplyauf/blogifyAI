@@ -14,9 +14,10 @@ export const fetchAiWriters = () => async (dispatch: any) => {
     const response = await http().get("dashboard/user/blogifyai", {});
     console.log(response);
     dispatch(aiListStartSuccess({ aiList: response?.data.data }));
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
-    dispatch(aiListStartFailure({ error }));
+    error = error.response?.data.message || error.message;
+    dispatch(aiListStartFailure(error));
   }
 };
 export const fetchAiWriter =
@@ -29,8 +30,9 @@ export const fetchAiWriter =
       );
       console.log(response.data.data);
       dispatch(aiSingleStartSuccess({ aiListSingle: response?.data.data }));
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
-      dispatch(aiSingleStartFailure({ error }));
+      error = error.response?.data.message || error.message;
+      dispatch(aiSingleStartFailure(error));
     }
   };

@@ -5,15 +5,17 @@ interface AIState {
   aiList: any;
   loadingAll: boolean;
   loadingSingle: boolean;
-  error: any;
+  errorSingle: string | null;
   aiListSingle: any;
+  errorAiList: string | null;
 }
 
 const initialAIState: AIState = {
   aiList: [],
   loadingAll: false,
   loadingSingle: false,
-  error: {},
+  errorAiList: "",
+  errorSingle: "",
   aiListSingle: {},
 };
 const aiwriterSlice = createSlice({
@@ -30,30 +32,30 @@ const aiwriterSlice = createSlice({
     // },
     aiListStart(state) {
       state.loadingAll = true;
-      state.error = null;
+      state.errorAiList = null;
     },
     aiListStartSuccess: (state, action) => {
       state.loadingAll = false;
-      state.error = null;
+      state.errorAiList = null;
       state.aiList = action.payload;
     },
     aiListStartFailure(state, action) {
       state.loadingAll = false;
-      state.error = action.payload.error;
+      state.errorAiList = action.payload;
       state.aiList = null;
     },
     aiSingleStart(state) {
       state.loadingSingle = true;
-      state.error = null;
+      state.errorSingle = null;
     },
     aiSingleStartSuccess: (state, action) => {
       state.loadingSingle = false;
-      state.error = null;
+      state.errorSingle = null;
       state.aiListSingle = action.payload;
     },
     aiSingleStartFailure(state, action) {
       state.loadingSingle = false;
-      state.error = action.payload.error;
+      state.errorSingle = action.payload.error;
       state.aiListSingle = null;
     },
   },

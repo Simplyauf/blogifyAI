@@ -13,7 +13,9 @@ import Link from "next/link";
 
 const AiWriter = () => {
   // const [data, setData] = useState([]);
-  const { aiList, loadingAll } = useAppSelector((state) => state.aiWriters);
+  const { aiList, loadingAll, errorAiList } = useAppSelector(
+    (state) => state.aiWriters
+  );
 
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -24,6 +26,20 @@ const AiWriter = () => {
   // console.log(aiList?.aiList?.aiList);
   return (
     <section className="pt-8 pb-[102px] sm:pb-[119px] px-5 sm:px-6 min-h-screen bg-Brand/Surface/surface-200 2xl:px-[4%] absolute  md:w-[75%]  w-full lg:w-[80%]  xl:w-[85%] right-0">
+      {errorAiList && (
+        <section className="w-full min-h-[300px] h-[calc(100vh-200px)] flex  flex-col gap-4 justify-center items-center">
+          <h2 className="font-bold font-DarkerGrotesque text-2xl lg:text-4xl">
+            {" "}
+            {errorAiList}
+          </h2>
+          <button
+            className=" h-[48px] flex justify-center items-center text-[20px] bg-Brand/Primary/Primary-800 rounded-lg text-Brand/Surface/surface-50 font-medium leading-8 font-DarkerGrotesque w-[148px] "
+            onClick={() => dispatch(fetchAiWriters())}
+          >
+            Retry
+          </button>
+        </section>
+      )}
       {loadingAll ? (
         <div className="mt-[10px]">
           <ClipLoader />

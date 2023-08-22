@@ -46,7 +46,7 @@ export const HorizontalNav = ({ isNavOpen, setIsNavOpen }: Proptype) => {
             className="cursor-pointer"
           >
             {" "}
-            <span className="text-[26px] font-bold  leading-[34px]">
+            <span className="text-[26px] capitalize font-bold  leading-[34px]">
               {category.title}
             </span>
           </Link>

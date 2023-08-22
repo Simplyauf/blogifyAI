@@ -89,7 +89,7 @@ const Notifications = () => {
                   {description}
                 </p>
               </div>
-              <button className="flex justify-end items-center rounded-2xl w-10 h-6 bg-Brand/Primary/Primary-600 px-1">
+              <button className="flex justify-end items-center rounded-2xl w-10 h-6 bg-Brand/Primary/Primary-600 px-1 min-w-[40px]">
                 <div className="w-4 h-4 rounded-[50%] bg-Brand/Surface/surface-50"></div>
               </button>
             </div>

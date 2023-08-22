@@ -6,7 +6,9 @@ import React, { useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 
 const AiWritercards = () => {
-  const { aiList, loadingAll } = useAppSelector((state) => state.aiWriters);
+  const { aiList, loadingAll, errorAiList } = useAppSelector(
+    (state) => state.aiWriters
+  );
 
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -15,6 +17,20 @@ const AiWritercards = () => {
   const router = useRouter();
   return (
     <div>
+      {errorAiList && (
+        <section className="w-full min-h-[300px] h-[calc(100vh-400px)] flex  flex-col gap-4 justify-center items-center">
+          <h2 className="font-bold font-DarkerGrotesque text-2xl lg:text-4xl">
+            {" "}
+            {errorAiList}
+          </h2>
+          <button
+            className=" h-[48px] flex justify-center items-center text-[20px] bg-Brand/Primary/Primary-800 rounded-lg text-Brand/Surface/surface-50 font-medium leading-8 font-DarkerGrotesque w-[148px] "
+            onClick={() => dispatch(fetchAiWriters())}
+          >
+            Retry
+          </button>
+        </section>
+      )}
       {loadingAll ? (
         <div className="mt-[10px]">
           <ClipLoader />

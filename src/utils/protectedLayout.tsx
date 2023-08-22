@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useAppSelector } from "../redux/hooks";
+import { ClipLoader } from "react-spinners";
 
 interface PropType {
   children: React.ReactNode;
@@ -26,7 +27,11 @@ export const ProtectRoute = ({ children }: any) => {
 
   if (isEntireAppLoading) {
     // You can return a loading component or null, depending on your use case
-    return <div>Loading...</div>;
+    return (
+      <section className="w-ful h-screen flex justify-center items-center">
+        <ClipLoader color="black" size={100} />
+      </section>
+    );
   }
   if (!isAuthenticated) {
     return null;
