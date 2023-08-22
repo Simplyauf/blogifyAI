@@ -28,6 +28,7 @@ import Linkedin from "@/assets/linkedin-footer.svg";
 import Twitter from "@/assets/twitter-footer.svg";
 import Link from "@/assets/link-footer.svg";
 import Scribble60 from "@/assets/scribble final version-60.svg";
+import Scribble05 from "@/assets/scribble final version-05.svg";
 import Scribble135 from "@/assets/scribble final version-135.svg";
 import Scribble146 from "@/assets/scribble final version-146.svg";
 import Scribble123 from "@/assets/scribble final version-123.svg";
@@ -97,6 +98,7 @@ export default function Home() {
           <h2 className="text-Brand/Primary/Primary-800 text-center font-bold leading-[40px] text-[32px] md:max-w-[373px]  max-w-[248px] mx-auto font-DarkerGrotesque relative w-full ">
             Your One-stop platform for easy Blogging
           </h2>
+          <Scribble146 className="absolute right-[-60px] z-[3] sm:hidden" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full mt-[48px] gap-4  lg:gap-8 relative">
           <Scribble60 className="absolute top-[341px] -left-[25px] sm:hidden block z-[1]" />
@@ -133,8 +135,10 @@ export default function Home() {
         </div>
       </section>
       <section className="py-[64px] w-full px-[4%] md:px-[80px] BigMobile:px-[8%] xl:px-[165px] 2xl:px-[15%] bg-Brand/Surface/surface-50 relative ">
+        <Scribble05 className="absolute  top-[380px] lg:right-[10px] xl:right-[40px] lg:block  hidden  z-[2]" />
         <div className="relative w-full">
           <Scribble123 className="absolute -left-[60px] top-[120px]  sm:top-0 z-[2]" />
+
           <h2 className="text-Brand/Primary/Primary-800 text-center font-bold leading-[50px] text-[42px] md:max-w-[361px]  max-w-[275px] mx-auto  font-DarkerGrotesque">
             Advanced AI Features for Professionals
           </h2>
@@ -297,7 +301,7 @@ export default function Home() {
           <Vector2SM className="absolute bottom-[-2.9px] right-[-2.9px]  md:hidden" />
 
           {/* vector3 */}
-          <Vector3SM className="w-[66px] h-[66px] mt-[-4px] " />
+          <Vector3SM className="w-[66px] h-[66px] mt-[-4px] md:hidden" />
           <Vector3LG className="mt-[-4px] hidden md:block md:w-[102px] md:h-[102px]" />
 
           {/* vector4 */}
